@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — CYPHER Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="cur"></div>
+<div id="ring"></div>
+<div id="scan"></div>
+
+<div class="wrap">
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><span>//</span>CYPHER</a>
+  <div class="nav-links-wrap" id="nav-links-wrap">
+    <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+    <div class="nav-item"><a href="courses.html" class="nav-link">Courses</a></div>
+    <div class="nav-item has-dropdown">
+      <span class="nav-trigger">Company <span class="caret">▼</span></span>
+      <div class="dropdown">
+        <a href="about.html">About Us</a>
+        <a href="corporate.html">Corporate Training</a>
+        <a href="services.html">Cybersecurity Services</a>
+      </div>
+    </div>
+    <div class="nav-item active"><a href="contact.html" class="nav-link">Contact</a></div>
+  </div>
+  <div class="nav-spacer"></div>
+  <button class="btn-nav" onclick="location.href='contact.html'">Get Protected →</button>
+  <div class="nav-ham" id="nav-ham"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> <span style="color:var(--accent)">›</span> Contact</div>
+  <h1>Get in <span style="color:var(--accent)">Touch</span></h1>
+  <p class="ph-sub">Whether you're enrolling in a course, requesting a security assessment, or exploring corporate training — we respond within one business day. Usually faster.</p>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap"><div class="marquee-track" id="mtrack"></div></div>
+
+<!-- MAIN CONTACT SECTION -->
+<section class="section">
+  <div class="contact-grid">
+
+    <!-- LEFT: Info -->
+    <div>
+      <div class="reveal">
+        <div class="s-tag">Contact Info</div>
+        <h2 class="s-title" style="font-size:clamp(28px,3.5vw,48px);margin-bottom:12px;">Let's start<br><em>the conversation.</em></h2>
+        <p style="font-size:14.5px;color:var(--dim2);line-height:1.8;margin-bottom:40px;">No sales pressure, no generic pitches. Tell us what you need and we'll give you a straight answer on the fastest path to get there.</p>
+      </div>
+
+      <div class="contact-detail reveal">
+        <div class="contact-detail-icon">[✉]</div>
+        <div class="contact-detail-text">
+          <strong>General Enquiries</strong>
+          info@cypher.academy
+        </div>
+      </div>
+      <div class="contact-detail reveal">
+        <div class="contact-detail-icon">[✉]</div>
+        <div class="contact-detail-text">
+          <strong>Enterprise & Corporate</strong>
+          enterprise@cypher.academy
+        </div>
+      </div>
+      <div class="contact-detail reveal">
+        <div class="contact-detail-icon">[✉]</div>
+        <div class="contact-detail-text">
+          <strong>Security Services</strong>
+          security@cypher.academy
+        </div>
+      </div>
+      <div class="contact-detail reveal">
+        <div class="contact-detail-icon">[☎]</div>
+        <div class="contact-detail-text">
+          <strong>Dubai HQ</strong>
+          +971 4 XXX XXXX
+        </div>
+      </div>
+      <div class="contact-detail reveal">
+        <div class="contact-detail-icon">[☎]</div>
+        <div class="contact-detail-text">
+          <strong>India Office</strong>
+          +91 98XXX XXXXX
+        </div>
+      </div>
+      <div class="contact-detail reveal">
+        <div class="contact-detail-icon">[☎]</div>
+        <div class="contact-detail-text">
+          <strong>24/7 Incident Response Hotline</strong>
+          +971 4 XXX XXXX (Emergency Only)
+        </div>
+      </div>
+
+      <!-- Response time box -->
+      <div class="reveal" style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);padding:24px 28px;margin-top:36px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:10px;">Response Times</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid var(--border);">
+            <span style="color:var(--dim2);">General enquiries</span>
+            <span style="font-family:'JetBrains Mono',monospace;color:var(--accent);">&lt; 1 business day</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid var(--border);">
+            <span style="color:var(--dim2);">Enterprise proposals</span>
+            <span style="font-family:'JetBrains Mono',monospace;color:var(--accent);">&lt; 4 hours</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid var(--border);">
+            <span style="color:var(--dim2);">Security engagements</span>
+            <span style="font-family:'JetBrains Mono',monospace;color:var(--accent);">&lt; 2 hours</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;">
+            <span style="color:var(--dim2);">Incident response (active breach)</span>
+            <span style="font-family:'JetBrains Mono',monospace;color:var(--red);">IMMEDIATE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="reveal">
+      <div style="background:var(--surface);border:1px solid var(--border);padding:44px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--border);">
+          // Send Us a Message
+        </div>
+        <form id="contact-form" onsubmit="handleSubmit(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="form-group">
+              <label class="form-label">First Name *</label>
+              <input type="text" class="form-input" placeholder="John" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name *</label>
+              <input type="text" class="form-input" placeholder="Doe" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-input" placeholder="john@company.com" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="+971 XX XXX XXXX"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Organisation</label>
+            <input type="text" class="form-input" placeholder="Your company or institution"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">I'm interested in *</label>
+            <select class="form-select form-input" required>
+              <option value="" disabled selected>Select an option</option>
+              <option>Individual Course Enrolment</option>
+              <option>Corporate Training Program</option>
+              <option>Penetration Testing</option>
+              <option>Incident Response</option>
+              <option>Managed Detection & Response</option>
+              <option>Cloud Security Assessment</option>
+              <option>Compliance & GRC</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message *</label>
+            <textarea class="form-textarea form-input" placeholder="Tell us what you're looking for, your timeline, and any specific requirements..." required></textarea>
+          </div>
+          <div class="form-group" style="display:flex;align-items:flex-start;gap:12px;margin-top:4px;">
+            <input type="checkbox" id="consent" required style="margin-top:3px;accent-color:var(--accent);cursor:none;"/>
+            <label for="consent" style="font-size:12px;color:var(--dim2);line-height:1.6;cursor:none;">I agree to CYPHER Academy's Privacy Policy and consent to being contacted regarding my enquiry.</label>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;font-size:12px;padding:16px;">
+            Send Message →
+          </button>
+        </form>
+        <!-- Success state (hidden by default) -->
+        <div id="form-success" style="display:none;text-align:center;padding:48px 24px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:48px;color:var(--accent);margin-bottom:16px;">✓</div>
+          <div style="font-size:20px;font-weight:600;margin-bottom:10px;">Message received.</div>
+          <div style="font-size:14px;color:var(--dim2);line-height:1.7;">We'll get back to you within one business day. Check your inbox — including spam, just in case.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICES -->
+<section class="section dark">
+  <div class="reveal">
+    <div class="s-tag">Our Offices</div>
+    <h2 class="s-title">Find us<br><em>worldwide</em></h2>
+  </div>
+  <div class="offices-grid">
+    <div class="office-card reveal">
+      <div class="office-city">Dubai, UAE — HQ</div>
+      <p class="office-addr">
+        CYPHER Academy Tower, Level 14<br>
+        Business Bay, Sheikh Zayed Road<br>
+        Dubai, United Arab Emirates<br>
+        <span style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;">+971 4 XXX XXXX</span>
+      </p>
+    </div>
+    <div class="office-card reveal">
+      <div class="office-city">Bangalore, India</div>
+      <p class="office-addr">
+        CYPHER Academy India Pvt. Ltd.<br>
+        3rd Floor, Prestige Tech Park<br>
+        Outer Ring Road, Bengaluru<br>
+        Karnataka 560103<br>
+        <span style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;">+91 98XXX XXXXX</span>
+      </p>
+    </div>
+    <div class="office-card reveal">
+      <div class="office-city">London, UK</div>
+      <p class="office-addr">
+        CYPHER Security Ltd.<br>
+        20 Fenchurch Street, 26th Floor<br>
+        London, EC3M 3BY<br>
+        United Kingdom<br>
+        <span style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;">+44 20 XXXX XXXX</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK LINKS -->
+<section class="section">
+  <div class="reveal" style="text-align:center;margin-bottom:52px;">
+    <div class="s-tag" style="justify-content:center;">Not sure where to start?</div>
+    <h2 class="s-title" style="text-align:center;margin-bottom:0;">Jump to what<br><em>you need</em></h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="reveal">
+    <a href="courses.html" style="text-decoration:none;">
+      <div style="background:var(--surface);border:1px solid var(--border);padding:36px;text-align:center;transition:border-color .3s,background .3s;position:relative;overflow:hidden;" class="card">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:28px;color:var(--accent);margin-bottom:16px;">[◈]</div>
+        <div style="font-size:17px;font-weight:600;margin-bottom:8px;color:var(--text);">Explore Courses</div>
+        <div style="font-size:13px;color:var(--dim2);line-height:1.65;">Browse our full catalogue of individual and group certification programs.</div>
+        <div style="margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--accent);">Browse Courses →</div>
+      </div>
+    </a>
+    <a href="corporate.html" style="text-decoration:none;">
+      <div style="background:var(--surface);border:1px solid var(--border);padding:36px;text-align:center;transition:border-color .3s,background .3s;position:relative;overflow:hidden;" class="card">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:28px;color:var(--blue);margin-bottom:16px;">[▣]</div>
+        <div style="font-size:17px;font-weight:600;margin-bottom:8px;color:var(--text);">Corporate Training</div>
+        <div style="font-size:13px;color:var(--dim2);line-height:1.65;">Custom programs for security teams of 5 to 5,000. On-site or online.</div>
+        <div style="margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--blue);">Learn More →</div>
+      </div>
+    </a>
+    <a href="services.html" style="text-decoration:none;">
+      <div style="background:var(--surface);border:1px solid var(--border);padding:36px;text-align:center;transition:border-color .3s,background .3s;position:relative;overflow:hidden;" class="card">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:28px;color:var(--red);margin-bottom:16px;">[◆]</div>
+        <div style="font-size:17px;font-weight:600;margin-bottom:8px;color:var(--text);">Security Services</div>
+        <div style="font-size:13px;color:var(--dim2);line-height:1.65;">Pen testing, MDR, incident response, and compliance for your organization.</div>
+        <div style="margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--red);">View Services →</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section dark">
+  <div class="reveal">
+    <div class="s-tag">FAQ</div>
+    <h2 class="s-title">Common<br><em>questions</em></h2>
+  </div>
+  <div style="max-width:800px;" class="reveal">
+    <div class="faq-item">
+      <div class="faq-q">Do I need prior experience to enrol in a course? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">It depends on the course. Our beginner programs like CompTIA Security+ and CYPHER Red Team Associate require no prior experience. Intermediate and advanced courses like CEH, CPENT, and OSCP require foundational networking and OS knowledge. We assess every applicant and recommend the right entry point.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does it take to get certified? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Timelines vary by course. Most of our programs run 4–12 weeks depending on study hours per week. Intensive full-time tracks can compress this significantly. We'll give you a realistic timeline based on your availability during your free consultation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you offer instalment payment plans? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Yes. Most courses offer 3 and 6-month instalment plans at no extra cost. Corporate packages can be invoiced quarterly. Contact us to discuss payment options for your specific situation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the placement assistance process? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">All enrolled students get access to our careers platform, which includes resume reviews, mock interview sessions, LinkedIn optimization, and direct referrals to our network of 200+ hiring partners. Our placement team works with you until you land the right role — not just any role.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can CYPHER deliver training at our offices? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Absolutely. Our enterprise team delivers on-site training across UAE, India, UK, and the broader GCC and APAC regions. We bring the instructors, lab infrastructure, and course materials — you provide the space and the people.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How quickly can your IR team respond to an active breach? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Our incident response SLA is 2 hours for remote deployment. For clients with an active retainer, we can begin triage within 30 minutes. On-site deployment timelines depend on location — our IR team is based in Dubai, Bangalore, and London for regional coverage.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">CYPHER</span>
+      <p class="footer-about">Leading cybersecurity academy with industry-certified training, corporate solutions, and real-world labs across UAE, India, and globally.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <a href="courses.html">CYPHER Certifications</a>
+      <a href="courses.html">EC-Council</a>
+      <a href="courses.html">CompTIA</a>
+      <a href="courses.html">OffSec / OSCP</a>
+      <a href="courses.html">ISC2 / ISACA</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="corporate.html">Corporate Training</a>
+      <a href="services.html">Cybersecurity Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter / X</a>
+      <a href="#">info@cypher.academy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 CYPHER SECURITY ACADEMY — ALL RIGHTS RESERVED</span>
+    <div class="footer-socials">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Refund Policy</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="js/main.js"></script>
+<script>
+buildMarquee('mtrack', ['Dubai · UAE','Bangalore · India','London · UK','Response within 24hrs','Enterprise Enquiries Welcome','IR Hotline 24/7','info@cypher.academy']);
+
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+</script>
+</body>
+</html>

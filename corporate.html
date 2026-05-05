@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Corporate Training — CYPHER Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="cur"></div>
+<div id="ring"></div>
+<div id="scan"></div>
+
+<div class="wrap">
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><span>//</span>CYPHER</a>
+  <div class="nav-links-wrap" id="nav-links-wrap">
+    <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+    <div class="nav-item"><a href="courses.html" class="nav-link">Courses</a></div>
+    <div class="nav-item has-dropdown active">
+      <span class="nav-trigger">Company <span class="caret">▼</span></span>
+      <div class="dropdown">
+        <a href="about.html">About Us</a>
+        <a href="corporate.html">Corporate Training</a>
+        <a href="services.html">Cybersecurity Services</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+  </div>
+  <div class="nav-spacer"></div>
+  <button class="btn-nav" onclick="location.href='contact.html'">Get Protected →</button>
+  <div class="nav-ham" id="nav-ham"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> <span style="color:var(--accent)">›</span> Company <span style="color:var(--accent)">›</span> Corporate Training</div>
+  <h1>Corporate <span style="color:var(--accent)">Training</span></h1>
+  <p class="ph-sub">Custom cybersecurity upskilling programs for teams of 5 to 5,000. We train your people on real threats, on your schedule, at your location or ours.</p>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap"><div class="marquee-track" id="mtrack"></div></div>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  <div class="sbi"><div class="sbi-n" data-count="200" data-suffix="+">0</div><div class="sbi-l">Enterprise Clients</div></div>
+  <div class="sbi"><div class="sbi-n" data-count="350" data-suffix="+">0</div><div class="sbi-l">Teams Trained</div></div>
+  <div class="sbi"><div class="sbi-n" data-count="45" data-suffix="+">0</div><div class="sbi-l">Countries Reached</div></div>
+  <div class="sbi"><div class="sbi-n">98%</div><div class="sbi-l">Client Satisfaction</div></div>
+</div>
+
+<!-- INTRO -->
+<section class="section">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;">
+    <div class="reveal">
+      <div class="s-tag">Enterprise Solutions</div>
+      <h2 class="s-title">Your team is your<br><em>first line of defense.</em></h2>
+      <p style="font-size:15px;color:var(--dim2);line-height:1.82;margin-bottom:22px;">82% of breaches involve a human element — phishing clicks, misconfigured cloud settings, weak credentials. No tool or platform can fix an untrained team. We can.</p>
+      <p style="font-size:15px;color:var(--dim2);line-height:1.82;margin-bottom:32px;">CYPHER Enterprise delivers fully customized security training programs: from awareness workshops for non-technical staff to advanced red team certification paths for your security engineers — all mapped to your actual threat landscape.</p>
+      <a href="contact.html" class="btn-primary">Request a Proposal</a>
+    </div>
+    <div class="reveal" style="display:flex;flex-direction:column;gap:16px;">
+      <div style="background:var(--surface);border:1px solid var(--border);padding:28px;display:flex;gap:20px;align-items:flex-start;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:var(--accent);flex-shrink:0;">[01]</div>
+        <div>
+          <div style="font-size:16px;font-weight:600;margin-bottom:6px;">Assessment First</div>
+          <div style="font-size:13px;color:var(--dim2);line-height:1.65;">We start with a skills gap analysis across your security team before recommending a single course.</div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);padding:28px;display:flex;gap:20px;align-items:flex-start;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:var(--accent);flex-shrink:0;">[02]</div>
+        <div>
+          <div style="font-size:16px;font-weight:600;margin-bottom:6px;">Custom Curriculum</div>
+          <div style="font-size:13px;color:var(--dim2);line-height:1.65;">Programs built around your tech stack, industry, and the specific threat actors targeting your sector.</div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);padding:28px;display:flex;gap:20px;align-items:flex-start;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;color:var(--accent);flex-shrink:0;">[03]</div>
+        <div>
+          <div style="font-size:16px;font-weight:600;margin-bottom:6px;">Measurable Outcomes</div>
+          <div style="font-size:13px;color:var(--dim2);line-height:1.65;">Progress dashboards, pre/post assessments, and certification tracking for every learner in your team.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section dark">
+  <div class="reveal">
+    <div class="s-tag">Why CYPHER Enterprise</div>
+    <h2 class="s-title">Everything your team<br><em>needs to stay secure</em></h2>
+  </div>
+  <div class="corp-benefits">
+    <div class="corp-ben reveal">
+      <div class="corp-icon">[◈]</div>
+      <div class="corp-title">On-Site & On-Demand</div>
+      <p class="corp-desc">We come to you. On-site training across UAE, India, UK, and GCC — or deploy via our LMS to remote teams globally. No travel costs for your staff.</p>
+    </div>
+    <div class="corp-ben reveal">
+      <div class="corp-icon">[◆]</div>
+      <div class="corp-title">Custom Threat Simulations</div>
+      <p class="corp-desc">Tabletop exercises and live attack simulations tailored to your actual infrastructure — not generic scenarios. We test what matters to you.</p>
+    </div>
+    <div class="corp-ben reveal">
+      <div class="corp-icon">[◉]</div>
+      <div class="corp-title">Phishing & Awareness</div>
+      <p class="corp-desc">Ongoing phishing simulation campaigns with detailed analytics. Turn your most vulnerable employees into your most vigilant defenders.</p>
+    </div>
+    <div class="corp-ben reveal">
+      <div class="corp-icon">[▣]</div>
+      <div class="corp-title">Certification Pathways</div>
+      <p class="corp-desc">Map your entire team to recognized certification tracks — Security+, CEH, CISSP, CISM — and track progress through a centralized dashboard.</p>
+    </div>
+    <div class="corp-ben reveal">
+      <div class="corp-icon">[⬡]</div>
+      <div class="corp-title">Live Lab Access</div>
+      <p class="corp-desc">Every employee gets 24/7 access to our Pentest Garage cyber range. Hands-on practice between sessions keeps skills sharp and retention high.</p>
+    </div>
+    <div class="corp-ben reveal">
+      <div class="corp-icon">[▦]</div>
+      <div class="corp-title">Dedicated Account Manager</div>
+      <p class="corp-desc">A named CYPHER enterprise advisor manages your engagement, coordinates scheduling, and reports outcomes directly to your CISO or L&D lead.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section">
+  <div class="reveal">
+    <div class="s-tag">Industries We Serve</div>
+    <h2 class="s-title">Every sector.<br><em>Every threat model.</em></h2>
+  </div>
+  <div class="industries-grid reveal">
+    <div class="ind-box">
+      <div class="ind-icon">🏦</div>
+      <span>Financial Services</span>
+    </div>
+    <div class="ind-box">
+      <div class="ind-icon">🏥</div>
+      <span>Healthcare</span>
+    </div>
+    <div class="ind-box">
+      <div class="ind-icon">⚡</div>
+      <span>Energy & Utilities</span>
+    </div>
+    <div class="ind-box">
+      <div class="ind-icon">🏛</div>
+      <span>Government</span>
+    </div>
+    <div class="ind-box">
+      <div class="ind-icon">✈️</div>
+      <span>Aviation & Travel</span>
+    </div>
+    <div class="ind-box">
+      <div class="ind-icon">📡</div>
+      <span>Telecom</span>
+    </div>
+    <div class="ind-box">
+      <div class="ind-icon">🛒</div>
+      <span>Retail & E-Commerce</span>
+    </div>
+    <div class="ind-box">
+      <div class="ind-icon">🏗</div>
+      <span>Infrastructure</span>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="section dark">
+  <div class="reveal">
+    <div class="s-tag">Training Packages</div>
+    <h2 class="s-title">Transparent pricing<br><em>for every team size</em></h2>
+    <p class="s-sub">All packages include lab access, progress dashboards, and a dedicated account manager. Custom enterprise quotes available for 50+ seats.</p>
+  </div>
+  <div class="packages-grid">
+    <div class="pkg reveal">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--dim2);margin-bottom:12px;">STARTER</div>
+      <div class="pkg-name">Team Essentials</div>
+      <div class="pkg-price">$2,400<span class="pkg-period"> / team of 5</span></div>
+      <ul class="pkg-features">
+        <li>Security Awareness Program (all staff)</li>
+        <li>Phishing Simulation — 3 campaigns</li>
+        <li>CompTIA Security+ prep for 5 engineers</li>
+        <li>24/7 lab access (90 days)</li>
+        <li>Progress dashboard</li>
+        <li>Monthly report to management</li>
+      </ul>
+      <a href="contact.html" class="btn-ghost" style="width:100%;justify-content:center;">Get Started</a>
+    </div>
+    <div class="pkg featured reveal">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--dim2);margin-bottom:12px;">PROFESSIONAL</div>
+      <div class="pkg-name">Security Pro</div>
+      <div class="pkg-price">$7,900<span class="pkg-period"> / team of 15</span></div>
+      <ul class="pkg-features">
+        <li>Everything in Essentials</li>
+        <li>CEH v13 for 10 security engineers</li>
+        <li>Custom threat simulation exercise</li>
+        <li>Dedicated account manager</li>
+        <li>On-site delivery (1 location)</li>
+        <li>Incident response tabletop</li>
+        <li>Quarterly curriculum review</li>
+      </ul>
+      <a href="contact.html" class="btn-primary" style="width:100%;justify-content:center;">Get Started</a>
+    </div>
+    <div class="pkg reveal">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--dim2);margin-bottom:12px;">ENTERPRISE</div>
+      <div class="pkg-name">Full Spectrum</div>
+      <div class="pkg-price">Custom<span class="pkg-period"> pricing</span></div>
+      <ul class="pkg-features">
+        <li>Everything in Pro</li>
+        <li>Unlimited seat licensing</li>
+        <li>Multi-location on-site delivery</li>
+        <li>CISO advisory sessions (quarterly)</li>
+        <li>Red team exercise (annual)</li>
+        <li>Custom certification pathway</li>
+        <li>White-labelled LMS option</li>
+      </ul>
+      <a href="contact.html" class="btn-ghost" style="width:100%;justify-content:center;">Request Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section">
+  <div class="reveal" style="text-align:center;margin-bottom:48px;">
+    <div class="s-tag" style="justify-content:center;">Trusted By</div>
+    <h2 class="s-title" style="text-align:center;">Organizations that chose<br><em>CYPHER to protect them</em></h2>
+  </div>
+  <div class="partners-grid reveal">
+    <div class="partner-box"><span class="partner-name">Etisalat</span></div>
+    <div class="partner-box"><span class="partner-name">Emirates</span></div>
+    <div class="partner-box"><span class="partner-name">Amazon</span></div>
+    <div class="partner-box"><span class="partner-name">DP World</span></div>
+    <div class="partner-box"><span class="partner-name">ADNOC</span></div>
+    <div class="partner-box"><span class="partner-name">Etihad</span></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="text-align:center;padding:100px 60px;background:var(--surface);border-top:1px solid var(--border);">
+  <div class="cta-tag" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:20px;">Let's talk enterprise</div>
+  <h2 style="font-size:clamp(32px,5vw,68px);font-weight:700;letter-spacing:-2px;margin-bottom:20px;">Ready to upskill<br>your entire team?</h2>
+  <p style="font-size:15px;color:var(--dim2);max-width:420px;margin:0 auto 40px;line-height:1.75;">Book a 30-minute call with our enterprise team. We'll assess your current posture and propose a custom training roadmap — no commitment.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <a href="contact.html" class="btn-primary">Book Enterprise Call</a>
+    <a href="services.html" class="btn-ghost">View Security Services →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">CYPHER</span>
+      <p class="footer-about">Leading cybersecurity academy with industry-certified training, corporate solutions, and real-world labs across UAE, India, and globally.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <a href="courses.html">CYPHER Certifications</a>
+      <a href="courses.html">EC-Council</a>
+      <a href="courses.html">CompTIA</a>
+      <a href="courses.html">OffSec / OSCP</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="corporate.html">Corporate Training</a>
+      <a href="services.html">Cybersecurity Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+      <a href="#">Instagram</a>
+      <a href="#">info@cypher.academy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 CYPHER SECURITY ACADEMY — ALL RIGHTS RESERVED</span>
+    <div class="footer-socials">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+<script src="js/main.js"></script>
+<script>
+buildMarquee('mtrack',['Corporate Training','On-Site Delivery','Custom Threat Simulations','Phishing Campaigns','CEH for Teams','CISSP Pathways','Red Team Exercises','CISO Advisory']);
+</script>
+</body>
+</html>

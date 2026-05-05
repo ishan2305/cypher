@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses — CYPHER Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="cur"></div>
+<div id="ring"></div>
+<div id="scan"></div>
+
+<div class="wrap">
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><span>//</span>CYPHER</a>
+  <div class="nav-links-wrap" id="nav-links-wrap">
+    <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+    <div class="nav-item active"><a href="courses.html" class="nav-link">Courses</a></div>
+    <div class="nav-item has-dropdown">
+      <span class="nav-trigger">Company <span class="caret">▼</span></span>
+      <div class="dropdown">
+        <a href="about.html">About Us</a>
+        <a href="corporate.html">Corporate Training</a>
+        <a href="services.html">Cybersecurity Services</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+  </div>
+  <div class="nav-spacer"></div>
+  <button class="btn-nav" onclick="location.href='contact.html'">Get Protected →</button>
+  <div class="nav-ham" id="nav-ham"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> <span style="color:var(--accent)">›</span> Courses</div>
+  <h1>All <span style="color:var(--accent)">Courses</span></h1>
+  <p class="ph-sub">From beginner foundations to elite offensive security — find the certification that advances your career. All programs include lab access, mentorship, and placement support.</p>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap"><div class="marquee-track" id="mtrack"></div></div>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  <div class="sbi"><div class="sbi-n" data-count="40" data-suffix="+">0</div><div class="sbi-l">Courses Available</div></div>
+  <div class="sbi"><div class="sbi-n" data-count="8500" data-suffix="+">0</div><div class="sbi-l">Students Trained</div></div>
+  <div class="sbi"><div class="sbi-n">96%</div><div class="sbi-l">Exam Pass Rate</div></div>
+  <div class="sbi"><div class="sbi-n">24/7</div><div class="sbi-l">Lab Access</div></div>
+</div>
+
+<!-- COURSES SECTION -->
+<section class="courses-all">
+
+  <!-- Filter -->
+  <div class="filter-wrap reveal">
+    <button class="filter-btn active" data-cat="all">All Courses</button>
+    <button class="filter-btn" data-cat="cypher">CYPHER Certs</button>
+    <button class="filter-btn" data-cat="eccouncil">EC-Council</button>
+    <button class="filter-btn" data-cat="comptia">CompTIA</button>
+    <button class="filter-btn" data-cat="offsec">OffSec</button>
+    <button class="filter-btn" data-cat="isc2">ISC2</button>
+    <button class="filter-btn" data-cat="isaca">ISACA</button>
+  </div>
+
+  <!-- ── CYPHER CERTIFICATIONS ── -->
+  <div class="reveal" style="margin-bottom:20px;">
+    <div class="s-tag">CYPHER Certifications</div>
+  </div>
+  <div class="course-grid" style="margin-bottom:60px;">
+
+    <div class="course-card reveal" data-cat="cypher">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-green">CYPHER CERT</span><span class="badge badge-red">ADVANCED</span></div>
+        <h3 class="cc-title">CYPHER Certified Penetration Tester (CCPT)</h3>
+        <p class="cc-desc">Full-scope red team methodology: recon, exploitation, post-exploitation, and reporting. Live targets in our dedicated cyber range.</p>
+        <div class="cc-meta"><span>80 Hours</span><span>12 hrs/week</span><span>Live + Online</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$549</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="cypher">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-green">CYPHER CERT</span><span class="badge badge-blue">INTERMEDIATE</span></div>
+        <h3 class="cc-title">SOC Analyst Mastery (CSOA)</h3>
+        <p class="cc-desc">SIEM operations, threat hunting, log analysis, alert triage, and incident escalation workflows. Build real-world SOC skills from day one.</p>
+        <div class="cc-meta"><span>180 Hours</span><span>10 hrs/week</span><span>Online + Lab</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$799</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="cypher">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-green">CYPHER CERT</span><span class="badge badge-red">ADVANCED</span></div>
+        <h3 class="cc-title">Advanced Cyber Defense Diploma (ACDD)</h3>
+        <p class="cc-desc">Comprehensive 400-hour program covering SOC, cloud security, threat intelligence, digital forensics, and compliance. The complete defensive practitioner path.</p>
+        <div class="cc-meta"><span>400 Hours</span><span>10 hrs/week</span><span>In-Person + Lab</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$1,499</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="cypher">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-green">CYPHER CERT</span><span class="badge badge-blue">INTERMEDIATE</span></div>
+        <h3 class="cc-title">Bug Bounty Hunter (BBH)</h3>
+        <p class="cc-desc">Web app recon, OWASP Top 10, XSS, SQLi, SSRF, and reporting strategies. Write your first valid HackerOne report by week four.</p>
+        <div class="cc-meta"><span>60 Hours</span><span>8 hrs/week</span><span>Online + Lab</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$399</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="cypher">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-green">CYPHER CERT</span><span class="badge badge-blue">BEGINNER</span></div>
+        <h3 class="cc-title">CYPHER Red Team Associate (CRTA)</h3>
+        <p class="cc-desc">Entry-level offensive operations: network scanning, vulnerability identification, basic exploitation, and structured report writing.</p>
+        <div class="cc-meta"><span>50 Hours</span><span>8 hrs/week</span><span>Online</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$299</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="cypher">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-green">CYPHER CERT</span><span class="badge badge-red">ADVANCED</span></div>
+        <h3 class="cc-title">Ethical Hacking & Jailbreaking Realities (EHJR)</h3>
+        <p class="cc-desc">Advanced exploitation techniques covering buffer overflows, kernel exploits, mobile security, and anti-forensics. For experienced practitioners only.</p>
+        <div class="cc-meta"><span>70 Hours</span><span>10 hrs/week</span><span>Live + In-Person</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$649</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EC-COUNCIL ── -->
+  <div class="reveal" style="margin-bottom:20px;">
+    <div class="s-tag">EC-Council Certifications</div>
+  </div>
+  <div class="course-grid" style="margin-bottom:60px;">
+
+    <div class="course-card reveal" data-cat="eccouncil">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-blue">EC-COUNCIL</span><span class="badge badge-red">ADVANCED</span></div>
+        <h3 class="cc-title">Certified Ethical Hacker v13 AI (CEH)</h3>
+        <p class="cc-desc">The world's most recognized ethical hacking certification, now with AI-integrated attack modules. 20 domains, 220+ hands-on labs.</p>
+        <div class="cc-meta"><span>40 Hours</span><span>10 hrs/week</span><span>Live Online</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$699</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="eccouncil">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-blue">EC-COUNCIL</span><span class="badge badge-red">ADVANCED</span></div>
+        <h3 class="cc-title">Certified Penetration Testing Professional (CPENT)</h3>
+        <p class="cc-desc">Advanced pen testing including IoT, OT, and cloud. Two-part 24-hour live exam — score 90%+ and earn LICEPT designation.</p>
+        <div class="cc-meta"><span>40 Hours</span><span>10 hrs/week</span><span>Online + Lab</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$749</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="eccouncil">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-blue">EC-COUNCIL</span><span class="badge badge-blue">INTERMEDIATE</span></div>
+        <h3 class="cc-title">Computer Hacking Forensic Investigator (CHFI)</h3>
+        <p class="cc-desc">Digital forensics, evidence collection, malware analysis, and courtroom-ready reporting. Endorsed by law enforcement agencies worldwide.</p>
+        <div class="cc-meta"><span>40 Hours</span><span>10 hrs/week</span><span>Online</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$599</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="eccouncil">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-blue">EC-COUNCIL</span><span class="badge badge-blue">INTERMEDIATE</span></div>
+        <h3 class="cc-title">Certified Network Defender (CND)</h3>
+        <p class="cc-desc">Network defense, threat monitoring, vulnerability assessment, and response. The defensive counterpart to CEH — covers 14 domains of network security.</p>
+        <div class="cc-meta"><span>40 Hours</span><span>8 hrs/week</span><span>Online + Lab</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$549</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="eccouncil">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-blue">EC-COUNCIL</span><span class="badge badge-red">EXPERT</span></div>
+        <h3 class="cc-title">Chief Information Security Officer (CCISO)</h3>
+        <p class="cc-desc">Executive cybersecurity leadership: governance, risk, compliance, and programme management. Designed for aspiring and current CISOs.</p>
+        <div class="cc-meta"><span>40 Hours</span><span>6 hrs/week</span><span>Weekend Batch</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$899</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="eccouncil">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-blue">EC-COUNCIL</span><span class="badge badge-blue">INTERMEDIATE</span></div>
+        <h3 class="cc-title">Certified SOC Analyst (CSA)</h3>
+        <p class="cc-desc">Tier I and Tier II SOC operations: alert triage, log monitoring, SIEM correlation, and incident escalation. Built for aspiring SOC analysts.</p>
+        <div class="cc-meta"><span>40 Hours</span><span>8 hrs/week</span><span>Online</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$499</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CompTIA ── -->
+  <div class="reveal" style="margin-bottom:20px;">
+    <div class="s-tag">CompTIA Certifications</div>
+  </div>
+  <div class="course-grid" style="margin-bottom:60px;">
+
+    <div class="course-card reveal" data-cat="comptia">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-dim">CompTIA</span><span class="badge badge-blue">BEGINNER</span></div>
+        <h3 class="cc-title">CompTIA Security+</h3>
+        <p class="cc-desc">The globally recognized entry-level security certification. DoD 8570 approved, vendor-neutral, and required for most cybersecurity roles. Perfect starting point.</p>
+        <div class="cc-meta"><span>40 Hours</span><span>8 hrs/week</span><span>Online + Live</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$449</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="comptia">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-dim">CompTIA</span><span class="badge badge-blue">INTERMEDIATE</span></div>
+        <h3 class="cc-title">CompTIA CySA+ (Cybersecurity Analyst)</h3>
+        <p class="cc-desc">Blue-team focused: threat and vulnerability management, incident response, and security architecture. Analytical approach to enterprise defense.</p>
+        <div class="cc-meta"><span>40 Hours</span><span>8 hrs/week</span><span>Online</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$499</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="comptia">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-dim">CompTIA</span><span class="badge badge-red">ADVANCED</span></div>
+        <h3 class="cc-title">CompTIA PenTest+</h3>
+        <p class="cc-desc">Penetration testing and vulnerability assessment methodology. Covers planning, scoping, and managing modern pen testing engagements.</p>
+        <div class="cc-meta"><span>40 Hours</span><span>8 hrs/week</span><span>Online + Lab</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$499</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── OffSec ── -->
+  <div class="reveal" style="margin-bottom:20px;">
+    <div class="s-tag">OffSec Certifications</div>
+  </div>
+  <div class="course-grid" style="margin-bottom:60px;">
+
+    <div class="course-card reveal" data-cat="offsec">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-red">OFFSEC</span><span class="badge badge-red">ELITE</span></div>
+        <h3 class="cc-title">OffSec Certified Professional (OSCP)</h3>
+        <p class="cc-desc">The most respected penetration testing credential in the industry. 24-hour hands-on proctored exam. Our pass rate: 88%. Unlimited lab time included.</p>
+        <div class="cc-meta"><span>90 Hours</span><span>12 hrs/week</span><span>Self-Paced + Coach</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$999</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="offsec">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-red">OFFSEC</span><span class="badge badge-red">ADVANCED</span></div>
+        <h3 class="cc-title">OffSec Experienced Penetration Tester (OSEP)</h3>
+        <p class="cc-desc">Advanced evasion, lateral movement, and Active Directory attacks. For OSCP holders ready to operate at the senior red team level.</p>
+        <div class="cc-meta"><span>60 Hours</span><span>12 hrs/week</span><span>Self-Paced + Coach</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$1,199</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ISC2 + ISACA ── -->
+  <div class="reveal" style="margin-bottom:20px;">
+    <div class="s-tag">ISC2 & ISACA</div>
+  </div>
+  <div class="course-grid">
+
+    <div class="course-card reveal" data-cat="isc2">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-dim">ISC2</span><span class="badge badge-red">EXPERT</span></div>
+        <h3 class="cc-title">CISSP — Certified Information Systems Security Professional</h3>
+        <p class="cc-desc">The gold standard for security leadership. 8 domains, CISO-level knowledge, and our structured study blueprint with a 94% first-attempt pass rate.</p>
+        <div class="cc-meta"><span>60 Hours</span><span>6 hrs/week</span><span>Weekend Batch</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$899</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="isaca">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-dim">ISACA</span><span class="badge badge-red">EXPERT</span></div>
+        <h3 class="cc-title">CISM — Certified Information Security Manager</h3>
+        <p class="cc-desc">Security governance, risk management, and incident response from an enterprise management perspective. Ideal for security managers and directors.</p>
+        <div class="cc-meta"><span>40 Hours</span><span>4 hrs/week</span><span>Weekend Batch</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$799</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+
+    <div class="course-card reveal" data-cat="isaca">
+      <div class="cc-top">
+        <div class="cc-cats"><span class="badge badge-dim">ISACA</span><span class="badge badge-blue">INTERMEDIATE</span></div>
+        <h3 class="cc-title">CISA — Certified Information Systems Auditor</h3>
+        <p class="cc-desc">IT audit, control, and security assurance. Globally recognized for IS audit professionals and compliance practitioners across every industry.</p>
+        <div class="cc-meta"><span>40 Hours</span><span>4 hrs/week</span><span>Weekend Batch</span></div>
+      </div>
+      <div class="cc-bottom">
+        <span class="cc-price">$749</span>
+        <div class="cc-btns"><a href="contact.html" class="cc-enroll">Enroll</a><a href="#" class="cc-syl">Syllabus</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="text-align:center;padding:100px 60px;background:var(--surface);border-top:1px solid var(--border);">
+  <div class="cta-tag" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:20px;">Can't decide?</div>
+  <h2 style="font-size:clamp(32px,5vw,64px);font-weight:700;letter-spacing:-2px;margin-bottom:20px;">Get a free career<br>roadmap session.</h2>
+  <p style="font-size:15px;color:var(--dim2);max-width:400px;margin:0 auto 40px;line-height:1.75;">Our advisors will map the fastest certification path to your specific career goal — completely free, no strings attached.</p>
+  <a href="contact.html" class="btn-primary">Book Free Session</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">CYPHER</span>
+      <p class="footer-about">Leading cybersecurity academy with industry-certified training, corporate solutions, and real-world labs across UAE, India, and globally.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <a href="courses.html">CYPHER Certifications</a>
+      <a href="courses.html">EC-Council</a>
+      <a href="courses.html">CompTIA</a>
+      <a href="courses.html">OffSec / OSCP</a>
+      <a href="courses.html">ISC2 / ISACA</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="corporate.html">Corporate Training</a>
+      <a href="services.html">Cybersecurity Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+      <a href="#">Instagram</a>
+      <a href="#">info@cypher.academy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 CYPHER SECURITY ACADEMY — ALL RIGHTS RESERVED</span>
+    <div class="footer-socials">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+<script src="js/main.js"></script>
+<script>
+buildMarquee('mtrack',['CCPT','CEH v13','OSCP','CISSP','CompTIA Security+','CPENT','CHFI','CISM','CySA+','BBH','CRTA','CCISO']);
+</script>
+</body>
+</html>

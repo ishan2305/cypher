@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — CYPHER Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="cur"></div>
+<div id="ring"></div>
+<div id="scan"></div>
+
+<div class="wrap">
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><span>//</span>CYPHER</a>
+  <div class="nav-links-wrap" id="nav-links-wrap">
+    <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+    <div class="nav-item"><a href="courses.html" class="nav-link">Courses</a></div>
+    <div class="nav-item has-dropdown active">
+      <span class="nav-trigger">Company <span class="caret">▼</span></span>
+      <div class="dropdown">
+        <a href="about.html">About Us</a>
+        <a href="corporate.html">Corporate Training</a>
+        <a href="services.html">Cybersecurity Services</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+  </div>
+  <div class="nav-spacer"></div>
+  <button class="btn-nav" onclick="location.href='contact.html'">Get Protected →</button>
+  <div class="nav-ham" id="nav-ham"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> <span style="color:var(--accent)">›</span> Company <span style="color:var(--accent)">›</span> About Us</div>
+  <h1>About <span style="color:var(--accent)">CYPHER</span></h1>
+  <p class="ph-sub">We don't just train cybersecurity professionals — we build the operators, analysts, and leaders that organizations trust to defend their most critical systems.</p>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap"><div class="marquee-track" id="mtrack"></div></div>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  <div class="sbi"><div class="sbi-n" data-count="2015" data-suffix="">2015</div><div class="sbi-l">Founded</div></div>
+  <div class="sbi"><div class="sbi-n" data-count="8500" data-suffix="+">0</div><div class="sbi-l">Alumni Worldwide</div></div>
+  <div class="sbi"><div class="sbi-n" data-count="3" data-suffix="">0</div><div class="sbi-l">Global Offices</div></div>
+  <div class="sbi"><div class="sbi-n" data-count="12" data-suffix="+">0</div><div class="sbi-l">Cert Partners</div></div>
+</div>
+
+<!-- MISSION / INTRO -->
+<section class="section">
+  <div class="about-intro">
+    <div class="reveal">
+      <div class="s-tag">Our Mission</div>
+      <h2 class="s-title">We think like<br><em>the enemy.</em><br>We train like<em> the best.</em></h2>
+      <p style="font-size:15px;color:var(--dim2);line-height:1.82;margin-bottom:24px;">CYPHER Academy was founded in 2015 by a team of former government red-teamers, CISO-level practitioners, and security researchers who were tired of watching organizations get breached because their defenders weren't trained on real threats.</p>
+      <p style="font-size:15px;color:var(--dim2);line-height:1.82;margin-bottom:32px;">Every course, lab, and curriculum update at CYPHER is driven by live threat intelligence. We rebuild our programs quarterly because the adversaries we're training against don't stand still — and neither do we.</p>
+      <a href="courses.html" class="btn-primary">Explore Our Courses →</a>
+    </div>
+    <div class="reveal">
+      <div class="about-img-placeholder" style="background:linear-gradient(135deg,#061510,#020608);border:1px solid var(--border);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+        <canvas id="about-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+        <div style="position:relative;z-index:1;text-align:center;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--accent);margin-bottom:12px;">EST. 2015</div>
+          <div style="font-size:clamp(40px,6vw,80px);font-weight:700;color:var(--text);letter-spacing:-2px;line-height:1;">8,500+<br><span style="font-size:.45em;color:var(--dim2);letter-spacing:0;">graduates worldwide</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section dark">
+  <div class="reveal" style="max-width:860px;margin:0 auto;text-align:center;">
+    <div class="s-tag" style="justify-content:center;">Our Story</div>
+    <h2 class="s-title" style="text-align:center;">From a startup lab to<br><em>a global institution</em></h2>
+    <p style="font-size:15px;color:var(--dim2);line-height:1.85;margin-bottom:24px;">What started as a 12-person cohort in Dubai has grown into a globally recognized academy with offices in Dubai, Bangalore, and London — and students in 45+ countries. Our accreditations from EC-Council, OffSec, CompTIA, ISC2, and ISACA make us one of the most credentialed cybersecurity training institutions in the MENA and South Asia region.</p>
+    <p style="font-size:15px;color:var(--dim2);line-height:1.85;">We've trained security teams for government agencies, Fortune 500 enterprises, and critical infrastructure operators. When organizations need people who can actually stop a breach — not just pass a compliance audit — they send their people to CYPHER.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:72px;" class="reveal">
+    <div style="background:var(--bg);padding:40px 32px;text-align:center;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700;color:var(--accent);margin-bottom:8px;">2015</div>
+      <div style="font-size:13px;color:var(--dim2);">Founded in Dubai with our first cohort of 12 students</div>
+    </div>
+    <div style="background:var(--bg);padding:40px 32px;text-align:center;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700;color:var(--accent);margin-bottom:8px;">2018</div>
+      <div style="font-size:13px;color:var(--dim2);">Became an EC-Council Accredited Training Center</div>
+    </div>
+    <div style="background:var(--bg);padding:40px 32px;text-align:center;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700;color:var(--accent);margin-bottom:8px;">2021</div>
+      <div style="font-size:13px;color:var(--dim2);">Launched Pentest Garage — our 24/7 live cyber range</div>
+    </div>
+    <div style="background:var(--bg);padding:40px 32px;text-align:center;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700;color:var(--accent);margin-bottom:8px;">2024</div>
+      <div style="font-size:13px;color:var(--dim2);">8,500+ graduates across 45+ countries</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section">
+  <div class="reveal">
+    <div class="s-tag">Our Values</div>
+    <h2 class="s-title">What we stand for</h2>
+  </div>
+  <div class="value-grid">
+    <div class="value-card reveal">
+      <div class="value-icon">[◈]</div>
+      <div class="value-title">Hands-On First</div>
+      <p class="value-desc">Every concept is taught through doing. We build cyber ranges, not lecture halls. Theory without practice is a liability in this field.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon">[◆]</div>
+      <div class="value-title">Ruthlessly Current</div>
+      <p class="value-desc">Our curriculum is rebuilt quarterly using live CVE data, real breach reports, and threat intelligence from our network of active practitioners.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon">[◉]</div>
+      <div class="value-title">Students First</div>
+      <p class="value-desc">From placement assistance to 1-on-1 mentorship, we measure success by where our graduates end up — not by enrollment numbers.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon">[▣]</div>
+      <div class="value-title">Ethical Practice</div>
+      <p class="value-desc">We train offensive security the right way — legally, responsibly, and with a deep commitment to using these skills for protection, not exploitation.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon">[⬡]</div>
+      <div class="value-title">Community Driven</div>
+      <p class="value-desc">Our alumni network, CTF events, and mentorship circles create a community that continues to grow and support each member long after graduation.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon">[▦]</div>
+      <div class="value-title">Globally Recognized</div>
+      <p class="value-desc">Our partnerships with EC-Council, OffSec, CompTIA, ISC2, and ISACA ensure your CYPHER credentials open doors in every corner of the world.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section dark">
+  <div class="reveal">
+    <div class="s-tag">Leadership</div>
+    <h2 class="s-title">The team behind<br><em>CYPHER</em></h2>
+    <p class="s-sub">Former operators, researchers, and executives who've defended critical infrastructure — now building the next generation of defenders.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <div class="team-avatar"><span>KA</span></div>
+      <div class="team-info">
+        <div class="team-name">Khalid Al-Rashidi</div>
+        <div class="team-role">CEO & Co-Founder</div>
+        <p class="team-bio">Former CISO at Emirates NBD. 18 years in offensive and defensive security across MENA governments and financial institutions.</p>
+      </div>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-avatar"><span>SR</span></div>
+      <div class="team-info">
+        <div class="team-name">Sneha Rao</div>
+        <div class="team-role">CTO & Head of Curriculum</div>
+        <p class="team-bio">OSCP, CISSP, CEH Master. Led red team operations for three Fortune 100 companies. Architect of the CYPHER certification framework.</p>
+      </div>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-avatar"><span>JO</span></div>
+      <div class="team-info">
+        <div class="team-name">James O'Brien</div>
+        <div class="team-role">Director of Training</div>
+        <p class="team-bio">15 years with UK NCSC and private sector red teams. Specialist in advanced persistent threats and nation-state TTPs.</p>
+      </div>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-avatar"><span>FA</span></div>
+      <div class="team-info">
+        <div class="team-name">Fatima Al-Mansoori</div>
+        <div class="team-role">Head of Corporate & Partnerships</div>
+        <p class="team-bio">Leads our enterprise training division and global certification partnerships. Previously at Etisalat Digital's security division.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATIONS -->
+<section class="section">
+  <div class="reveal" style="text-align:center;margin-bottom:48px;">
+    <div class="s-tag" style="justify-content:center;">Accreditations</div>
+    <h2 class="s-title" style="text-align:center;">Globally recognized<br><em>credentials</em></h2>
+  </div>
+  <div class="partners-grid reveal">
+    <div class="partner-box"><span class="partner-name">EC-Council</span></div>
+    <div class="partner-box"><span class="partner-name">OffSec</span></div>
+    <div class="partner-box"><span class="partner-name">CompTIA</span></div>
+    <div class="partner-box"><span class="partner-name">ISC²</span></div>
+    <div class="partner-box"><span class="partner-name">ISACA</span></div>
+    <div class="partner-box"><span class="partner-name">PECB</span></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="text-align:center;padding:100px 60px;background:var(--surface);border-top:1px solid var(--border);">
+  <div class="cta-tag" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:20px;">Join the mission</div>
+  <h2 style="font-size:clamp(32px,5vw,68px);font-weight:700;letter-spacing:-2px;margin-bottom:20px;">Ready to become<br>a CYPHER graduate?</h2>
+  <p style="font-size:15px;color:var(--dim2);max-width:400px;margin:0 auto 40px;line-height:1.75;">Free first consultation. We'll map your exact path to certification and placement — no commitment required.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <a href="courses.html" class="btn-primary">Browse Courses</a>
+    <a href="contact.html" class="btn-ghost">Get in Touch →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">CYPHER</span>
+      <p class="footer-about">Leading cybersecurity academy with industry-certified training, corporate solutions, and real-world labs across UAE, India, and globally.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <a href="courses.html">CYPHER Certifications</a>
+      <a href="courses.html">EC-Council</a>
+      <a href="courses.html">CompTIA</a>
+      <a href="courses.html">OffSec / OSCP</a>
+      <a href="courses.html">ISC2 / ISACA</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="corporate.html">Corporate Training</a>
+      <a href="services.html">Cybersecurity Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+      <a href="#">Instagram</a>
+      <a href="#">info@cypher.academy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 CYPHER SECURITY ACADEMY — ALL RIGHTS RESERVED</span>
+    <div class="footer-socials">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+<script src="js/main.js"></script>
+<script>
+buildMarquee('mtrack',['Est. 2015','Dubai · Bangalore · London','8,500+ Alumni','EC-Council Partner','OffSec ATC','CompTIA Authorized','45+ Countries','96% Placement Rate']);
+miniNet('about-canvas','rgba(0,255,136,.7)','rgba(0,255,136,ALPHA)');
+</script>
+</body>
+</html>
