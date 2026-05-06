@@ -276,7 +276,7 @@ footer {
 }
 .footer-col a {
   display:block;font-size:13px;color:var(--dim2);text-decoration:none;
-  margin-bottom:10px;transition:color .2s padding-left .2s;
+  margin-bottom:10px;transition:color .2s, padding-left .2s;
 }
 .footer-col a:hover { color:var(--accent);padding-left:4px; }
 .footer-bottom {
