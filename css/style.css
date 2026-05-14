@@ -523,7 +523,7 @@ h1.hero-title {
 .cy-coin::after {
   content: '';
   position: absolute; inset: 0;
-  background: center / contain no-repeat url('img/cylens-logo.png');
+  background: center / contain no-repeat url('../img/cylens-logo.png');
 }
 .cy-coin::after { transform: rotateY(180deg); }
 @keyframes cy-spin {
