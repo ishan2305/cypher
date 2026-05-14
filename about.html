@@ -3,237 +3,303 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us — CYPHER Academy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <title>About Us — CyLens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<div id="cur"></div>
-<div id="ring"></div>
-<div id="scan"></div>
 
-<div class="wrap">
+<!-- ── NAVIGATION ── -->
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 22 22" fill="none">
+        <ellipse cx="11" cy="11" rx="9" ry="5.5" stroke="white" stroke-width="1.5"/>
+        <circle cx="11" cy="11" r="3.5" fill="white" opacity=".9"/>
+        <circle cx="11" cy="11" r="1.5" fill="#07071a"/>
+        <line x1="2" y1="11" x2="5" y2="11" stroke="white" stroke-width="1.5"/>
+        <line x1="17" y1="11" x2="20" y2="11" stroke="white" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="logo-text-wrap">
+      <span class="logo-text">CyLens</span>
+      <span class="logo-tagline">Vision That Secures</span>
+    </div>
+  </a>
 
-<!-- NAV -->
-<nav id="nav">
-  <a href="index.html" class="nav-logo"><span>//</span>CYPHER</a>
-  <div class="nav-links-wrap" id="nav-links-wrap">
-    <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
-    <div class="nav-item"><a href="courses.html" class="nav-link">Courses</a></div>
-    <div class="nav-item has-dropdown active">
-      <span class="nav-trigger">Company <span class="caret">▼</span></span>
+  <nav class="nav-links" id="nav-links">
+    <div class="nav-item">
+      <a href="index.html" class="nav-link">Home</a>
+    </div>
+    <div class="nav-item has-dropdown">
+      <button class="nav-trigger">Courses <span class="caret">▼</span></button>
       <div class="dropdown">
-        <a href="about.html">About Us</a>
-        <a href="corporate.html">Corporate Training</a>
-        <a href="services.html">Cybersecurity Services</a>
+        <a href="courses.html">Audit Course</a>
+        <a href="courses.html">Offensive Security</a>
+        <a href="courses.html">Defensive Security</a>
       </div>
     </div>
-    <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
-  </div>
-  <div class="nav-spacer"></div>
-  <button class="btn-nav" onclick="location.href='contact.html'">Get Protected →</button>
+    <div class="nav-item has-dropdown">
+      <button class="nav-trigger">Services <span class="caret">▼</span></button>
+      <div class="dropdown">
+        <a href="services.html">Penetration Testing</a>
+        <a href="services.html">Security Audit</a>
+        <a href="services.html">SOC Services</a>
+        <a href="services.html">Consulting</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#" class="nav-link">Blogs</a>
+    </div>
+    <div class="nav-item">
+      <a href="about.html" class="nav-link active">About Us</a>
+    </div>
+  </nav>
+
+  <a href="contact.html" class="btn-cta">Connect with Sales →</a>
   <div class="nav-ham" id="nav-ham"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- PAGE HERO -->
+<!-- ── PAGE HERO ── -->
 <div class="page-hero">
-  <div class="breadcrumb"><a href="index.html">Home</a> <span style="color:var(--accent)">›</span> Company <span style="color:var(--accent)">›</span> About Us</div>
-  <h1>About <span style="color:var(--accent)">CYPHER</span></h1>
-  <p class="ph-sub">We don't just train cybersecurity professionals — we build the operators, analysts, and leaders that organizations trust to defend their most critical systems.</p>
-</div>
-
-<!-- MARQUEE -->
-<div class="marquee-wrap"><div class="marquee-track" id="mtrack"></div></div>
-
-<!-- STAT BAR -->
-<div class="stat-bar">
-  <div class="sbi"><div class="sbi-n" data-count="2015" data-suffix="">2015</div><div class="sbi-l">Founded</div></div>
-  <div class="sbi"><div class="sbi-n" data-count="8500" data-suffix="+">0</div><div class="sbi-l">Alumni Worldwide</div></div>
-  <div class="sbi"><div class="sbi-n" data-count="3" data-suffix="">0</div><div class="sbi-l">Global Offices</div></div>
-  <div class="sbi"><div class="sbi-n" data-count="12" data-suffix="+">0</div><div class="sbi-l">Cert Partners</div></div>
-</div>
-
-<!-- MISSION / INTRO -->
-<section class="section">
-  <div class="about-intro">
-    <div class="reveal">
-      <div class="s-tag">Our Mission</div>
-      <h2 class="s-title">We think like<br><em>the enemy.</em><br>We train like<em> the best.</em></h2>
-      <p style="font-size:15px;color:var(--dim2);line-height:1.82;margin-bottom:24px;">CYPHER Academy was founded in 2015 by a team of former government red-teamers, CISO-level practitioners, and security researchers who were tired of watching organizations get breached because their defenders weren't trained on real threats.</p>
-      <p style="font-size:15px;color:var(--dim2);line-height:1.82;margin-bottom:32px;">Every course, lab, and curriculum update at CYPHER is driven by live threat intelligence. We rebuild our programs quarterly because the adversaries we're training against don't stand still — and neither do we.</p>
-      <a href="courses.html" class="btn-primary">Explore Our Courses →</a>
+  <div class="about-hero-inner">
+    <div>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>About Us</span>
+      </div>
+      <h1>About Us</h1>
+      <p class="purple-sub">Vision That Secures. Mission That Protects.</p>
+      <p class="sub-text">At CyLens, we believe that a secure tomorrow is built on knowledge, awareness, and proactive action today. We are passionate about empowering individuals and organizations to navigate the digital world with confidence and resilience.</p>
     </div>
-    <div class="reveal">
-      <div class="about-img-placeholder" style="background:linear-gradient(135deg,#061510,#020608);border:1px solid var(--border);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-        <canvas id="about-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
-        <div style="position:relative;z-index:1;text-align:center;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--accent);margin-bottom:12px;">EST. 2015</div>
-          <div style="font-size:clamp(40px,6vw,80px);font-weight:700;color:var(--text);letter-spacing:-2px;line-height:1;">8,500+<br><span style="font-size:.45em;color:var(--dim2);letter-spacing:0;">graduates worldwide</span></div>
+    <div class="about-shield-col">
+      <div class="shield-wrap" style="padding:20px;">
+        <div class="shield-ring ring-1" style="width:260px;height:260px;"></div>
+        <div class="shield-outer" style="width:200px;height:230px;">
+          <svg width="100" height="80" viewBox="0 0 140 100" fill="none">
+            <defs>
+              <radialGradient id="irisGrad2" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#22d3ee"/>
+                <stop offset="100%" stop-color="#7c3aed"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="70" cy="50" rx="58" ry="34" stroke="url(#irisGrad2)" stroke-width="1.5" fill="rgba(6,182,212,0.04)"/>
+            <circle cx="70" cy="50" r="22" fill="url(#irisGrad2)" opacity=".85"/>
+            <circle cx="70" cy="50" r="22" stroke="rgba(255,255,255,0.15)" stroke-width="6" stroke-dasharray="8 6" fill="none"/>
+            <circle cx="70" cy="50" r="10" fill="#07071a"/>
+            <circle cx="75" cy="45" r="4" fill="rgba(255,255,255,0.6)"/>
+          </svg>
+        </div>
+        <div class="shield-platform" style="bottom:-10px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── WHO WE ARE ── -->
+<div class="about-body-section">
+  <div class="reveal">
+    <div class="s-label">Who We Are</div>
+    <h2 class="s-title">CyLens <span class="purple">Security</span></h2>
+    <p style="font-family:'Inter',sans-serif;font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px;">
+      CyLens is a cybersecurity training and consulting company dedicated to strengthening the security posture of individuals and organizations.
+    </p>
+    <p style="font-family:'Inter',sans-serif;font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:32px;">
+      Through industry-focused training, hands-on labs, and expert-led services, we help our clients identify risks, build robust defenses, and stay ahead of ever-evolving threats.
+    </p>
+
+    <!-- Values Grid -->
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="val-icon">🛡️</div>
+        <div>
+          <div class="val-title">Integrity</div>
+          <p class="val-desc">We uphold the highest standards of honesty, transparency, and ethics in everything we do.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="val-icon">⭐</div>
+        <div>
+          <div class="val-title">Excellence</div>
+          <p class="val-desc">We are committed to delivering exceptional quality in every course, engagement, and interaction.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="val-icon">⚡</div>
+        <div>
+          <div class="val-title">Innovation</div>
+          <p class="val-desc">We embrace new ideas and emerging technologies to continuously drive better security outcomes.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="val-icon">🤝</div>
+        <div>
+          <div class="val-title">Empowerment</div>
+          <p class="val-desc">We empower people with the skills and confidence to secure the digital future for themselves and others.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Network Illustration -->
+  <div class="reveal reveal-d2">
+    <div class="team-image">
+      <canvas id="about-canvas"></canvas>
+    </div>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--dim);text-align:center;margin-top:14px;text-transform:uppercase;">Secure Network Visualization</p>
+  </div>
+</div>
+
+<!-- ── STATS ── -->
+<div class="about-stats">
+  <div class="as-item reveal">
+    <span class="as-num" data-count="500" data-suffix="+">500+</span>
+    <span class="as-label">Students Trained Globally</span>
+  </div>
+  <div class="as-item reveal reveal-d1">
+    <span class="as-num" data-count="50" data-suffix="+">50+</span>
+    <span class="as-label">Successful Projects Delivered</span>
+  </div>
+  <div class="as-item reveal reveal-d2">
+    <span class="as-num" data-count="50" data-suffix="+">50+</span>
+    <span class="as-label">Industry Experts in Community</span>
+  </div>
+  <div class="as-item reveal reveal-d3">
+    <span class="as-num" data-count="100" data-suffix="+">100+</span>
+    <span class="as-label">Enterprise Clients Trust Us</span>
+  </div>
+</div>
+
+<!-- ── MISSION & VISION ── -->
+<section class="section section-dark">
+  <div class="reveal" style="text-align:center;margin-bottom:48px;">
+    <div class="s-label" style="justify-content:center;">Our Purpose</div>
+    <h2 class="s-title" style="text-align:center;">Mission &amp; <span class="cyan">Vision</span></h2>
+  </div>
+  <div class="mv-grid reveal">
+    <div class="mv-card">
+      <div class="mv-icon">🎯</div>
+      <div class="mv-title">Our Mission</div>
+      <p class="mv-desc">To empower individuals and organizations with the knowledge, skills, and services to proactively identify risks, strengthen defenses, and stay ahead in an evolving threat landscape. We believe security is not a destination — it's an ongoing commitment.</p>
+    </div>
+    <div class="mv-card">
+      <div class="mv-icon">👁️</div>
+      <div class="mv-title">Our Vision</div>
+      <p class="mv-desc">To be a global leader in cybersecurity education and solutions, building a safer, more resilient digital world for everyone. We envision a future where every professional and organization has the tools to defend what matters most.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials-section">
+  <div class="reveal" style="text-align:center;margin-bottom:12px;">
+    <div class="s-label" style="justify-content:center;">What Our Learners Say</div>
+    <h2 class="s-title" style="text-align:center;">Voices of Our Learners <span class="purple">♥</span></h2>
+    <p class="s-sub" style="text-align:center;margin:0 auto 48px;">Real stories from real learners building their cybersecurity careers with CyLens.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <span class="quote-mark">"</span>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">CyLens courses are extremely well-structured and beginner-friendly. The hands-on labs and real-world examples helped me gain practical confidence.</p>
+      <div class="testi-footer">
+        <div class="testi-avatar">AM</div>
+        <div>
+          <div class="testi-name">Arjun Mehta</div>
+          <div class="testi-role">SOC Analyst</div>
+          <div class="testi-location">📍 Bengaluru, India</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-d1">
+      <span class="quote-mark">"</span>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">The trainers explain complex concepts in such a simple way. I loved the mentorship sessions and doubt support. Highly recommended!</p>
+      <div class="testi-footer">
+        <div class="testi-avatar">PN</div>
+        <div>
+          <div class="testi-name">Priya Nair</div>
+          <div class="testi-role">Security Engineer</div>
+          <div class="testi-location">📍 Kochi, India</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-d2">
+      <span class="quote-mark">"</span>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">CyLens changed the way I learn. The projects, labs, and community support made my learning journey productive and enjoyable.</p>
+      <div class="testi-footer">
+        <div class="testi-avatar">KS</div>
+        <div>
+          <div class="testi-name">Karan Singh</div>
+          <div class="testi-role">Penetration Tester</div>
+          <div class="testi-location">📍 Delhi, India</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-d3">
+      <span class="quote-mark">"</span>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">The audit course content is top-notch. I was able to apply my learning immediately at work. Worth every minute and every penny!</p>
+      <div class="testi-footer">
+        <div class="testi-avatar">ND</div>
+        <div>
+          <div class="testi-name">Neha Deshmukh</div>
+          <div class="testi-role">GRC Analyst</div>
+          <div class="testi-location">📍 Pune, India</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STORY -->
-<section class="section dark">
-  <div class="reveal" style="max-width:860px;margin:0 auto;text-align:center;">
-    <div class="s-tag" style="justify-content:center;">Our Story</div>
-    <h2 class="s-title" style="text-align:center;">From a startup lab to<br><em>a global institution</em></h2>
-    <p style="font-size:15px;color:var(--dim2);line-height:1.85;margin-bottom:24px;">What started as a 12-person cohort in Dubai has grown into a globally recognized academy with offices in Dubai, Bangalore, and London — and students in 45+ countries. Our accreditations from EC-Council, OffSec, CompTIA, ISC2, and ISACA make us one of the most credentialed cybersecurity training institutions in the MENA and South Asia region.</p>
-    <p style="font-size:15px;color:var(--dim2);line-height:1.85;">We've trained security teams for government agencies, Fortune 500 enterprises, and critical infrastructure operators. When organizations need people who can actually stop a breach — not just pass a compliance audit — they send their people to CYPHER.</p>
-  </div>
-
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:72px;" class="reveal">
-    <div style="background:var(--bg);padding:40px 32px;text-align:center;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700;color:var(--accent);margin-bottom:8px;">2015</div>
-      <div style="font-size:13px;color:var(--dim2);">Founded in Dubai with our first cohort of 12 students</div>
-    </div>
-    <div style="background:var(--bg);padding:40px 32px;text-align:center;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700;color:var(--accent);margin-bottom:8px;">2018</div>
-      <div style="font-size:13px;color:var(--dim2);">Became an EC-Council Accredited Training Center</div>
-    </div>
-    <div style="background:var(--bg);padding:40px 32px;text-align:center;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700;color:var(--accent);margin-bottom:8px;">2021</div>
-      <div style="font-size:13px;color:var(--dim2);">Launched Pentest Garage — our 24/7 live cyber range</div>
-    </div>
-    <div style="background:var(--bg);padding:40px 32px;text-align:center;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700;color:var(--accent);margin-bottom:8px;">2024</div>
-      <div style="font-size:13px;color:var(--dim2);">8,500+ graduates across 45+ countries</div>
-    </div>
+<!-- ── CTA ── -->
+<section id="page-cta">
+  <span class="cta-label">Ready to Get Started?</span>
+  <h2 class="cta-title s-title">Ready to start your<br><span class="cyan">cybersecurity journey?</span></h2>
+  <p class="cta-sub">Free initial consultation. No commitment. Expert guidance on the fastest path to your security goals.</p>
+  <div class="cta-btns">
+    <a href="courses.html" class="btn-primary">Explore Courses →</a>
+    <a href="contact.html" class="btn-outline">Book a Free Call →</a>
   </div>
 </section>
 
-<!-- VALUES -->
-<section class="section">
-  <div class="reveal">
-    <div class="s-tag">Our Values</div>
-    <h2 class="s-title">What we stand for</h2>
-  </div>
-  <div class="value-grid">
-    <div class="value-card reveal">
-      <div class="value-icon">[◈]</div>
-      <div class="value-title">Hands-On First</div>
-      <p class="value-desc">Every concept is taught through doing. We build cyber ranges, not lecture halls. Theory without practice is a liability in this field.</p>
-    </div>
-    <div class="value-card reveal">
-      <div class="value-icon">[◆]</div>
-      <div class="value-title">Ruthlessly Current</div>
-      <p class="value-desc">Our curriculum is rebuilt quarterly using live CVE data, real breach reports, and threat intelligence from our network of active practitioners.</p>
-    </div>
-    <div class="value-card reveal">
-      <div class="value-icon">[◉]</div>
-      <div class="value-title">Students First</div>
-      <p class="value-desc">From placement assistance to 1-on-1 mentorship, we measure success by where our graduates end up — not by enrollment numbers.</p>
-    </div>
-    <div class="value-card reveal">
-      <div class="value-icon">[▣]</div>
-      <div class="value-title">Ethical Practice</div>
-      <p class="value-desc">We train offensive security the right way — legally, responsibly, and with a deep commitment to using these skills for protection, not exploitation.</p>
-    </div>
-    <div class="value-card reveal">
-      <div class="value-icon">[⬡]</div>
-      <div class="value-title">Community Driven</div>
-      <p class="value-desc">Our alumni network, CTF events, and mentorship circles create a community that continues to grow and support each member long after graduation.</p>
-    </div>
-    <div class="value-card reveal">
-      <div class="value-icon">[▦]</div>
-      <div class="value-title">Globally Recognized</div>
-      <p class="value-desc">Our partnerships with EC-Council, OffSec, CompTIA, ISC2, and ISACA ensure your CYPHER credentials open doors in every corner of the world.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section class="section dark">
-  <div class="reveal">
-    <div class="s-tag">Leadership</div>
-    <h2 class="s-title">The team behind<br><em>CYPHER</em></h2>
-    <p class="s-sub">Former operators, researchers, and executives who've defended critical infrastructure — now building the next generation of defenders.</p>
-  </div>
-  <div class="team-grid">
-    <div class="team-card reveal">
-      <div class="team-avatar"><span>KA</span></div>
-      <div class="team-info">
-        <div class="team-name">Khalid Al-Rashidi</div>
-        <div class="team-role">CEO & Co-Founder</div>
-        <p class="team-bio">Former CISO at Emirates NBD. 18 years in offensive and defensive security across MENA governments and financial institutions.</p>
-      </div>
-    </div>
-    <div class="team-card reveal">
-      <div class="team-avatar"><span>SR</span></div>
-      <div class="team-info">
-        <div class="team-name">Sneha Rao</div>
-        <div class="team-role">CTO & Head of Curriculum</div>
-        <p class="team-bio">OSCP, CISSP, CEH Master. Led red team operations for three Fortune 100 companies. Architect of the CYPHER certification framework.</p>
-      </div>
-    </div>
-    <div class="team-card reveal">
-      <div class="team-avatar"><span>JO</span></div>
-      <div class="team-info">
-        <div class="team-name">James O'Brien</div>
-        <div class="team-role">Director of Training</div>
-        <p class="team-bio">15 years with UK NCSC and private sector red teams. Specialist in advanced persistent threats and nation-state TTPs.</p>
-      </div>
-    </div>
-    <div class="team-card reveal">
-      <div class="team-avatar"><span>FA</span></div>
-      <div class="team-info">
-        <div class="team-name">Fatima Al-Mansoori</div>
-        <div class="team-role">Head of Corporate & Partnerships</div>
-        <p class="team-bio">Leads our enterprise training division and global certification partnerships. Previously at Etisalat Digital's security division.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ACCREDITATIONS -->
-<section class="section">
-  <div class="reveal" style="text-align:center;margin-bottom:48px;">
-    <div class="s-tag" style="justify-content:center;">Accreditations</div>
-    <h2 class="s-title" style="text-align:center;">Globally recognized<br><em>credentials</em></h2>
-  </div>
-  <div class="partners-grid reveal">
-    <div class="partner-box"><span class="partner-name">EC-Council</span></div>
-    <div class="partner-box"><span class="partner-name">OffSec</span></div>
-    <div class="partner-box"><span class="partner-name">CompTIA</span></div>
-    <div class="partner-box"><span class="partner-name">ISC²</span></div>
-    <div class="partner-box"><span class="partner-name">ISACA</span></div>
-    <div class="partner-box"><span class="partner-name">PECB</span></div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section style="text-align:center;padding:100px 60px;background:var(--surface);border-top:1px solid var(--border);">
-  <div class="cta-tag" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:20px;">Join the mission</div>
-  <h2 style="font-size:clamp(32px,5vw,68px);font-weight:700;letter-spacing:-2px;margin-bottom:20px;">Ready to become<br>a CYPHER graduate?</h2>
-  <p style="font-size:15px;color:var(--dim2);max-width:400px;margin:0 auto 40px;line-height:1.75;">Free first consultation. We'll map your exact path to certification and placement — no commitment required.</p>
-  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-    <a href="courses.html" class="btn-primary">Browse Courses</a>
-    <a href="contact.html" class="btn-ghost">Get in Touch →</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
+<!-- ── FOOTER ── -->
 <footer>
-  <div class="footer-top">
+  <div class="footer-grid">
     <div>
-      <span class="footer-logo">CYPHER</span>
-      <p class="footer-about">Leading cybersecurity academy with industry-certified training, corporate solutions, and real-world labs across UAE, India, and globally.</p>
+      <a href="index.html" class="footer-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 22 22" fill="none">
+            <ellipse cx="11" cy="11" rx="9" ry="5.5" stroke="white" stroke-width="1.5"/>
+            <circle cx="11" cy="11" r="3.5" fill="white" opacity=".9"/>
+            <circle cx="11" cy="11" r="1.5" fill="#07071a"/>
+          </svg>
+        </div>
+        <div class="logo-text-wrap">
+          <span class="logo-text">CyLens</span>
+          <span class="logo-tagline">Vision That Secures</span>
+        </div>
+      </a>
+      <p class="footer-about">Leading cybersecurity academy offering industry-certified training, corporate solutions, and hands-on lab environments across UAE, India, and globally.</p>
     </div>
     <div class="footer-col">
       <h4>Courses</h4>
-      <a href="courses.html">CYPHER Certifications</a>
-      <a href="courses.html">EC-Council</a>
-      <a href="courses.html">CompTIA</a>
-      <a href="courses.html">OffSec / OSCP</a>
-      <a href="courses.html">ISC2 / ISACA</a>
+      <a href="courses.html">Audit Professional</a>
+      <a href="courses.html">Offensive Security</a>
+      <a href="courses.html">Defensive Security</a>
+      <a href="courses.html">Certifications</a>
+      <a href="courses.html">All Courses</a>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <a href="about.html">About Us</a>
       <a href="corporate.html">Corporate Training</a>
       <a href="services.html">Cybersecurity Services</a>
+      <a href="#">Blog</a>
       <a href="contact.html">Contact</a>
     </div>
     <div class="footer-col">
@@ -241,23 +307,27 @@
       <a href="#">LinkedIn</a>
       <a href="#">YouTube</a>
       <a href="#">Instagram</a>
-      <a href="#">info@cypher.academy</a>
+      <a href="#">Twitter / X</a>
+      <a href="mailto:info@cylens.academy">info@cylens.academy</a>
     </div>
   </div>
+  <div class="footer-trust">
+    <div class="footer-trust-item">🛡️ Trusted by aspiring cyber defenders across India</div>
+    <div class="footer-trust-item">👥 Growing community of learners and professionals</div>
+  </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2024 CYPHER SECURITY ACADEMY — ALL RIGHTS RESERVED</span>
-    <div class="footer-socials">
+    <span class="footer-copy">© 2024 CYLENS SECURITY ACADEMY — ALL RIGHTS RESERVED</span>
+    <div class="footer-legal">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Use</a>
+      <a href="#">Refund Policy</a>
     </div>
   </div>
 </footer>
 
-</div>
 <script src="js/main.js"></script>
 <script>
-buildMarquee('mtrack',['Est. 2015','Dubai · Bangalore · London','8,500+ Alumni','EC-Council Partner','OffSec ATC','CompTIA Authorized','45+ Countries','96% Placement Rate']);
-miniNet('about-canvas','rgba(0,255,136,.7)','rgba(0,255,136,ALPHA)');
+  miniNet('about-canvas', 'rgba(124,58,237,0.7)', 'rgba(124,58,237,ALPHA)');
 </script>
 </body>
 </html>
