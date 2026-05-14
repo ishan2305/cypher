@@ -177,3 +177,44 @@ document.querySelectorAll('.faq-q').forEach(q => {
 
 /* ── 11. SMOOTH COUNTER for any data-count elements (hero stats if present) ── */
 // Already handled by counterObserver above.
+
+/* ── COURSE DETAIL MODAL ── */
+(function() {
+  const overlay = document.getElementById('course-modal-overlay');
+  if (!overlay) return;
+  const modal  = overlay.querySelector('.modal');
+  const closeBtn = overlay.querySelector('.modal-close');
+  const form   = overlay.querySelector('.modal-form');
+
+  // Open on any .btn-view-detail click
+  document.querySelectorAll('.btn-view-detail').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const courseName = btn.closest('.course-card') ?
+        btn.closest('.course-card').querySelector('.cc-title').textContent.trim() : '';
+      const hidden = overlay.querySelector('input[name="course"]');
+      if (hidden) hidden.value = courseName;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = form.querySelector('.modal-submit');
+      btn.textContent = '✓ Submitted! We\'ll be in touch.';
+      btn.style.background = '#22c55e';
+      setTimeout(closeModal, 2000);
+    });
+  }
+})();
