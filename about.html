@@ -60,7 +60,7 @@
     <div>
       <div class="breadcrumb">
         <a href="index.html">Home</a>
-        <span>/</span>
+        <span>›</span>
         <span>About Us</span>
       </div>
       <h1>About Us</h1>
@@ -68,24 +68,49 @@
       <p class="sub-text">At CyLens, we believe that a secure tomorrow is built on knowledge, awareness, and proactive action today. We are passionate about empowering individuals and organizations to navigate the digital world with confidence and resilience.</p>
     </div>
     <div class="about-shield-col">
-      <div class="shield-wrap" style="padding:20px;">
-        <div class="shield-ring ring-1" style="width:260px;height:260px;"></div>
-        <div class="shield-outer" style="width:200px;height:230px;">
-          <svg width="100" height="80" viewBox="0 0 140 100" fill="none">
-            <defs>
-              <radialGradient id="irisGrad2" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#22d3ee"/>
-                <stop offset="100%" stop-color="#7c3aed"/>
-              </radialGradient>
-            </defs>
-            <ellipse cx="70" cy="50" rx="58" ry="34" stroke="url(#irisGrad2)" stroke-width="1.5" fill="rgba(6,182,212,0.04)"/>
-            <circle cx="70" cy="50" r="22" fill="url(#irisGrad2)" opacity=".85"/>
-            <circle cx="70" cy="50" r="22" stroke="rgba(255,255,255,0.15)" stroke-width="6" stroke-dasharray="8 6" fill="none"/>
-            <circle cx="70" cy="50" r="10" fill="#07071a"/>
-            <circle cx="75" cy="45" r="4" fill="rgba(255,255,255,0.6)"/>
-          </svg>
-        </div>
-        <div class="shield-platform" style="bottom:-10px;"></div>
+      <!-- Cyber Shield with Eye — matches design reference -->
+      <div style="position:relative;width:320px;height:340px;display:flex;align-items:center;justify-content:center;">
+        <!-- Outer glow ring -->
+        <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(139,92,246,0.18) 0%,transparent 70%);filter:blur(18px);"></div>
+        <!-- Circuit dots -->
+        <svg width="320" height="340" viewBox="0 0 320 340" fill="none" style="position:absolute;top:0;left:0;">
+          <defs>
+            <linearGradient id="shieldGradA" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#8b5cf6"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+          <!-- Shield shape -->
+          <path d="M160 20 L280 65 L280 160 C280 240 220 300 160 320 C100 300 40 240 40 160 L40 65 Z"
+            fill="rgba(139,92,246,0.06)" stroke="url(#shieldGradA)" stroke-width="2"/>
+          <!-- Inner shield -->
+          <path d="M160 50 L255 85 L255 160 C255 225 210 272 160 290 C110 272 65 225 65 160 L65 85 Z"
+            fill="none" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+          <!-- Circuit lines -->
+          <line x1="160" y1="20" x2="160" y2="5" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="160" y1="5" x2="180" y2="5" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="180" cy="5" r="3" fill="#8b5cf6"/>
+          <line x1="280" y1="130" x2="305" y2="130" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="305" y1="130" x2="305" y2="110" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="305" cy="110" r="3" fill="#06b6d4"/>
+          <line x1="40" y1="130" x2="15" y2="130" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="15" cy="130" r="3" fill="#06b6d4"/>
+          <line x1="160" y1="320" x2="160" y2="335" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="160" cy="335" r="3" fill="#8b5cf6"/>
+          <!-- Dots on shield border -->
+          <circle cx="280" cy="90" r="3" fill="#06b6d4" opacity=".7"/>
+          <circle cx="40" cy="90" r="3" fill="#06b6d4" opacity=".7"/>
+          <circle cx="40" cy="190" r="3" fill="#8b5cf6" opacity=".7"/>
+          <circle cx="280" cy="190" r="3" fill="#8b5cf6" opacity=".7"/>
+          <!-- Eye -->
+          <ellipse cx="160" cy="170" rx="60" ry="36" stroke="url(#shieldGradA)" stroke-width="1.5" fill="rgba(6,182,212,0.05)"/>
+          <circle cx="160" cy="170" r="24" fill="rgba(139,92,246,0.7)" opacity=".9"/>
+          <circle cx="160" cy="170" r="24" stroke="rgba(255,255,255,0.12)" stroke-width="8" stroke-dasharray="7 5" fill="none"/>
+          <circle cx="160" cy="170" r="11" fill="#07071a"/>
+          <circle cx="166" cy="164" r="5" fill="rgba(255,255,255,0.55)"/>
+          <!-- Platform glow -->
+          <ellipse cx="160" cy="325" rx="70" ry="8" fill="rgba(6,182,212,0.25)" filter="blur(6px)"/>
+        </svg>
       </div>
     </div>
   </div>
@@ -106,28 +131,50 @@
     <!-- Values Grid -->
     <div class="values-grid">
       <div class="value-card">
-        <div class="val-icon">🛡️</div>
+        <div class="val-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M13 2L4 6v6c0 5.5 3.9 10.7 9 12 5.1-1.3 9-6.5 9-12V6L13 2z" fill="rgba(139,92,246,0.12)" stroke="#8b5cf6" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M9.5 13l2.5 2.5 5-5" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div>
           <div class="val-title">Integrity</div>
           <p class="val-desc">We uphold the highest standards of honesty, transparency, and ethics in everything we do.</p>
         </div>
       </div>
       <div class="value-card">
-        <div class="val-icon">⭐</div>
+        <div class="val-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <circle cx="10" cy="9" r="3.5" stroke="#8b5cf6" stroke-width="1.8" fill="rgba(139,92,246,0.1)"/>
+            <path d="M3 22c0-3.9 3.1-7 7-7" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <polygon points="20,5 21.4,9.4 26,9.4 22.3,12.1 23.7,16.5 20,13.8 16.3,16.5 17.7,12.1 14,9.4 18.6,9.4" fill="#ec4899" opacity="0.9"/>
+          </svg>
+        </div>
         <div>
           <div class="val-title">Excellence</div>
           <p class="val-desc">We are committed to delivering exceptional quality in every course, engagement, and interaction.</p>
         </div>
       </div>
       <div class="value-card">
-        <div class="val-icon">⚡</div>
+        <div class="val-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M14.5 2L6 14h8l-3.5 10L22 12h-8.5L14.5 2z" fill="rgba(139,92,246,0.12)" stroke="#8b5cf6" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div>
           <div class="val-title">Innovation</div>
           <p class="val-desc">We embrace new ideas and emerging technologies to continuously drive better security outcomes.</p>
         </div>
       </div>
       <div class="value-card">
-        <div class="val-icon">🤝</div>
+        <div class="val-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M2 15l5.5-5h3.5l2 2 2-2h3.5l5.5 5" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M10.5 10.5l2.5 3 2.5-3" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M7.5 10l-2 7M18.5 10l2 7" stroke="rgba(139,92,246,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M5.5 17c2.5 2 13 2 15.5 0" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
         <div>
           <div class="val-title">Empowerment</div>
           <p class="val-desc">We empower people with the skills and confidence to secure the digital future for themselves and others.</p>
@@ -136,12 +183,108 @@
     </div>
   </div>
 
-  <!-- Network Illustration -->
+  <!-- Cyber Ops Room Illustration -->
   <div class="reveal reveal-d2">
-    <div class="team-image">
-      <canvas id="about-canvas"></canvas>
+    <div class="cyber-ops-img">
+      <svg width="100%" viewBox="0 0 460 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ops-bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0e0b1f"/>
+            <stop offset="100%" stop-color="#07071a"/>
+          </linearGradient>
+          <linearGradient id="ops-screen" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#12103a"/>
+            <stop offset="100%" stop-color="#080620"/>
+          </linearGradient>
+        </defs>
+        <!-- Background -->
+        <rect width="460" height="300" rx="16" fill="url(#ops-bg)"/>
+        <!-- Grid lines -->
+        <line x1="0" y1="75" x2="460" y2="75" stroke="rgba(139,92,246,0.06)" stroke-width="1"/>
+        <line x1="0" y1="150" x2="460" y2="150" stroke="rgba(139,92,246,0.06)" stroke-width="1"/>
+        <line x1="0" y1="225" x2="460" y2="225" stroke="rgba(139,92,246,0.06)" stroke-width="1"/>
+        <line x1="115" y1="0" x2="115" y2="300" stroke="rgba(139,92,246,0.06)" stroke-width="1"/>
+        <line x1="230" y1="0" x2="230" y2="300" stroke="rgba(139,92,246,0.06)" stroke-width="1"/>
+        <line x1="345" y1="0" x2="345" y2="300" stroke="rgba(139,92,246,0.06)" stroke-width="1"/>
+        <!-- Desk surface -->
+        <rect x="20" y="225" width="420" height="18" rx="5" fill="rgba(26,16,64,0.9)" stroke="rgba(139,92,246,0.2)" stroke-width="1"/>
+        <!-- LEFT MONITOR -->
+        <rect x="67" y="200" width="4" height="27" rx="2" fill="rgba(139,92,246,0.2)"/>
+        <rect x="55" y="222" width="28" height="4" rx="2" fill="rgba(139,92,246,0.12)"/>
+        <rect x="28" y="78" width="116" height="124" rx="8" fill="rgba(18,12,48,0.95)" stroke="rgba(139,92,246,0.28)" stroke-width="1.5"/>
+        <rect x="37" y="87" width="98" height="107" rx="4" fill="url(#ops-screen)"/>
+        <text x="46" y="101" font-family="monospace" font-size="7" fill="rgba(6,182,212,0.85)">SECURITY MONITOR</text>
+        <rect x="46" y="107" width="80" height="7" rx="2" fill="rgba(239,68,68,0.25)" stroke="rgba(239,68,68,0.5)" stroke-width="0.5"/>
+        <text x="49" y="113" font-family="monospace" font-size="5.5" fill="rgba(239,68,68,0.9)">⚠ ALERT: Intrusion det…</text>
+        <rect x="46" y="118" width="80" height="7" rx="2" fill="rgba(251,191,36,0.18)" stroke="rgba(251,191,36,0.4)" stroke-width="0.5"/>
+        <text x="49" y="124" font-family="monospace" font-size="5.5" fill="rgba(251,191,36,0.9)">● Port scan detected</text>
+        <rect x="46" y="129" width="80" height="7" rx="2" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.3)" stroke-width="0.5"/>
+        <text x="49" y="135" font-family="monospace" font-size="5.5" fill="rgba(34,197,94,0.8)">✓ Firewall rules OK</text>
+        <rect x="46" y="150" width="10" height="32" rx="1" fill="rgba(139,92,246,0.6)"/>
+        <rect x="60" y="160" width="10" height="22" rx="1" fill="rgba(6,182,212,0.6)"/>
+        <rect x="74" y="144" width="10" height="38" rx="1" fill="rgba(139,92,246,0.8)"/>
+        <rect x="88" y="154" width="10" height="28" rx="1" fill="rgba(6,182,212,0.5)"/>
+        <rect x="102" y="147" width="10" height="35" rx="1" fill="rgba(236,72,153,0.6)"/>
+        <!-- CENTER MONITOR (main) -->
+        <rect x="221" y="200" width="6" height="27" rx="2" fill="rgba(139,92,246,0.28)"/>
+        <rect x="200" y="222" width="48" height="4" rx="2" fill="rgba(139,92,246,0.15)"/>
+        <rect x="128" y="48" width="192" height="157" rx="10" fill="rgba(18,12,48,0.98)" stroke="rgba(139,92,246,0.45)" stroke-width="2"/>
+        <rect x="139" y="58" width="170" height="137" rx="5" fill="url(#ops-screen)"/>
+        <rect x="139" y="58" width="170" height="16" rx="5" fill="rgba(139,92,246,0.18)"/>
+        <text x="148" y="70" font-family="monospace" font-size="7" fill="rgba(139,92,246,0.95)">CYLENS SOC DASHBOARD</text>
+        <!-- Network nodes -->
+        <circle cx="224" cy="108" r="9" fill="rgba(139,92,246,0.18)" stroke="#8b5cf6" stroke-width="1.8"/>
+        <circle cx="224" cy="108" r="4" fill="#8b5cf6" opacity="0.7"/>
+        <circle cx="173" cy="93" r="5.5" fill="rgba(6,182,212,0.15)" stroke="#06b6d4" stroke-width="1.2"/>
+        <circle cx="275" cy="93" r="5.5" fill="rgba(6,182,212,0.15)" stroke="#06b6d4" stroke-width="1.2"/>
+        <circle cx="173" cy="130" r="5.5" fill="rgba(34,197,94,0.15)" stroke="rgba(34,197,94,0.65)" stroke-width="1.2"/>
+        <circle cx="275" cy="130" r="5.5" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.65)" stroke-width="1.2"/>
+        <circle cx="214" cy="146" r="4.5" fill="rgba(251,191,36,0.15)" stroke="rgba(251,191,36,0.65)" stroke-width="1.2"/>
+        <circle cx="240" cy="146" r="4.5" fill="rgba(6,182,212,0.15)" stroke="#06b6d4" stroke-width="1.2"/>
+        <!-- Connection lines -->
+        <line x1="224" y1="108" x2="173" y2="93" stroke="rgba(139,92,246,0.4)" stroke-width="1" stroke-dasharray="3 2"/>
+        <line x1="224" y1="108" x2="275" y2="93" stroke="rgba(139,92,246,0.4)" stroke-width="1" stroke-dasharray="3 2"/>
+        <line x1="224" y1="108" x2="173" y2="130" stroke="rgba(34,197,94,0.4)" stroke-width="1" stroke-dasharray="3 2"/>
+        <line x1="224" y1="108" x2="275" y2="130" stroke="rgba(239,68,68,0.5)" stroke-width="1" stroke-dasharray="3 2"/>
+        <line x1="224" y1="108" x2="214" y2="146" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
+        <line x1="224" y1="108" x2="240" y2="146" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
+        <!-- Status bar -->
+        <rect x="148" y="160" width="152" height="28" rx="3" fill="rgba(0,0,0,0.35)"/>
+        <text x="155" y="172" font-family="monospace" font-size="6" fill="rgba(34,197,94,0.9)">STATUS: ALL SYSTEMS SECURE</text>
+        <text x="155" y="182" font-family="monospace" font-size="5.5" fill="rgba(6,182,212,0.7)">Blocked: 247 threats | Uptime: 99.9%</text>
+        <!-- RIGHT MONITOR -->
+        <rect x="388" y="200" width="4" height="27" rx="2" fill="rgba(139,92,246,0.2)"/>
+        <rect x="376" y="222" width="28" height="4" rx="2" fill="rgba(139,92,246,0.12)"/>
+        <rect x="314" y="78" width="116" height="124" rx="8" fill="rgba(18,12,48,0.95)" stroke="rgba(139,92,246,0.28)" stroke-width="1.5"/>
+        <rect x="323" y="87" width="98" height="107" rx="4" fill="url(#ops-screen)"/>
+        <text x="328" y="100" font-family="monospace" font-size="7" fill="rgba(6,182,212,0.85)">NETWORK TRAFFIC</text>
+        <polyline points="328,140 340,130 350,135 362,118 372,124 382,109 392,117 402,104 412,114"
+          stroke="rgba(139,92,246,0.85)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="328,155 340,148 350,153 362,144 372,149 382,139 392,145 402,137 412,143"
+          stroke="rgba(6,182,212,0.65)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="372" cy="173" r="15" stroke="rgba(139,92,246,0.2)" stroke-width="3" fill="none"/>
+        <circle cx="372" cy="173" r="15" stroke="#8b5cf6" stroke-width="3" fill="none"
+          stroke-dasharray="70 25" stroke-linecap="round" transform="rotate(-90 372 173)"/>
+        <text x="367" y="177" font-family="monospace" font-size="7" fill="#8b5cf6">74%</text>
+        <!-- Keyboard -->
+        <rect x="169" y="231" width="120" height="10" rx="3" fill="rgba(26,16,64,0.85)" stroke="rgba(139,92,246,0.15)" stroke-width="1"/>
+        <rect x="175" y="233" width="8" height="3" rx="1" fill="rgba(139,92,246,0.18)"/>
+        <rect x="186" y="233" width="8" height="3" rx="1" fill="rgba(139,92,246,0.18)"/>
+        <rect x="197" y="233" width="8" height="3" rx="1" fill="rgba(139,92,246,0.18)"/>
+        <rect x="208" y="233" width="8" height="3" rx="1" fill="rgba(139,92,246,0.18)"/>
+        <rect x="175" y="238" width="50" height="2" rx="1" fill="rgba(139,92,246,0.12)"/>
+        <!-- Ambient glow -->
+        <ellipse cx="224" cy="285" rx="150" ry="22" fill="rgba(139,92,246,0.07)"/>
+        <!-- Floating dots -->
+        <circle cx="55" cy="38" r="2" fill="rgba(139,92,246,0.6)"/>
+        <circle cx="118" cy="24" r="1.5" fill="rgba(6,182,212,0.5)"/>
+        <circle cx="400" cy="33" r="2" fill="rgba(236,72,153,0.5)"/>
+        <circle cx="432" cy="62" r="1.5" fill="rgba(139,92,246,0.4)"/>
+        <!-- Border -->
+        <rect width="460" height="300" rx="16" fill="none" stroke="rgba(139,92,246,0.18)" stroke-width="1.5"/>
+      </svg>
     </div>
-    <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--dim);text-align:center;margin-top:14px;text-transform:uppercase;">Secure Network Visualization</p>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--dim);text-align:center;margin-top:14px;text-transform:uppercase;">Cybersecurity Operations Center</p>
   </div>
 </div>
 
@@ -173,12 +316,31 @@
   </div>
   <div class="mv-grid reveal">
     <div class="mv-card">
-      <div class="mv-icon">🎯</div>
+      <div class="mv-icon">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+          <circle cx="17" cy="17" r="14" stroke="#8b5cf6" stroke-width="1.8" fill="rgba(139,92,246,0.06)"/>
+          <circle cx="17" cy="17" r="10" stroke="#06b6d4" stroke-width="1.4" fill="rgba(6,182,212,0.06)"/>
+          <circle cx="17" cy="17" r="5.5" stroke="#8b5cf6" stroke-width="1.4" fill="rgba(139,92,246,0.14)"/>
+          <circle cx="17" cy="17" r="2" fill="#8b5cf6"/>
+          <line x1="31" y1="3" x2="22" y2="12" stroke="#ec4899" stroke-width="1.5" stroke-linecap="round"/>
+          <polyline points="27,3 31,3 31,7" stroke="#ec4899" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
       <div class="mv-title">Our Mission</div>
       <p class="mv-desc">To empower individuals and organizations with the knowledge, skills, and services to proactively identify risks, strengthen defenses, and stay ahead in an evolving threat landscape. We believe security is not a destination — it's an ongoing commitment.</p>
     </div>
     <div class="mv-card">
-      <div class="mv-icon">👁️</div>
+      <div class="mv-icon">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+          <path d="M3 17c4-9 24-9 28 0-4 9-24 9-28 0z" stroke="#8b5cf6" stroke-width="1.8" fill="rgba(139,92,246,0.06)" stroke-linejoin="round"/>
+          <circle cx="17" cy="17" r="6" fill="rgba(139,92,246,0.14)" stroke="#06b6d4" stroke-width="1.5"/>
+          <circle cx="17" cy="17" r="2.8" fill="#8b5cf6"/>
+          <circle cx="19" cy="15" r="1.2" fill="rgba(255,255,255,0.5)"/>
+          <!-- Scan line -->
+          <line x1="17" y1="8" x2="17" y2="4" stroke="rgba(6,182,212,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="17" y1="26" x2="17" y2="30" stroke="rgba(6,182,212,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
       <div class="mv-title">Our Vision</div>
       <p class="mv-desc">To be a global leader in cybersecurity education and solutions, building a safer, more resilient digital world for everyone. We envision a future where every professional and organization has the tools to defend what matters most.</p>
     </div>
@@ -312,14 +474,10 @@
     <div class="footer-legal">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Use</a>
-      <a href="#">Refund Policy</a>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
-<script>
-  miniNet('about-canvas', 'rgba(124,58,237,0.7)', 'rgba(124,58,237,ALPHA)');
-</script>
 </body>
 </html>
