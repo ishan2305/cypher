@@ -308,10 +308,9 @@ body {
 }
 .s-title .cyan,
 .s-title .purple {
-  color: transparent;
-  background: linear-gradient(135deg, #c4b5fd, #f9a8d4, #38bdf8);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #22d3ee; -webkit-text-fill-color: #22d3ee;
+  background: none;
+  text-shadow: 0 0 36px rgba(34,211,238,0.55), 0 0 12px rgba(34,211,238,0.32);
 }
 
 .s-sub {
@@ -502,16 +501,16 @@ footer {
 .hero-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 15px; letter-spacing: 4px; text-transform: uppercase;
-  background: linear-gradient(135deg, #c4b5fd, #f9a8d4, #38bdf8);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
+  color: #22d3ee; -webkit-text-fill-color: #22d3ee;
+  text-shadow: 0 0 28px rgba(34,211,238,0.5), 0 0 8px rgba(34,211,238,0.3);
   font-weight: 600;
   display: inline-flex; align-items: center; gap: 14px;
   margin-bottom: 28px;
 }
 .hero-label::before {
   content: ''; width: 38px; height: 1.5px;
-  background: linear-gradient(135deg, var(--purple), var(--pink), var(--cyan));
+  background: #22d3ee;
+  box-shadow: 0 0 10px rgba(34,211,238,0.6);
   flex-shrink: 0;
 }
 
@@ -522,9 +521,9 @@ h1.hero-title {
   letter-spacing: -2px; margin-bottom: 26px;
 }
 .hero-title .gradient-text {
-  background: linear-gradient(135deg, #c4b5fd, #f9a8d4, #38bdf8);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
+  color: #22d3ee; -webkit-text-fill-color: #22d3ee;
+  background: none;
+  text-shadow: 0 0 36px rgba(34,211,238,0.55), 0 0 12px rgba(34,211,238,0.32);
 }
 
 .hero-desc {
@@ -1114,8 +1113,9 @@ h1.hero-title {
   margin-bottom: 20px; line-height: .95;
 }
 .gradient-text-pc {
-  background: linear-gradient(135deg, var(--purple-light), var(--cyan-light));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+  color: #22d3ee; -webkit-text-fill-color: #22d3ee;
+  background: none;
+  text-shadow: 0 0 36px rgba(34,211,238,0.55), 0 0 12px rgba(34,211,238,0.32);
 }
 .courses-hero p {
   font-family: 'Inter', sans-serif; font-size: 16px;
