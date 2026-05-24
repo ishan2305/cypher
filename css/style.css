@@ -826,41 +826,61 @@ h1.hero-title {
 }
 .quad-card {
   position: absolute;
-  background: linear-gradient(135deg,
-    #6d28d9 0%,
-    var(--purple) 30%,
-    #a78bfa 55%,
-    var(--pink) 100%);
-  background-size: 200% 200%; background-position: 0% 0%;
-  border: none;
-  border-radius: 14px;
-  padding: 18px 22px; min-width: 180px; text-align: center;
-  transition: background-position .5s ease, transform .3s, box-shadow .3s;
-  box-shadow: 0 8px 26px rgba(109,40,217,0.4);
+  background: rgba(13,13,38,0.88);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px; min-width: 180px; text-align: center;
+  backdrop-filter: blur(6px);
+  transition: border-color .3s, transform .3s, box-shadow .3s;
+  z-index: 2;
 }
 .quad-card:hover {
-  background-position: 100% 100%;
-  transform: translateY(-3px);
-  box-shadow: 0 14px 36px rgba(236,72,153,0.45);
+  border-color: rgba(139,92,246,0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139,92,246,0.18);
 }
 .quad-card.top-left  { top: 0; left: 0; }
 .quad-card.top-right { top: 0; right: 0; }
 .quad-card.bot-left  { bottom: 0; left: 0; }
 .quad-card.bot-right { bottom: 0; right: 0; }
-.quad-icon { font-size: 22px; margin-bottom: 10px; }
-/* Force quad-card SVG icons to render white on the gradient fill */
-.quad-card svg [stroke] { stroke: #fff !important; }
-.quad-card svg [fill]:not([fill="none"]) { fill: rgba(255,255,255,0.20) !important; }
+.quad-icon { font-size: 22px; margin-bottom: 8px; }
 .quad-title {
-  font-family: 'Outfit', sans-serif; font-size: 17px;
-  font-weight: 700; letter-spacing: 1.2px;
-  text-transform: uppercase; margin-bottom: 6px;
-  color: #fff; -webkit-text-fill-color: #fff;
+  font-family: 'Outfit', sans-serif; font-size: 16px;
+  font-weight: 700; color: #fff;
+  -webkit-text-fill-color: #fff;
   background: none;
+  letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 5px;
 }
 .quad-desc {
-  font-family: 'Inter', sans-serif; font-size: 13.5px;
-  color: rgba(255,255,255,0.92); line-height: 1.5;
+  font-family: 'Inter', sans-serif; font-size: 13px;
+  color: var(--muted); line-height: 1.5;
+}
+
+/* Dashed connector lines from each quad card toward center logo */
+.shield-connectors {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.shield-connectors line {
+  stroke: rgba(139,92,246,0.5);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+  stroke-linecap: round;
+}
+.shield-connectors circle {
+  fill: #22d3ee;
+  filter: drop-shadow(0 0 6px rgba(34,211,238,0.7));
+  animation: connector-pulse 2.4s ease-in-out infinite;
+}
+.shield-connectors circle:nth-child(6) { animation-delay: .3s; }
+.shield-connectors circle:nth-child(7) { animation-delay: .6s; }
+.shield-connectors circle:nth-child(8) { animation-delay: .9s; }
+@keyframes connector-pulse {
+  0%, 100% { opacity: .9; }
+  50%      { opacity: .35; }
 }
 
 /* ================================================================
