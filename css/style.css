@@ -1678,9 +1678,14 @@ h1.hero-title {
 }
 
 @media (max-width: 768px) {
-  .nav { padding: 0 20px; }
+  /* ── Nav ── */
+  .nav { padding: 0 20px; height: 76px; }
+  .nav-logo-img { width: 56px; height: 56px; }
+  .logo-text { font-size: 24px; }
+  .logo-tagline { font-size: 10px; letter-spacing: 1.5px; }
+  .logo-text-wrap { gap: 5px; }
   .nav-links {
-    display: none; position: fixed; top: 72px; left: 0;
+    display: none; position: fixed; top: 76px; left: 0;
     right: 0; bottom: 0;
     background: rgba(7,7,26,.98);
     flex-direction: column; align-items: flex-start;
@@ -1689,7 +1694,7 @@ h1.hero-title {
   .nav-links.open { display: flex; }
   .nav-item { width: 100%; }
   .nav-link, .nav-trigger {
-    height: auto; padding: 16px 0;
+    height: auto; padding: 18px 0; font-size: 18px;
     border-bottom: 1px solid var(--border); width: 100%;
   }
   .nav-link.active::after { display: none; }
@@ -1698,27 +1703,54 @@ h1.hero-title {
     opacity: 1; visibility: visible;
     background: transparent; border: none;
     padding: 0 0 0 16px; backdrop-filter: none;
+    min-width: 0; box-shadow: none;
   }
+  .dropdown a { padding: 12px 0; font-size: 15px; }
   .nav-ham { display: flex; }
   .btn-cta { display: none; }
 
   .section { padding: 64px 24px; }
-  .page-hero { padding: 110px 24px 48px; }
+  .page-hero { padding: 96px 24px 48px; min-height: 40vh; }
+  .page-hero h1 { font-size: clamp(38px, 10vw, 64px); letter-spacing: -1.5px; }
+  .page-hero .purple-sub { font-size: 17px; }
+  .page-hero .sub-text { font-size: 14px; }
 
   #hero {
-    padding: 110px 24px 48px; min-height: auto; gap: 28px;
+    padding: 96px 24px 40px; min-height: auto; gap: 24px;
   }
   .hero-main {
     grid-template-columns: 1fr;
   }
   .hero-main > :nth-child(2), .hero-main > :nth-child(3) { display: none; }
 
-  .stats-bar { grid-template-columns: 1fr 1fr; }
-  .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
-  .stat-item:nth-child(2n) { border-right: none; }
-  .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
+  /* Hero label and title scaling for narrow screens */
+  .hero-label { font-size: 12px; letter-spacing: 2.5px; gap: 10px; margin-bottom: 18px; }
+  .hero-label::before { width: 28px; }
+  h1.hero-title { font-size: clamp(38px, 11vw, 56px); letter-spacing: -1.5px; margin-bottom: 18px; }
+  .hero-desc { font-size: 16px; margin-bottom: 26px; }
+  .hero-ctas { gap: 10px; }
+  .btn-primary, .btn-outline { padding: 14px 22px; font-size: 15px; }
+
+  /* Marquee: match hero's mobile 24px padding so it spans edge-to-edge */
+  .hero-marquee {
+    margin-left: -24px; margin-right: -24px;
+    margin-bottom: 16px;
+  }
+  .m-item { font-size: 11px; letter-spacing: 2.5px; gap: 36px; }
+  .marquee-track { gap: 36px; }
+
+  .stats-bar { grid-template-columns: 1fr 1fr; gap: 16px; padding: 0; }
+  .stat-item { padding: 0; border: none; gap: 14px; }
+  .stat-icon { width: 52px; height: 52px; border-radius: 12px; }
+  .stat-icon svg { width: 24px; height: 24px; }
+  .stat-text strong { font-size: 15px; }
+  .stat-text span { font-size: 12.5px; line-height: 1.4; }
 
   .features-grid, .courses-grid { grid-template-columns: 1fr; }
+  .features-grid-row { grid-template-columns: 1fr; }
+  .features-grid-row .feature-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .features-grid-row .feature-item:last-child { border-bottom: none; }
+  .feature-item { padding: 28px 24px; }
   .process-steps { grid-template-columns: 1fr; gap: 28px; }
   .process-line { display: none; }
   .how-grid { grid-template-columns: 1fr; }
@@ -1751,20 +1783,61 @@ h1.hero-title {
   .values-grid { grid-template-columns: 1fr; }
 
   .svc-grid { grid-template-columns: 1fr; }
+  .svc-new-grid { grid-template-columns: 1fr; }
+  .learners-grid { grid-template-columns: 1fr; }
+  .learners-section { padding: 56px 24px; }
+  .learners-cta { flex-direction: column; text-align: center; padding: 24px; }
   .testimonials-section { padding: 64px 24px; }
 
-  #page-cta { padding: 80px 24px; }
+  /* CTA section: cap title size on mobile */
+  .cta-title.s-title, #page-cta .s-title { font-size: clamp(32px, 9vw, 52px); }
+  #page-cta { padding: 72px 24px; }
+  .cta-btns { flex-direction: column; align-items: stretch; gap: 12px; }
+  .cta-btns .btn-primary, .cta-btns .btn-outline { justify-content: center; }
 
-  .courses-hero { padding: 120px 24px 60px; }
+  .courses-hero { padding: 100px 24px 60px; }
+  .courses-hero h1 { font-size: clamp(40px, 11vw, 64px); letter-spacing: -1.5px; }
+
+  /* About hero: stack column with smaller shield graphic */
+  .about-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .about-shield-col { display: flex; justify-content: center; }
+  .about-shield-col > div { width: 240px !important; height: 260px !important; }
+  .about-shield-col svg { width: 240px !important; height: 260px !important; }
+
+  /* Section header titles */
+  .s-title { font-size: clamp(32px, 8vw, 48px); letter-spacing: -1px; }
+  .s-sub { font-size: 16px; }
+  .s-label { font-size: 11.5px; letter-spacing: 2px; padding: 7px 14px; }
 }
 
 @media (max-width: 480px) {
   .testi-grid, .testi-row2 { grid-template-columns: 1fr; }
   .about-stats { grid-template-columns: 1fr; }
-  .stats-bar { grid-template-columns: 1fr; }
+  .stats-bar { grid-template-columns: 1fr; gap: 14px; }
   .stat-item { border-right: none; }
   .about-hero-inner { grid-template-columns: 1fr; }
   .about-shield-col { display: none; }
+
+  /* Tighter padding for very small phones */
+  .section { padding: 56px 18px; }
+  #hero { padding: 88px 18px 32px; gap: 22px; }
+  .hero-marquee { margin-left: -18px; margin-right: -18px; }
+  .page-hero { padding: 88px 18px 40px; }
+  footer { padding: 56px 18px 28px; }
+
+  /* Hero title even smaller on tiny phones */
+  h1.hero-title { font-size: clamp(34px, 12vw, 46px); }
+
+  /* CTA section */
+  #page-cta { padding: 60px 18px; }
+  .cta-title.s-title { font-size: clamp(28px, 9vw, 42px); }
+
+  /* Section headings */
+  .s-title { font-size: clamp(28px, 8vw, 40px); }
+
+  /* Quote marks etc */
+  .quote-mark { font-size: 32px; }
+  .testi-card, .learner-card { padding: 20px; }
 }
 
 /* ================================================================
