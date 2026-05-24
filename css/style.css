@@ -827,23 +827,21 @@ h1.hero-title {
 .quad-card {
   position: absolute;
   background: linear-gradient(135deg,
-    #5b21b6 0%,
-    #6d28d9 25%,
-    var(--purple) 50%,
-    #a78bfa 70%,
-    var(--pink) 86%,
-    var(--cyan) 100%);
+    #6d28d9 0%,
+    var(--purple) 30%,
+    #a78bfa 55%,
+    var(--pink) 100%);
   background-size: 200% 200%; background-position: 0% 0%;
   border: none;
   border-radius: 14px;
   padding: 18px 22px; min-width: 180px; text-align: center;
   transition: background-position .5s ease, transform .3s, box-shadow .3s;
-  box-shadow: 0 8px 26px rgba(109,40,217,0.45);
+  box-shadow: 0 8px 26px rgba(109,40,217,0.4);
 }
 .quad-card:hover {
   background-position: 100% 100%;
   transform: translateY(-3px);
-  box-shadow: 0 14px 36px rgba(139,92,246,0.55);
+  box-shadow: 0 14px 36px rgba(236,72,153,0.45);
 }
 .quad-card.top-left  { top: 0; left: 0; }
 .quad-card.top-right { top: 0; right: 0; }
@@ -896,35 +894,44 @@ h1.hero-title {
 .feature-item {
   background: var(--bg); padding: 36px;
   position: relative; overflow: hidden;
-  transition: background .45s ease, transform .35s ease, box-shadow .35s ease;
+  isolation: isolate;
+  transition: transform .9s cubic-bezier(.2,.7,.2,1), box-shadow .9s cubic-bezier(.2,.7,.2,1);
   cursor: pointer;
+}
+/* Slow-whoosh gradient overlay — fades + pans in on hover */
+.feature-item::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--purple), var(--pink), var(--cyan));
+  background-size: 220% 220%;
+  background-position: 0% 0%;
+  opacity: 0;
+  transition: opacity .9s ease, background-position 1.2s ease;
+  z-index: 0; pointer-events: none;
 }
 .feature-item::before {
   content: ''; position: absolute; top: 0; left: 0;
-  width: 0; height: 2px; background: rgba(255,255,255,0.55);
-  transition: width .5s ease;
+  width: 0; height: 2px; background: rgba(255,255,255,0.6);
+  transition: width .9s ease;
   z-index: 2;
 }
-.feature-item:hover {
-  background: linear-gradient(135deg,
-    #5b21b6 0%,
-    #6d28d9 25%,
-    var(--purple) 50%,
-    #a78bfa 70%,
-    var(--pink) 86%,
-    var(--cyan) 100%);
-  transform: translateY(-4px);
-  box-shadow: 0 14px 36px rgba(109,40,217,0.45);
+.feature-item > * { position: relative; z-index: 1; }
+.feature-item:hover::after {
+  opacity: 1;
+  background-position: 100% 100%;
 }
 .feature-item:hover::before { width: 100%; }
+.feature-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 38px rgba(139,92,246,0.42);
+}
 .feature-icon {
   width: 56px; height: 56px; border-radius: 50%;
   background: rgba(139,92,246,.18); border: 1px solid var(--border);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 20px;
-  transition: background .4s ease, border-color .4s ease;
+  transition: background .8s ease, border-color .8s ease;
 }
-.feature-icon svg { width: 28px; height: 28px; transition: filter .4s ease; }
+.feature-icon svg { width: 28px; height: 28px; transition: filter .8s ease; }
 .feature-item:hover .feature-icon {
   background: rgba(255,255,255,0.22);
   border-color: rgba(255,255,255,0.45);
@@ -933,26 +940,15 @@ h1.hero-title {
 .feature-title {
   font-family: 'Outfit', sans-serif; font-size: 19px; font-weight: 600;
   margin-bottom: 10px; color: var(--text);
-  transition: color .3s ease;
+  transition: color .7s ease;
 }
 .feature-desc {
   font-family: 'Inter', sans-serif; font-size: 16px;
   color: var(--muted); line-height: 1.7;
-  transition: color .3s ease;
+  transition: color .7s ease;
 }
 .feature-item:hover .feature-title { color: #fff; }
 .feature-item:hover .feature-desc { color: rgba(255,255,255,0.92); }
-
-/* Single-row variant override — higher specificity to beat the #0a0a22 base */
-.features-grid-row .feature-item:hover {
-  background: linear-gradient(135deg,
-    #5b21b6 0%,
-    #6d28d9 25%,
-    var(--purple) 50%,
-    #a78bfa 70%,
-    var(--pink) 86%,
-    var(--cyan) 100%);
-}
 
 /* ================================================================
    HOMEPAGE — PROCESS / HOW WE WORK
