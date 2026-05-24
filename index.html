@@ -155,8 +155,33 @@
         stroke="#ef4444" stroke-width="1.5" fill="none"/>
     </svg>
 
+    <!-- Active Defenses -->
+    <div class="sw-section-title" style="margin-top:14px;">Active Defenses</div>
+    <div class="defense-grid">
+      <div class="defense-item">
+        <span class="defense-dot"></span>
+        <span class="defense-label">Firewall</span>
+        <span class="defense-status">ON</span>
+      </div>
+      <div class="defense-item">
+        <span class="defense-dot"></span>
+        <span class="defense-label">IDS / IPS</span>
+        <span class="defense-status">ON</span>
+      </div>
+      <div class="defense-item">
+        <span class="defense-dot"></span>
+        <span class="defense-label">SOC Watch</span>
+        <span class="defense-status">ON</span>
+      </div>
+      <div class="defense-item">
+        <span class="defense-dot"></span>
+        <span class="defense-label">Backups</span>
+        <span class="defense-status">ON</span>
+      </div>
+    </div>
+
     <!-- Recent Scans -->
-    <div class="sw-section-title" style="margin-top:14px;">Recent Scans</div>
+    <div class="sw-section-title" style="margin-top:18px;">Recent Scans</div>
     <div class="scan-list">
       <div class="scan-item">
         <div class="scan-icon">✓</div>
@@ -169,6 +194,11 @@
         <span class="scan-time">15m ago</span>
       </div>
       <div class="scan-item">
+        <div class="scan-icon">✓</div>
+        <span class="scan-name">Patch Compliance</span>
+        <span class="scan-time">42m ago</span>
+      </div>
+      <div class="scan-item">
         <div class="scan-icon">👤</div>
         <span class="scan-name">Penetration Test</span>
         <span class="scan-time">1h ago</span>
@@ -176,6 +206,11 @@
     </div>
   </div>
   </div><!-- /.hero-main -->
+
+  <!-- Marquee (inside hero so it shows in landing view) -->
+  <div class="marquee-wrap hero-marquee">
+    <div class="marquee-track" id="mtrack-hero"></div>
+  </div>
 
   <!-- Stats Bar (inside hero so it shows in landing view) -->
   <div class="stats-bar">
@@ -225,11 +260,6 @@
     </div>
   </div>
 </section>
-
-<!-- ── MARQUEE ── -->
-<div class="marquee-wrap">
-  <div class="marquee-track" id="mtrack"></div>
-</div>
 
 <!-- ── MISSION SECTION ── -->
 <section class="section section-dark">
@@ -669,7 +699,7 @@
 <script src="js/main.js"></script>
 <script>
   /* Marquee build */
-  buildMarquee('mtrack', [
+  buildMarquee('mtrack-hero', [
     'Cybersecurity Training','Penetration Testing','Security Audit',
     'SOC Operations','Threat Detection','Incident Response',
     'Ethical Hacking','Security Consulting','CyLens Academy','Defensive Security'
