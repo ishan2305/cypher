@@ -191,20 +191,29 @@ body {
   width: 100%;
 }
 .screen-3 .testimonials-section > .reveal:first-child { margin-bottom: 0 !important; }
-.screen-3 .s-title { font-size: clamp(28px, 3.2vw, 44px); margin-bottom: 10px; }
-.screen-3 .s-sub { font-size: 14.5px; margin: 0 auto 24px !important; }
-.screen-3 .s-label { font-size: 11px; padding: 6px 12px; margin-bottom: 12px; }
-.screen-3 .testi-grid, .screen-3 .testi-row2 { gap: 14px; }
-.screen-3 .testi-card { padding: 16px; }
-.screen-3 .testi-card .quote-mark { font-size: 30px; }
-.screen-3 .testi-stars { font-size: 12px; margin-bottom: 8px; }
-.screen-3 .testi-text { font-size: 12.5px; line-height: 1.55; margin-bottom: 12px; }
-.screen-3 .testi-avatar { width: 34px; height: 34px; font-size: 12px; }
-.screen-3 .testi-name { font-size: 13px; }
-.screen-3 .testi-role, .screen-3 .testi-location { font-size: 10.5px; }
-.screen-3 .testi-cta { margin-top: 18px !important; padding: 18px 26px; }
-.screen-3 .testi-cta-text h3 { font-size: 18px; }
-.screen-3 .testi-cta-text p { font-size: 13px; }
+.screen-3 .s-title { font-size: clamp(36px, 4.2vw, 56px); margin-bottom: 14px; }
+.screen-3 .s-sub { font-size: 17.5px; margin: 0 auto 0 !important; max-width: 720px; }
+.screen-3 .s-label { font-size: 13px; padding: 7px 14px; margin-bottom: 16px; }
+.screen-3 .testi-grid, .screen-3 .testi-row2 { gap: 18px; }
+.screen-3 .testi-card { padding: 24px 22px; min-height: 200px; }
+.screen-3 .testi-card .quote-mark { font-size: 42px; }
+.screen-3 .testi-stars { font-size: 15px; margin-bottom: 12px; letter-spacing: 3px; }
+.screen-3 .testi-text { font-size: 14.5px; line-height: 1.6; margin-bottom: 18px; }
+.screen-3 .testi-avatar { width: 44px; height: 44px; font-size: 15px; }
+.screen-3 .testi-name { font-size: 16px; font-weight: 700; }
+.screen-3 .testi-role { font-size: 13px; color: var(--text); }
+.screen-3 .testi-location {
+  font-size: 13px;
+  background: linear-gradient(135deg, #0274F5, #7622E5);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  font-weight: 600;
+  text-shadow: 0 0 16px rgba(2,116,245,0.25);
+}
+.screen-3 .testi-cta { margin-top: 0 !important; padding: 22px 32px; }
+.screen-3 .testi-cta-text h3 { font-size: 22px; }
+.screen-3 .testi-cta-text p { font-size: 15px; }
+.screen-3 .testi-cta-text img { width: 56px !important; height: 56px !important; }
 
 /* Screen 4 — CTA + Footer in one viewport */
 .screen-4 {
@@ -221,23 +230,32 @@ body {
   padding: 32px 72px 48px;
   text-align: center;
 }
-.screen-4 #page-cta .cta-label { font-size: 13px; letter-spacing: 3px; }
-.screen-4 .cta-title.s-title { font-size: clamp(34px, 4.2vw, 60px); margin-bottom: 14px; }
-.screen-4 .cta-sub { font-size: 16px; max-width: 580px; margin-bottom: 26px; }
-.screen-4 .cta-btns { gap: 14px; }
+.screen-4 #page-cta .cta-label { font-size: 15px; letter-spacing: 3.5px; }
+.screen-4 .cta-title.s-title { font-size: clamp(44px, 5vw, 76px); margin-bottom: 22px; line-height: 1.05; }
+.screen-4 .cta-sub { font-size: 19px; max-width: 640px; margin-bottom: 36px; line-height: 1.6; }
+.screen-4 .cta-btns { gap: 18px; }
+.screen-4 .cta-btns .btn-primary,
+.screen-4 .cta-btns .btn-outline { padding: 18px 38px; font-size: 17px; }
 .screen-4 footer {
   flex-shrink: 0;
-  padding: 32px 72px 18px;
+  padding: 44px 72px 24px;
   border-top: 1px solid var(--border);
 }
-.screen-4 .footer-grid { gap: 32px; margin-bottom: 20px; }
-.screen-4 .footer-about { font-size: 12.5px; line-height: 1.55; margin-top: 10px; max-width: 280px; }
-.screen-4 .footer-col h4 { margin-bottom: 10px; padding-bottom: 7px; font-size: 9.5px; }
-.screen-4 .footer-col a { font-size: 12.5px; margin-bottom: 6px; }
-.screen-4 .footer-trust { padding: 12px 0; margin-bottom: 12px; gap: 32px; }
-.screen-4 .footer-trust-item { font-size: 9.5px; }
+.screen-4 .footer-grid { gap: 48px; margin-bottom: 28px; }
+.screen-4 .footer-logo .nav-logo-img,
+.screen-4 .footer-logo .logo-icon { width: 64px !important; height: 64px !important; }
+.screen-4 .footer-logo .logo-text { font-size: 28px; }
+.screen-4 .footer-logo .logo-tagline { font-size: 12px; letter-spacing: 1.8px; }
+.screen-4 .footer-logo .logo-text-wrap { --tagline-indent: 26px; }
+/* Footer logo across other pages uses default 36px logo-text */
+.footer-logo .logo-text-wrap { --tagline-indent: 30px; }
+.screen-4 .footer-about { font-size: 14.5px; line-height: 1.65; margin-top: 16px; max-width: 320px; }
+.screen-4 .footer-col h4 { margin-bottom: 14px; padding-bottom: 9px; font-size: 11.5px; letter-spacing: 2.5px; }
+.screen-4 .footer-col a { font-size: 14.5px; margin-bottom: 10px; }
+.screen-4 .footer-trust { padding: 16px 0; margin-bottom: 16px; gap: 36px; }
+.screen-4 .footer-trust-item { font-size: 11.5px; letter-spacing: 1.2px; }
 .screen-4 .footer-bottom { padding-top: 0; }
-.screen-4 .footer-copy, .screen-4 .footer-legal a { font-size: 9.5px; }
+.screen-4 .footer-copy, .screen-4 .footer-legal a { font-size: 11px; letter-spacing: 1.2px; }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
@@ -268,7 +286,13 @@ body {
   width: 86px; height: 86px;
   object-fit: contain; flex-shrink: 0;
 }
-.logo-text-wrap { display: flex; flex-direction: column; gap: 9px; }
+.logo-text-wrap {
+  display: flex; flex-direction: column; gap: 9px;
+  align-items: flex-start;
+  /* Indent the tagline so V of "Vision" aligns under L of "CyLens".
+     "Cy" in Alice ≈ width of 2 chars. Overridden per context below. */
+  --tagline-indent: 32px;
+}
 .logo-text {
   font-family: 'Alice', serif; font-size: 36px; font-weight: 400;
   color: #fff; line-height: 1;
@@ -277,6 +301,7 @@ body {
   font-family: 'Inter', sans-serif; font-size: 13px;
   color: var(--purple-light); letter-spacing: 2px; text-transform: uppercase;
   line-height: 1; font-weight: 500;
+  margin-left: var(--tagline-indent);
 }
 
 /* Nav links */
@@ -505,9 +530,10 @@ body {
 }
 .s-title .cyan,
 .s-title .purple {
-  color: #22d3ee; -webkit-text-fill-color: #22d3ee;
-  background: none;
-  text-shadow: 0 0 36px rgba(34,211,238,0.55), 0 0 12px rgba(34,211,238,0.32);
+  background: linear-gradient(135deg, #0274F5, #7622E5);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  text-shadow: 0 0 36px rgba(2,116,245,0.40), 0 0 14px rgba(118,34,229,0.30);
 }
 
 .s-sub {
@@ -698,16 +724,18 @@ footer {
 .hero-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 15px; letter-spacing: 4px; text-transform: uppercase;
-  color: #22d3ee; -webkit-text-fill-color: #22d3ee;
-  text-shadow: 0 0 28px rgba(34,211,238,0.5), 0 0 8px rgba(34,211,238,0.3);
+  background: linear-gradient(135deg, #0274F5, #7622E5);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  text-shadow: 0 0 26px rgba(2,116,245,0.30), 0 0 10px rgba(118,34,229,0.25);
   font-weight: 600;
   display: inline-flex; align-items: center; gap: 14px;
   margin-bottom: 28px;
 }
 .hero-label::before {
   content: ''; width: 38px; height: 1.5px;
-  background: #22d3ee;
-  box-shadow: 0 0 10px rgba(34,211,238,0.6);
+  background: linear-gradient(90deg, #0274F5, #7622E5);
+  box-shadow: 0 0 10px rgba(2,116,245,0.55);
   flex-shrink: 0;
 }
 
@@ -718,9 +746,10 @@ h1.hero-title {
   letter-spacing: -2px; margin-bottom: 26px;
 }
 .hero-title .gradient-text {
-  color: #22d3ee; -webkit-text-fill-color: #22d3ee;
-  background: none;
-  text-shadow: 0 0 36px rgba(34,211,238,0.55), 0 0 12px rgba(34,211,238,0.32);
+  background: linear-gradient(135deg, #0274F5, #7622E5);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  text-shadow: 0 0 36px rgba(2,116,245,0.40), 0 0 14px rgba(118,34,229,0.30);
 }
 
 .hero-desc {
@@ -1365,9 +1394,10 @@ h1.hero-title {
   margin-bottom: 20px; line-height: .95;
 }
 .gradient-text-pc {
-  color: #22d3ee; -webkit-text-fill-color: #22d3ee;
-  background: none;
-  text-shadow: 0 0 36px rgba(34,211,238,0.55), 0 0 12px rgba(34,211,238,0.32);
+  background: linear-gradient(135deg, #0274F5, #7622E5);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  text-shadow: 0 0 36px rgba(2,116,245,0.40), 0 0 14px rgba(118,34,229,0.30);
 }
 .courses-hero p {
   font-family: 'Inter', sans-serif; font-size: 16px;
@@ -1880,7 +1910,8 @@ h1.hero-title {
   .nav-logo-img { width: 56px; height: 56px; }
   .logo-text { font-size: 24px; }
   .logo-tagline { font-size: 10px; letter-spacing: 1.5px; }
-  .logo-text-wrap { gap: 5px; }
+  .logo-text-wrap { gap: 5px; --tagline-indent: 22px; }
+  .footer-logo .logo-text-wrap { --tagline-indent: 22px; }
   .nav-links {
     display: none; position: fixed; top: 76px; left: 0;
     right: 0; bottom: 0;
