@@ -32,7 +32,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
 body {
   background: var(--bg);
   color: var(--text);
@@ -41,6 +44,157 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
 }
+
+/* ── HOMEPAGE 4-SCREEN LAYOUT ── */
+/* Each .screen fills the viewport. Scroll-snap on the html element so
+   the page snaps section-by-section while still allowing free scroll
+   within a section if its content exceeds the viewport. */
+@media (min-width: 1025px) {
+  html.snap-home { scroll-snap-type: y proximity; }
+  html.snap-home body > .screen,
+  html.snap-home body > #hero.screen {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+.screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+/* Screen 1 — Hero, compressed so widget + coin + stats fit in 100vh.
+   Existing #hero CSS handles outer layout; we just trim content sizes. */
+#hero.screen-1 {
+  padding: 110px 48px 24px;
+  gap: 18px;
+  overflow: hidden;
+}
+#hero.screen-1 .hero-main {
+  gap: 32px;
+}
+#hero.screen-1 h1.hero-title {
+  font-size: clamp(40px, 5.2vw, 68px);
+  margin-bottom: 20px;
+}
+#hero.screen-1 .hero-label {
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+#hero.screen-1 .hero-desc {
+  font-size: 16.5px;
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+/* Coin */
+#hero.screen-1 .cy-coin-wrap,
+#hero.screen-1 .cy-coin {
+  width: clamp(180px, 26vh, 260px);
+  height: clamp(180px, 26vh, 260px);
+}
+#hero.screen-1 .hero-logo-platform {
+  width: 70%; margin-top: 8px;
+}
+/* Security widget — slim padding + smaller gauge + tighter scans/defenses */
+#hero.screen-1 .sec-widget {
+  padding: 22px 24px;
+  border-radius: 14px;
+}
+#hero.screen-1 .sw-header { margin-bottom: 14px; }
+#hero.screen-1 .sw-title { font-size: 12px; letter-spacing: 2px; }
+#hero.screen-1 .sw-live { font-size: 11px; }
+#hero.screen-1 .sw-gauge { gap: 16px; margin-bottom: 14px; padding-bottom: 14px; }
+#hero.screen-1 .gauge-circle-wrap { width: 84px; height: 84px; }
+#hero.screen-1 .gauge-pct { font-size: 22px; }
+#hero.screen-1 .gauge-lbl { font-size: 9px; }
+#hero.screen-1 .gauge-rows { gap: 7px; }
+#hero.screen-1 .gauge-row { font-size: 12px; }
+#hero.screen-1 .sw-section-title { margin-top: 12px; margin-bottom: 10px; font-size: 11px; letter-spacing: 2px; }
+#hero.screen-1 .threat-chart { height: 50px; }
+#hero.screen-1 .defense-grid { gap: 7px; }
+#hero.screen-1 .defense-item { padding: 7px 10px; border-radius: 6px; }
+#hero.screen-1 .defense-label { font-size: 12px; }
+#hero.screen-1 .defense-status { font-size: 10px; }
+#hero.screen-1 .defense-dot { width: 7px; height: 7px; }
+#hero.screen-1 .scan-list { gap: 9px; margin-top: 10px; }
+#hero.screen-1 .scan-icon { width: 26px; height: 26px; font-size: 12px; }
+#hero.screen-1 .scan-name { font-size: 13px; }
+#hero.screen-1 .scan-time { font-size: 11px; }
+/* Stats bar inside screen-1 */
+#hero.screen-1 .stats-bar { gap: 20px; }
+#hero.screen-1 .stat-item { gap: 16px; }
+#hero.screen-1 .stat-icon { width: 60px; height: 60px; border-radius: 14px; }
+#hero.screen-1 .stat-icon svg { width: 28px; height: 28px; }
+#hero.screen-1 .stat-text strong { font-size: 17px; }
+#hero.screen-1 .stat-text span { font-size: 13.5px; }
+/* Marquee inside screen-1 — tighter padding */
+#hero.screen-1 .hero-marquee { padding: 12px 0; margin-bottom: 18px; }
+#hero.screen-1 .m-item { font-size: 11.5px; letter-spacing: 3px; }
+
+/* Screen 2 — Mission + What Sets Us Apart + How We Work — compressed
+   so all three fit in a single viewport on common desktop heights. */
+.screen-2 .section { padding: 36px 72px; }
+.screen-2 .section:last-child { padding-bottom: 48px; }
+.screen-2 .mission-grid { gap: 48px; align-items: center; }
+.screen-2 .mission-grid h2.s-title { font-size: clamp(30px, 3.3vw, 46px); margin-bottom: 12px; }
+.screen-2 .mission-grid p { font-size: 16px !important; line-height: 1.65 !important; margin-bottom: 20px !important; }
+.screen-2 .mission-grid .btn-primary { padding: 12px 26px; font-size: 14.5px; }
+.screen-2 .shield-diagram { min-height: 340px; }
+.screen-2 .shield-center { width: 200px; height: 200px; }
+.screen-2 .shield-center img { width: 170px !important; height: 170px !important; }
+.screen-2 .shield-center::before { width: 200px; height: 200px; }
+.screen-2 .quad-card { min-width: 158px; padding: 12px 14px; }
+.screen-2 .quad-icon { font-size: 18px; margin-bottom: 4px; }
+.screen-2 .quad-icon svg { width: 18px; height: 18px; }
+.screen-2 .quad-title { font-size: 13px; margin-bottom: 3px; letter-spacing: .8px; }
+.screen-2 .quad-desc { font-size: 11.5px; line-height: 1.4; }
+.screen-2 .s-title { font-size: clamp(28px, 3vw, 42px); margin-bottom: 10px; }
+.screen-2 .s-sub { font-size: 14.5px; max-width: 560px; }
+.screen-2 .s-label { font-size: 11px; padding: 6px 12px; margin-bottom: 12px; }
+.screen-2 .features-grid-row .feature-item { padding: 22px 14px; }
+.screen-2 .features-grid-row .feature-icon { width: 46px; height: 46px; margin: 0 auto 8px; }
+.screen-2 .features-grid-row .feature-icon svg { width: 22px; height: 22px; }
+.screen-2 .features-grid-row .feature-title { font-size: 13px; margin-bottom: 4px; }
+.screen-2 .features-grid-row .feature-desc { font-size: 12px; line-height: 1.45; }
+.screen-2 .how-section-inner { grid-template-columns: 1fr 3fr; gap: 36px; }
+.screen-2 .how-text h2.s-title { font-size: clamp(26px, 3vw, 38px); }
+.screen-2 .step-circle { width: 36px; height: 36px; font-size: 12px; margin: 0 auto 14px; }
+.screen-2 .step-icon { width: 30px; height: 30px; margin: 0 auto 8px; }
+.screen-2 .step-icon svg { width: 22px; height: 22px; }
+.screen-2 .step-title { font-size: 12.5px; margin-bottom: 4px; }
+.screen-2 .step-desc { font-size: 11.5px; line-height: 1.45; }
+.screen-2 .how-timeline-line { top: 36px; }
+
+/* Screen 3 — Testimonials grid, compressed to fit 8 cards + CTA */
+.screen-3 .testimonials-section { padding: 28px 72px; width: 100%; }
+.screen-3 .s-title { font-size: clamp(28px, 3.2vw, 44px); margin-bottom: 10px; }
+.screen-3 .s-sub { font-size: 14.5px; margin: 0 auto 24px !important; }
+.screen-3 .s-label { font-size: 11px; padding: 6px 12px; margin-bottom: 12px; }
+.screen-3 .testi-grid, .screen-3 .testi-row2 { gap: 14px; }
+.screen-3 .testi-card { padding: 16px; }
+.screen-3 .testi-card .quote-mark { font-size: 30px; }
+.screen-3 .testi-stars { font-size: 12px; margin-bottom: 8px; }
+.screen-3 .testi-text { font-size: 12.5px; line-height: 1.55; margin-bottom: 12px; }
+.screen-3 .testi-avatar { width: 34px; height: 34px; font-size: 12px; }
+.screen-3 .testi-name { font-size: 13px; }
+.screen-3 .testi-role, .screen-3 .testi-location { font-size: 10.5px; }
+.screen-3 .testi-cta { margin-top: 18px !important; padding: 18px 26px; }
+.screen-3 .testi-cta-text h3 { font-size: 18px; }
+.screen-3 .testi-cta-text p { font-size: 13px; }
+
+/* Screen 4 — CTA + Footer in one viewport */
+.screen-4 { justify-content: space-between; }
+.screen-4 #page-cta { padding: 56px 72px 40px; }
+.screen-4 .cta-title.s-title { font-size: clamp(32px, 4vw, 56px); }
+.screen-4 .cta-sub { font-size: 16px; max-width: 560px; }
+.screen-4 footer { padding: 36px 72px 20px; }
+.screen-4 .footer-grid { gap: 36px; margin-bottom: 22px; }
+.screen-4 .footer-about { font-size: 13px; line-height: 1.6; margin-top: 12px; }
+.screen-4 .footer-col h4 { margin-bottom: 12px; padding-bottom: 8px; }
+.screen-4 .footer-col a { font-size: 13px; margin-bottom: 7px; }
+.screen-4 .footer-trust { padding: 14px 0; margin-bottom: 14px; }
+.screen-4 .footer-trust-item { font-size: 10px; }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
