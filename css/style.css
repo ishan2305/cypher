@@ -61,18 +61,20 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: relative;
 }
-/* Screen 1 — Hero, compressed so widget + coin + stats fit in 100vh.
-   Existing #hero CSS handles outer layout; we just trim content sizes. */
+/* Screen 1 — hero-main flex-grows to fill space above marquee + stats */
 #hero.screen-1 {
-  padding: 110px 48px 24px;
-  gap: 18px;
+  justify-content: flex-start;
+  padding: 110px 48px 28px;
+  gap: 22px;
   overflow: hidden;
 }
 #hero.screen-1 .hero-main {
-  gap: 32px;
+  flex: 1;
+  gap: 36px;
+  align-items: center;
+  align-content: center;
 }
 #hero.screen-1 h1.hero-title {
   font-size: clamp(40px, 5.2vw, 68px);
@@ -134,8 +136,16 @@ body {
 
 /* Screen 2 — Mission + What Sets Us Apart + How We Work — compressed
    so all three fit in a single viewport on common desktop heights. */
-.screen-2 .section { padding: 36px 72px; }
-.screen-2 .section:last-child { padding-bottom: 48px; }
+.screen-2 {
+  padding-top: 96px;
+  padding-bottom: 28px;
+  justify-content: space-between;
+  background: var(--surface);
+}
+.screen-2 > section,
+.screen-2 > .features-block { flex-shrink: 0; }
+.screen-2 .section { padding: 12px 72px; background: transparent; }
+.screen-2 .section-dark { background: transparent; }
 .screen-2 .mission-grid { gap: 48px; align-items: center; }
 .screen-2 .mission-grid h2.s-title { font-size: clamp(30px, 3.3vw, 46px); margin-bottom: 12px; }
 .screen-2 .mission-grid p { font-size: 16px !important; line-height: 1.65 !important; margin-bottom: 20px !important; }
@@ -167,7 +177,20 @@ body {
 .screen-2 .how-timeline-line { top: 36px; }
 
 /* Screen 3 — Testimonials grid, compressed to fit 8 cards + CTA */
-.screen-3 .testimonials-section { padding: 28px 72px; width: 100%; }
+.screen-3 {
+  padding: 96px 0 28px;
+  justify-content: flex-start;
+}
+.screen-3 .testimonials-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 72px;
+  margin: 0;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.screen-3 .testimonials-section > .reveal:first-child { margin-bottom: 0 !important; }
 .screen-3 .s-title { font-size: clamp(28px, 3.2vw, 44px); margin-bottom: 10px; }
 .screen-3 .s-sub { font-size: 14.5px; margin: 0 auto 24px !important; }
 .screen-3 .s-label { font-size: 11px; padding: 6px 12px; margin-bottom: 12px; }
@@ -184,17 +207,37 @@ body {
 .screen-3 .testi-cta-text p { font-size: 13px; }
 
 /* Screen 4 — CTA + Footer in one viewport */
-.screen-4 { justify-content: space-between; }
-.screen-4 #page-cta { padding: 56px 72px 40px; }
-.screen-4 .cta-title.s-title { font-size: clamp(32px, 4vw, 56px); }
-.screen-4 .cta-sub { font-size: 16px; max-width: 560px; }
-.screen-4 footer { padding: 36px 72px 20px; }
-.screen-4 .footer-grid { gap: 36px; margin-bottom: 22px; }
-.screen-4 .footer-about { font-size: 13px; line-height: 1.6; margin-top: 12px; }
-.screen-4 .footer-col h4 { margin-bottom: 12px; padding-bottom: 8px; }
-.screen-4 .footer-col a { font-size: 13px; margin-bottom: 7px; }
-.screen-4 .footer-trust { padding: 14px 0; margin-bottom: 14px; }
-.screen-4 .footer-trust-item { font-size: 10px; }
+.screen-4 {
+  padding-top: 96px;
+  padding-bottom: 0;
+  justify-content: flex-start;
+}
+.screen-4 #page-cta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 72px 48px;
+  text-align: center;
+}
+.screen-4 #page-cta .cta-label { font-size: 13px; letter-spacing: 3px; }
+.screen-4 .cta-title.s-title { font-size: clamp(34px, 4.2vw, 60px); margin-bottom: 14px; }
+.screen-4 .cta-sub { font-size: 16px; max-width: 580px; margin-bottom: 26px; }
+.screen-4 .cta-btns { gap: 14px; }
+.screen-4 footer {
+  flex-shrink: 0;
+  padding: 32px 72px 18px;
+  border-top: 1px solid var(--border);
+}
+.screen-4 .footer-grid { gap: 32px; margin-bottom: 20px; }
+.screen-4 .footer-about { font-size: 12.5px; line-height: 1.55; margin-top: 10px; max-width: 280px; }
+.screen-4 .footer-col h4 { margin-bottom: 10px; padding-bottom: 7px; font-size: 9.5px; }
+.screen-4 .footer-col a { font-size: 12.5px; margin-bottom: 6px; }
+.screen-4 .footer-trust { padding: 12px 0; margin-bottom: 12px; gap: 32px; }
+.screen-4 .footer-trust-item { font-size: 9.5px; }
+.screen-4 .footer-bottom { padding-top: 0; }
+.screen-4 .footer-copy, .screen-4 .footer-legal a { font-size: 9.5px; }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
