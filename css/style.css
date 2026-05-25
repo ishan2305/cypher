@@ -375,7 +375,7 @@ body {
 .btn-cta {
   position: relative;
   font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 600;
-  background: linear-gradient(135deg, #c4b5fd, #f9a8d4, #38bdf8);
+  background: linear-gradient(135deg, #0274F5, #7622E5);
   -webkit-background-clip: text; background-clip: text;
   color: transparent; -webkit-text-fill-color: transparent;
   border: none; padding: 14px 32px;
@@ -388,7 +388,7 @@ body {
 .btn-cta::before {
   content: ''; position: absolute; inset: 0;
   border-radius: 6px; padding: 2px;
-  background: linear-gradient(135deg, var(--purple), var(--pink), var(--cyan));
+  background: linear-gradient(135deg, #0274F5, #7622E5);
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -421,7 +421,7 @@ body {
 .btn-primary {
   font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 600;
   color: #fff;
-  background: linear-gradient(135deg, var(--purple), var(--pink), var(--cyan));
+  background: linear-gradient(135deg, #0274F5, #7622E5);
   background-size: 200% 200%; background-position: 0% 0%;
   border: none; padding: 16px 34px;
   cursor: pointer; border-radius: 6px;
@@ -440,7 +440,7 @@ body {
 .btn-outline {
   position: relative;
   font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 600;
-  background: linear-gradient(135deg, #c4b5fd, #f9a8d4, #38bdf8);
+  background: linear-gradient(135deg, #0274F5, #7622E5);
   -webkit-background-clip: text; background-clip: text;
   color: transparent; -webkit-text-fill-color: transparent;
   border: none; padding: 16px 34px;
@@ -452,7 +452,7 @@ body {
 .btn-outline::before {
   content: ''; position: absolute; inset: 0;
   border-radius: 6px; padding: 1.8px;
-  background: linear-gradient(135deg, var(--purple), var(--pink), var(--cyan));
+  background: linear-gradient(135deg, #0274F5, #7622E5);
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -501,7 +501,7 @@ body {
   font-size: 12.5px; letter-spacing: 3px; text-transform: uppercase;
   font-weight: 700;
   color: #fff; -webkit-text-fill-color: #fff;
-  background: linear-gradient(135deg, var(--purple), var(--pink), var(--cyan));
+  background: linear-gradient(135deg, #0274F5, #7622E5);
   background-size: 200% 200%; background-position: 0% 0%;
   border: none;
   padding: 8px 18px;
@@ -585,7 +585,7 @@ body {
 .page-hero::before {
   content: ''; position: absolute; top: 0; right: 0;
   width: 60%; height: 100%;
-  background: radial-gradient(ellipse 70% 80% at 85% 30%, rgba(124,58,237,.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse 70% 80% at 85% 30%, rgba(118,34,229,.16) 0%, rgba(2,116,245,.06) 50%, transparent 75%);
   pointer-events: none;
 }
 .breadcrumb {
@@ -770,7 +770,7 @@ h1.hero-title {
 }
 .shield-outer {
   width: 280px; height: 320px; position: relative;
-  background: linear-gradient(160deg, rgba(124,58,237,.15), rgba(6,182,212,.1));
+  background: linear-gradient(160deg, rgba(2,116,245,.15), rgba(118,34,229,.12));
   clip-path: polygon(50% 0%, 95% 15%, 100% 50%, 95% 85%, 50% 100%, 5% 85%, 0% 50%, 5% 15%);
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 0 60px rgba(124,58,237,.25), inset 0 0 40px rgba(6,182,212,.05);
@@ -788,7 +788,7 @@ h1.hero-title {
   position: absolute; bottom: 20px; left: 50%;
   transform: translateX(-50%);
   width: 200px; height: 20px;
-  background: radial-gradient(ellipse at center, rgba(6,182,212,.4), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(2,116,245,.4), transparent 70%);
   filter: blur(8px);
   z-index: 1;
 }
@@ -821,7 +821,7 @@ h1.hero-title {
 .cy-coin-glow {
   position: absolute; inset: -20px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(124,58,237,.35) 0%, rgba(6,182,212,.1) 40%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(2,116,245,.35) 0%, rgba(118,34,229,.18) 40%, transparent 70%);
   filter: blur(22px);
   pointer-events: none; z-index: 0;
 }
@@ -847,7 +847,7 @@ h1.hero-title {
 }
 .hero-logo-platform {
   width: 220px; height: 18px; margin-top: 12px;
-  background: radial-gradient(ellipse, rgba(6,182,212,.35) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(2,116,245,.35) 0%, transparent 70%);
   filter: blur(10px); z-index: 0;
 }
 
@@ -991,7 +991,7 @@ h1.hero-title {
 }
 .stat-icon {
   width: 80px; height: 80px; border-radius: 18px;
-  background: linear-gradient(135deg, rgba(139,92,246,.28), rgba(6,182,212,.18));
+  background: linear-gradient(135deg, rgba(2,116,245,.28), rgba(118,34,229,.22));
   border: 1px solid rgba(139,92,246,0.4);
   flex-shrink: 0; display: flex; align-items: center; justify-content: center;
   box-shadow: 0 6px 24px rgba(139,92,246,0.18);
@@ -1036,7 +1036,7 @@ h1.hero-title {
   content: '';
   position: absolute; inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(139,92,246,0.32) 0%, rgba(236,72,153,0.16) 35%, rgba(6,182,212,0.10) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(2,116,245,0.32) 0%, rgba(118,34,229,0.20) 45%, transparent 75%);
   filter: blur(14px);
   z-index: -1;
 }
@@ -1147,7 +1147,7 @@ h1.hero-title {
 /* Slow-whoosh gradient overlay — fades + pans in on hover */
 .feature-item::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, var(--purple), var(--pink), var(--cyan));
+  background: linear-gradient(135deg, #0274F5, #7622E5);
   background-size: 220% 220%;
   background-position: 0% 0%;
   opacity: 0;
@@ -1217,7 +1217,7 @@ h1.hero-title {
 .process-step { text-align: center; padding: 0 8px; }
 .step-circle {
   width: 44px; height: 44px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--purple), var(--cyan));
+  background: linear-gradient(135deg, #0274F5, #7622E5);
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 20px;
   font-family: 'Outfit', sans-serif; font-size: 13px;
@@ -1294,7 +1294,7 @@ h1.hero-title {
 .testi-footer { display: flex; align-items: center; gap: 12px; }
 .testi-avatar {
   width: 40px; height: 40px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--purple), var(--cyan));
+  background: linear-gradient(135deg, #0274F5, #7622E5);
   display: flex; align-items: center; justify-content: center;
   font-family: 'JetBrains Mono', monospace; font-size: 12px;
   font-weight: 700; color: #fff; flex-shrink: 0;
@@ -1315,7 +1315,7 @@ h1.hero-title {
 
 .testi-cta {
   margin-top: 32px;
-  background: linear-gradient(135deg, rgba(124,58,237,.12), rgba(6,182,212,.08));
+  background: linear-gradient(135deg, rgba(2,116,245,.14), rgba(118,34,229,.10));
   border: 1px solid var(--border); border-radius: 10px;
   padding: 28px 40px;
   display: flex; justify-content: space-between;
@@ -1377,14 +1377,14 @@ h1.hero-title {
   content: ''; position: absolute; left: 0; top: 50%;
   transform: translateY(-50%);
   width: 120px; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--purple));
+  background: linear-gradient(90deg, transparent, #0274F5);
   pointer-events: none;
 }
 .courses-hero::after {
   content: ''; position: absolute; right: 0; top: 50%;
   transform: translateY(-50%);
   width: 120px; height: 2px;
-  background: linear-gradient(90deg, var(--cyan), transparent);
+  background: linear-gradient(90deg, #7622E5, transparent);
   pointer-events: none;
 }
 .courses-hero h1 {
@@ -1498,7 +1498,7 @@ h1.hero-title {
 
 .courses-cta {
   margin: 40px 80px 80px;
-  background: linear-gradient(135deg, rgba(124,58,237,.1), rgba(6,182,212,.06));
+  background: linear-gradient(135deg, rgba(2,116,245,.12), rgba(118,34,229,.08));
   border: 1px solid var(--border); border-radius: 12px;
   padding: 48px;
   display: flex; justify-content: space-between;
@@ -1626,7 +1626,7 @@ h1.hero-title {
 .svc-card::before {
   content: ''; position: absolute; top: 0; left: 0;
   width: 0; height: 3px;
-  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  background: linear-gradient(90deg, #0274F5, #7622E5);
   transition: width .4s;
 }
 .svc-card:hover { background: var(--surface); }
@@ -1800,12 +1800,12 @@ h1.hero-title {
 }
 .pkg.featured {
   border-color: rgba(124,58,237,.45);
-  background: linear-gradient(180deg, rgba(124,58,237,.08), var(--card));
+  background: linear-gradient(180deg, rgba(2,116,245,.12), var(--card));
 }
 .pkg-popular {
   position: absolute; top: -1px; left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  background: linear-gradient(90deg, #0274F5, #7622E5);
   color: #fff; font-family: 'JetBrains Mono', monospace;
   font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
   padding: 5px 16px; border-radius: 0 0 6px 6px;
@@ -2129,7 +2129,7 @@ h1.hero-title {
 }
 .modal-submit {
   width: 100%; padding: 15px; margin-top: 6px;
-  background: linear-gradient(135deg, var(--purple), var(--cyan));
+  background: linear-gradient(135deg, #0274F5, #7622E5);
   color: #fff; font-family: 'Outfit', sans-serif; font-size: 15px;
   font-weight: 600; border: none; border-radius: 6px; cursor: pointer;
   display: flex; align-items: center; justify-content: center; gap: 10px;
@@ -2210,8 +2210,8 @@ h1.hero-title {
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 60% 40%, rgba(139,92,246,.15) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 30% 70%, rgba(6,182,212,.10) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 50% at 60% 40%, rgba(2,116,245,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 30% 70%, rgba(118,34,229,.14) 0%, transparent 60%);
 }
 .cyber-ops-svg {
   width: 85%; height: 85%; position: relative; z-index: 1;
@@ -2245,7 +2245,7 @@ h1.hero-title {
 }
 .learner-avatar {
   width: 42px; height: 42px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--purple), var(--cyan));
+  background: linear-gradient(135deg, #0274F5, #7622E5);
   display: flex; align-items: center; justify-content: center;
   font-family: 'JetBrains Mono', monospace; font-size: 12px;
   font-weight: 700; color: #fff; flex-shrink: 0;
@@ -2257,7 +2257,7 @@ h1.hero-title {
 .learner-loc { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--dim); margin-top: 2px; }
 
 .learners-cta {
-  background: linear-gradient(135deg, rgba(139,92,246,.12), rgba(6,182,212,.08));
+  background: linear-gradient(135deg, rgba(2,116,245,.14), rgba(118,34,229,.10));
   border: 1px solid var(--border); border-radius: 12px;
   padding: 28px 40px;
   display: flex; justify-content: space-between; align-items: center;
