@@ -8,6 +8,49 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
+  <style>
+  /* ── AMBIENT RADAR: huge, subtle, behind everything ── */
+  #hero.ambient{ position:relative; overflow:hidden; }
+  .radar-bg{ position:absolute; inset:-4%; z-index:0; pointer-events:none; }
+  .radar-bg canvas{ width:100%; height:100%; display:block; }
+
+  /* legibility scrim — darkens the left where the headline lives, fades to clear */
+  .hero-scrim{
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      linear-gradient(100deg, rgba(7,7,26,0.78) 0%, rgba(7,7,26,0.42) 30%, rgba(7,7,26,0.06) 54%, rgba(7,7,26,0) 72%),
+      radial-gradient(125% 95% at 50% 52%, rgba(7,7,26,0) 62%, rgba(7,7,26,0.30) 100%);
+  }
+
+  /* content floats above */
+  #hero.ambient .hero-main{
+    position:relative; z-index:2;
+    grid-template-columns:1.05fr 0.92fr;
+    gap:64px; align-items:center;
+  }
+  #hero.ambient .hero-marquee,
+  #hero.ambient .stats-bar{ position:relative; z-index:2; }
+
+  /* a touch more air for the premium feel */
+  #hero.ambient .hero-title{ font-size:clamp(52px,6.6vw,90px); }
+  #hero.ambient .hero-desc{ max-width:500px; }
+
+  /* subtle status chip under the CTAs (uses brand mono style) */
+  .scope-chip{
+    display:inline-flex; align-items:center; gap:10px; margin-top:30px;
+    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:2px;
+    text-transform:uppercase; color:var(--muted);
+  }
+  .scope-chip .dot{ width:7px; height:7px; border-radius:50%; background:#22c55e; box-shadow:0 0 8px #22c55e; animation:sblink 1.3s steps(2) infinite; }
+  .scope-chip b{ color:var(--cyan-light); font-weight:500; }
+  @keyframes sblink{ 50%{ opacity:.25; } }
+
+  @media (max-width:1024px){
+    #hero.ambient .hero-main{ grid-template-columns:1fr; }
+    #hero.ambient .sec-widget{ display:none; }
+    .hero-scrim{ background:linear-gradient(180deg, rgba(7,7,26,0.7), rgba(7,7,26,0.4) 50%, rgba(7,7,26,0.7)); }
+  }
+  </style>
 </head>
 <body>
 
@@ -55,7 +98,12 @@
 </nav>
 
 <!-- ── HERO ── -->
-<section id="hero" class="screen screen-1">
+<section id="hero" class="screen screen-1 ambient">
+
+  <!-- giant ambient radar backdrop -->
+  <div class="radar-bg"><canvas id="radar-bg-canvas"></canvas></div>
+  <div class="hero-scrim"></div>
+
   <div class="hero-main">
   <!-- Col 1: Text -->
   <div>
@@ -72,21 +120,10 @@
       <a href="courses.html" class="btn-primary">Explore Courses →</a>
       <a href="services.html" class="btn-outline">Explore Services →</a>
     </div>
+    <div class="scope-chip"><span class="dot"></span>Threat Scope · <b>Live monitoring active</b></div>
   </div>
 
-  <!-- Col 2: 3D Coin Logo -->
-  <div class="hero-logo-col">
-    <div class="cy-coin-wrap">
-      <div class="cy-coin-glow"></div>
-      <div class="cy-coin">
-        <img src="img/cylens-logo.png" class="coin-face coin-front" alt="CyLens"/>
-        <img src="img/cylens-logo.png" class="coin-face coin-back" alt="CyLens"/>
-      </div>
-    </div>
-    <div class="hero-logo-platform"></div>
-  </div>
-
-  <!-- Col 3: Security Widget -->
+  <!-- Col 2: Security Widget -->
   <div class="sec-widget">
     <div class="sw-header">
       <span class="sw-title">Security Posture</span>
@@ -734,5 +771,6 @@
     'Ethical Hacking','Security Consulting','CyLens Academy','Defensive Security'
   ]);
 </script>
+<script src="js/cylens-radar-ambient.js"></script>
 </body>
 </html>
