@@ -48,10 +48,10 @@
         x = cx + Math.cos(a) * R * r; y = cy + Math.sin(a) * R * r;
         t++;
       } while (inText(x, y) && t < 24);
-      const type = forceType || (Math.random() < 0.55 ? 'hostile' : (Math.random() < 0.5 ? 'cyan' : 'purple'));
+      const type = forceType || (Math.random() < 0.78 ? 'hostile' : (Math.random() < 0.5 ? 'cyan' : 'purple'));
       contacts.push({ a, r, type, label: pick(THREATS), lit: 0, lock: 0, armed: false, drift: (Math.random() - 0.5) * 0.0008 });
     }
-    for (let i = 0; i < 12; i++) spawn();
+    for (let i = 0; i < 18; i++) spawn();
 
     const pings = [];
     const catches = [];          // expanding "block" rings drawn when a threat is caught
@@ -152,13 +152,13 @@
           if (c.lit < 0.02 && c.lock < 0.04) return;
           const x = cx + Math.cos(c.a) * R * c.r, y = cy + Math.sin(c.a) * R * c.r;
           const col = c.type === 'hostile' ? 'rgba(244,63,94,' : c.type === 'cyan' ? 'rgba(34,211,238,' : 'rgba(167,139,250,';
-          // echo
-          ctx.beginPath(); ctx.arc(x, y, (1 - c.lit) * 22 + 3, 0, TAU);
-          ctx.strokeStyle = col + (c.lit * 0.35) + ')'; ctx.lineWidth = 1; ctx.stroke();
-          // blip
-          ctx.beginPath(); ctx.arc(x, y, 2.4 + c.lit * 1.6, 0, TAU);
-          ctx.fillStyle = col + Math.max(c.lit, c.lock * 0.8) + ')';
-          ctx.shadowBlur = 10; ctx.shadowColor = col + '0.8)'; ctx.fill(); ctx.shadowBlur = 0;
+          // echo (larger expanding ring)
+          ctx.beginPath(); ctx.arc(x, y, (1 - c.lit) * 30 + 4, 0, TAU);
+          ctx.strokeStyle = col + (c.lit * 0.42) + ')'; ctx.lineWidth = 1.2; ctx.stroke();
+          // blip (larger dot)
+          ctx.beginPath(); ctx.arc(x, y, 4 + c.lit * 2.2, 0, TAU);
+          ctx.fillStyle = col + Math.max(c.lit, c.lock * 0.85) + ')';
+          ctx.shadowBlur = 14; ctx.shadowColor = col + '0.85)'; ctx.fill(); ctx.shadowBlur = 0;
           // subtle lock reticle on a caught threat
           if (c.type === 'hostile' && c.lock > 0.18) {
             const br = 11;
@@ -203,10 +203,10 @@
         ctx.fillStyle = 'rgba(34,211,238,0.6)';
         ctx.shadowBlur = 10; ctx.shadowColor = 'rgba(34,211,238,0.8)'; ctx.fill(); ctx.shadowBlur = 0;
 
-        if (Math.random() < 0.006 && contacts.length < 14) spawn();
-        if (Math.random() < 0.0025 && contacts.length > 9) contacts.splice((Math.random() * contacts.length) | 0, 1);
+        if (Math.random() < 0.012 && contacts.length < 22) spawn();
+        if (Math.random() < 0.0025 && contacts.length > 14) contacts.splice((Math.random() * contacts.length) | 0, 1);
 
-        ang += 0.0095 * (dt / 16.7); /* slow, premium — a touch quicker so catches recur sooner */
+        ang += 0.020 * (dt / 16.7); /* sweep speed — roughly 2x faster so catches happen ~2x as often */
       } catch (e) { /* keep RAF chain alive */ }
       requestAnimationFrame(draw);
     }
