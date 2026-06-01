@@ -64,7 +64,30 @@
       const type = forceType || (r0 < 0.40 ? 'hostile' : (r0 < 0.70 ? 'cyan' : 'purple'));
       contacts.push({ a, r, type, label: pick(THREATS), lit: 0, lock: 0, armed: false, drift: (Math.random() - 0.5) * 0.0008 });
     }
-    for (let i = 0; i < 18; i++) spawn();
+    /* Spawn a contact ON the current sweep line so it reads as "discovered"
+       by the radar — the sweep crosses it on the same frame and immediately
+       fires the catch. Used by the in-loop spawner during animation. */
+    function spawnAtSweep(forceType) {
+      const headA = ang - Math.PI / 2;
+      // tiny angular jitter so multiple spawns don't stack on the exact line
+      const a = headA + (Math.random() - 0.5) * 0.08;
+      let r, x, y, t = 0;
+      do {
+        r = (Math.random() < 0.80)
+          ? (0.16 + Math.random() * 0.27)   // ring 1 to ring 3
+          : (0.46 + Math.random() * 0.42);  // outer fallback
+        x = cx + Math.cos(a) * R * r;
+        y = cy + Math.sin(a) * R * r;
+        t++;
+      } while (inText(x, y) && t < 12);
+      if (inText(x, y)) return; // skip if no safe slot under the sweep
+      const r0 = Math.random();
+      const type = forceType || (r0 < 0.40 ? 'hostile' : (r0 < 0.70 ? 'cyan' : 'purple'));
+      contacts.push({ a, r, type, label: pick(THREATS), lit: 0, lock: 0, armed: false, drift: (Math.random() - 0.5) * 0.0008 });
+    }
+    /* Half the previous initial count (18 to 6) — the rest fill in as the
+       sweep rotates and discovers new contacts. */
+    for (let i = 0; i < 6; i++) spawn();
 
     const pings = [];
     const catches = [];          // expanding "block" rings drawn when a threat is caught
@@ -244,8 +267,13 @@
         ctx.fillStyle = 'rgba(34,211,238,0.6)';
         ctx.shadowBlur = 10; ctx.shadowColor = 'rgba(34,211,238,0.8)'; ctx.fill(); ctx.shadowBlur = 0;
 
-        if (Math.random() < 0.012 && contacts.length < 22) spawn();
-        if (Math.random() < 0.0025 && contacts.length > 14) contacts.splice((Math.random() * contacts.length) | 0, 1);
+        /* New spawns appear ON the rotating sweep line — the radar
+           "discovers" them as the beam passes. Filter to left-half sweep
+           so most spawns land on the left side of the screen. Caps roughly
+           halved from before (max 22 to 11, despawn floor 14 to 6). */
+        const sweepInLeft = Math.cos(ang - Math.PI / 2) < 0.15;
+        if (sweepInLeft && Math.random() < 0.014 && contacts.length < 11) spawnAtSweep();
+        if (Math.random() < 0.0025 && contacts.length > 6) contacts.splice((Math.random() * contacts.length) | 0, 1);
 
         ang += 0.020 * (dt / 16.7); /* sweep speed — roughly 2x faster so catches happen ~2x as often */
       } catch (e) { /* keep RAF chain alive */ }
