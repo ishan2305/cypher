@@ -35,16 +35,26 @@
     function inText(x, y) {
       if (!W || !H) return false;
       const fx = x / W, fy = y / H;
-      if (fy < 0.12) return true;                                          // nav strip
-      if (fx > 0.02 && fx < 0.50 && fy > 0.15 && fy < 0.82) return true;    // left headline / desc / CTAs / chip
-      if (W >= 1024 && fx > 0.55 && fy > 0.17 && fy < 0.97) return true;    // opaque widget (wide screens)
+      if (fy < 0.10) return true;                                          // nav strip only
+      // Tighter headline mass — leave the upper-left and lower-left clear
+      // so threats can pop around the text without overlapping the words.
+      if (fx > 0.06 && fx < 0.42 && fy > 0.28 && fy < 0.66) return true;
+      if (W >= 1024 && fx > 0.56 && fy > 0.20 && fy < 0.95) return true;    // opaque widget (wide screens)
       return false;
     }
     function spawn(forceType) {
       let a, r, x, y, t = 0;
       do {
-        a = Math.random() * TAU;
-        r = 0.34 + Math.random() * 0.62;
+        /* 78% of spawns fall on the left half of the radar (angle between
+           PI/2 and 3PI/2). 22% scatter anywhere so the right side isn't empty. */
+        a = (Math.random() < 0.78)
+          ? (Math.PI * 0.5 + Math.random() * Math.PI)
+          : (Math.random() * TAU);
+        /* 80% of spawns land between ring 1 (~1/7) and ring 3 (~3/7) of R —
+           the inner band where catches read most clearly. 20% land farther out. */
+        r = (Math.random() < 0.80)
+          ? (0.16 + Math.random() * 0.27)
+          : (0.46 + Math.random() * 0.42);
         x = cx + Math.cos(a) * R * r; y = cy + Math.sin(a) * R * r;
         t++;
       } while (inText(x, y) && t < 24);
