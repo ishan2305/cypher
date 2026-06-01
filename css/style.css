@@ -655,7 +655,14 @@ footer {
   display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 48px; margin-bottom: 32px;
 }
-.footer-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.footer-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.footer-shield-img {
+  width: 60px; height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 12px rgba(2,116,245,0.35));
+}
+.screen-4 .footer-shield-img { width: 64px; height: 64px; }
 .footer-about {
   font-family: 'Inter', sans-serif; font-size: 14px;
   color: var(--muted); line-height: 1.75;
