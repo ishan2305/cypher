@@ -151,17 +151,19 @@ body {
 .screen-2 .mission-grid p { font-size: 16px !important; line-height: 1.65 !important; margin-bottom: 20px !important; }
 .screen-2 .mission-grid .btn-primary { padding: 12px 26px; font-size: 14.5px; }
 .screen-2 .shield-diagram {
-  min-height: 400px;
-  grid-template-columns: 180px 1fr 180px;
-  row-gap: 20px;
+  min-height: 480px;
+  grid-template-columns: 210px 1fr 210px;
+  row-gap: 26px;
 }
-.screen-2 .shield-center { max-width: 380px; }
+.screen-2 .shield-center { max-width: 460px; }
 .screen-2 .shield-center img { width: 100% !important; height: 100% !important; }
-.screen-2 .quad-card { max-width: 180px; min-height: 80px; padding: 12px 14px; }
-.screen-2 .quad-icon { font-size: 18px; margin-bottom: 4px; }
-.screen-2 .quad-icon svg { width: 18px; height: 18px; }
-.screen-2 .quad-title { font-size: 13px; margin-bottom: 3px; letter-spacing: .8px; }
-.screen-2 .quad-desc { font-size: 11.5px; line-height: 1.4; }
+.screen-2 .quad-card { max-width: 210px; min-height: 104px; padding: 16px 18px; margin-right: -24px; }
+.screen-2 .quad-card.top-right,
+.screen-2 .quad-card.bot-right { margin-right: 0; margin-left: -24px; }
+.screen-2 .quad-icon { font-size: 22px; margin-bottom: 8px; }
+.screen-2 .quad-icon svg { width: 22px; height: 22px; }
+.screen-2 .quad-title { font-size: 16px; margin-bottom: 5px; letter-spacing: 1px; }
+.screen-2 .quad-desc { font-size: 13px; line-height: 1.5; }
 .screen-2 .s-title { font-size: clamp(28px, 3vw, 42px); margin-bottom: 10px; }
 .screen-2 .s-sub { font-size: 14.5px; max-width: 560px; }
 .screen-2 .s-label { font-size: 11px; padding: 6px 12px; margin-bottom: 12px; }
@@ -1017,20 +1019,20 @@ h1.hero-title {
    HOMEPAGE — MISSION SECTION
 ================================================================ */
 .mission-grid {
-  display: grid; grid-template-columns: 0.85fr 1.15fr;
-  gap: 64px; align-items: center;
+  display: grid; grid-template-columns: 0.78fr 1.22fr;
+  gap: 56px; align-items: center;
 }
 
 /* 3-col, 2-row grid: card | image | card on each row */
 .shield-diagram {
   display: grid;
-  grid-template-columns: 220px 1fr 220px;
+  grid-template-columns: 230px 1fr 230px;
   grid-template-rows: 1fr 1fr;
   column-gap: 0;
-  row-gap: 28px;
+  row-gap: 32px;
   align-items: center;
   justify-items: center;
-  min-height: 520px;
+  min-height: 560px;
   position: relative;
 }
 /* Center logo (no more hexagon clip) */
@@ -1067,17 +1069,17 @@ h1.hero-title {
   text-align: center; letter-spacing: 1px;
 }
 .quad-card {
-  /* Grid-positioned, uniform size */
+  /* Grid-positioned, uniform size — all 4 cards identical */
   width: 100%;
-  max-width: 220px;
-  min-height: 96px;
+  max-width: 230px;
+  min-height: 116px;
   background: rgba(13,13,38,0.88);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 16px 18px; text-align: center;
+  padding: 20px 22px; text-align: center;
   backdrop-filter: blur(6px);
   display: flex; flex-direction: column; justify-content: center;
-  transition: border-color .3s, transform .3s, box-shadow .3s;
+  transition: border-color .3s, transform .3s, box-shadow .3s, margin .3s;
   z-index: 2;
 }
 .quad-card:hover {
@@ -1085,23 +1087,25 @@ h1.hero-title {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(139,92,246,0.18);
 }
-/* Place each card in its grid cell, justified TOWARD the image */
-.quad-card.top-left  { grid-column: 1; grid-row: 1; justify-self: end;   }
-.quad-card.top-right { grid-column: 3; grid-row: 1; justify-self: start; }
-.quad-card.bot-left  { grid-column: 1; grid-row: 2; justify-self: end;   }
-.quad-card.bot-right { grid-column: 3; grid-row: 2; justify-self: start; }
-.quad-icon { font-size: 22px; margin-bottom: 8px; }
+/* Place each card in its grid cell, justified TOWARD the image.
+   Negative margin pulls the card ~28px into the middle column so the
+   card sits where the shield's arm terminates. */
+.quad-card.top-left  { grid-column: 1; grid-row: 1; justify-self: end;   margin-right: -28px; }
+.quad-card.top-right { grid-column: 3; grid-row: 1; justify-self: start; margin-left:  -28px; }
+.quad-card.bot-left  { grid-column: 1; grid-row: 2; justify-self: end;   margin-right: -28px; }
+.quad-card.bot-right { grid-column: 3; grid-row: 2; justify-self: start; margin-left:  -28px; }
+.quad-icon { font-size: 24px; margin-bottom: 12px; }
 .quad-title {
-  font-family: 'Outfit', sans-serif; font-size: 16px;
+  font-family: 'Outfit', sans-serif; font-size: 18px;
   font-weight: 700; color: #fff;
   -webkit-text-fill-color: #fff;
   background: none;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   text-transform: uppercase; margin-bottom: 5px;
 }
 .quad-desc {
-  font-family: 'Inter', sans-serif; font-size: 13px;
-  color: var(--muted); line-height: 1.5;
+  font-family: 'Inter', sans-serif; font-size: 14.5px;
+  color: var(--muted); line-height: 1.55;
 }
 
 
