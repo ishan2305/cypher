@@ -157,9 +157,7 @@ body {
 }
 .screen-2 .shield-center { max-width: 460px; }
 .screen-2 .shield-center img { width: 100% !important; height: 100% !important; }
-.screen-2 .quad-card { max-width: 210px; min-height: 104px; padding: 16px 18px; margin-right: -24px; }
-.screen-2 .quad-card.top-right,
-.screen-2 .quad-card.bot-right { margin-right: 0; margin-left: -24px; }
+.screen-2 .quad-card { max-width: 210px; min-height: 104px; padding: 16px 18px; }
 .screen-2 .quad-icon { font-size: 22px; margin-bottom: 8px; }
 .screen-2 .quad-icon svg { width: 22px; height: 22px; }
 .screen-2 .quad-title { font-size: 16px; margin-bottom: 5px; letter-spacing: 1px; }
@@ -1087,13 +1085,11 @@ h1.hero-title {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(139,92,246,0.18);
 }
-/* Place each card in its grid cell, justified TOWARD the image.
-   Negative margin pulls the card ~28px into the middle column so the
-   card sits where the shield's arm terminates. */
-.quad-card.top-left  { grid-column: 1; grid-row: 1; justify-self: end;   margin-right: -28px; }
-.quad-card.top-right { grid-column: 3; grid-row: 1; justify-self: start; margin-left:  -28px; }
-.quad-card.bot-left  { grid-column: 1; grid-row: 2; justify-self: end;   margin-right: -28px; }
-.quad-card.bot-right { grid-column: 3; grid-row: 2; justify-self: start; margin-left:  -28px; }
+/* Place each card in its grid cell, justified TOWARD the image */
+.quad-card.top-left  { grid-column: 1; grid-row: 1; justify-self: end;   }
+.quad-card.top-right { grid-column: 3; grid-row: 1; justify-self: start; }
+.quad-card.bot-left  { grid-column: 1; grid-row: 2; justify-self: end;   }
+.quad-card.bot-right { grid-column: 3; grid-row: 2; justify-self: start; }
 .quad-icon { font-size: 24px; margin-bottom: 12px; }
 .quad-title {
   font-family: 'Outfit', sans-serif; font-size: 18px;
