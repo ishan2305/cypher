@@ -1044,8 +1044,7 @@ h1.hero-title {
 .shield-center img {
   width: 100% !important; height: 100% !important;
   object-fit: contain;
-  /* Knock out the image's black canvas — neon colors blend onto the dark surface */
-  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 24px rgba(2,116,245,0.4)) drop-shadow(0 0 48px rgba(118,34,229,0.3));
 }
 .shield-center-text {
   font-family: 'Outfit', sans-serif; font-size: 13px;
