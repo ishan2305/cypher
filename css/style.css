@@ -1024,7 +1024,7 @@ h1.hero-title {
 }
 /* Center logo (no more hexagon clip) */
 .shield-center {
-  width: 360px; height: 360px;
+  width: 440px; height: 440px;
   background: transparent;
   clip-path: none;
   border: none;
@@ -1034,17 +1034,18 @@ h1.hero-title {
 /* Soft glow behind the shield image */
 .shield-center::before {
   content: '';
-  position: absolute; inset: -10%;
+  position: absolute; inset: -8%;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(2,116,245,0.28) 0%, rgba(118,34,229,0.18) 45%, transparent 75%);
-  filter: blur(28px);
+  filter: blur(32px);
   z-index: -1;
   pointer-events: none;
 }
 .shield-center img {
   width: 100% !important; height: 100% !important;
   object-fit: contain;
-  filter: drop-shadow(0 0 24px rgba(2,116,245,0.35)) drop-shadow(0 0 40px rgba(118,34,229,0.25));
+  /* Knock out the image's black canvas — neon colors blend onto the dark surface */
+  mix-blend-mode: screen;
 }
 .shield-center-text {
   font-family: 'Outfit', sans-serif; font-size: 13px;
@@ -1066,10 +1067,15 @@ h1.hero-title {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(139,92,246,0.18);
 }
-.quad-card.top-left  { top: 0; left: 0; }
-.quad-card.top-right { top: 0; right: 0; }
-.quad-card.bot-left  { bottom: 0; left: 0; }
-.quad-card.bot-right { bottom: 0; right: 0; }
+/* Cards aligned to shield arm tips (upper ~32%, lower ~68% vertically) */
+.quad-card.top-left  { top: 32%; left: 0; bottom: auto; transform: translateY(-50%); }
+.quad-card.top-right { top: 32%; right: 0; bottom: auto; transform: translateY(-50%); }
+.quad-card.bot-left  { top: 68%; bottom: auto; left: 0;  transform: translateY(-50%); }
+.quad-card.bot-right { top: 68%; bottom: auto; right: 0; transform: translateY(-50%); }
+.quad-card:hover.top-left,
+.quad-card:hover.top-right,
+.quad-card:hover.bot-left,
+.quad-card:hover.bot-right { transform: translateY(calc(-50% - 2px)); }
 .quad-icon { font-size: 22px; margin-bottom: 8px; }
 .quad-title {
   font-family: 'Outfit', sans-serif; font-size: 16px;
