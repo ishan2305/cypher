@@ -48,7 +48,10 @@
         x = cx + Math.cos(a) * R * r; y = cy + Math.sin(a) * R * r;
         t++;
       } while (inText(x, y) && t < 24);
-      const type = forceType || (Math.random() < 0.78 ? 'hostile' : (Math.random() < 0.5 ? 'cyan' : 'purple'));
+      /* Equal-ish mix across the 3 contact types so labels of every colour land on the radar.
+         Hostiles slightly favoured for the "BLOCKED" drama, but all 3 show up regularly. */
+      const r0 = Math.random();
+      const type = forceType || (r0 < 0.40 ? 'hostile' : (r0 < 0.70 ? 'cyan' : 'purple'));
       contacts.push({ a, r, type, label: pick(THREATS), lit: 0, lock: 0, armed: false, drift: (Math.random() - 0.5) * 0.0008 });
     }
     for (let i = 0; i < 18; i++) spawn();
@@ -140,15 +143,21 @@
           c.a += c.drift * (dt / 16.7);
           let diff = swA - (((c.a % TAU) + TAU) % TAU);
           diff = ((diff % TAU) + TAU) % TAU;
-          // rising-edge "catch": fires once as the sweep first touches the contact
+          // rising-edge "catch": fires once as the sweep first touches the contact.
+          // ALL types now lock + push a catch ring (not just hostile) so every
+          // threat label is visibly scanned, not just the red ones.
           if (diff < 0.09 && !c.armed) {
-            c.armed = true; c.lit = 1;
-            if (c.type === 'hostile') {
-              c.lock = 1;
-              catches.push({ x: cx + Math.cos(c.a) * R * c.r, y: cy + Math.sin(c.a) * R * c.r, r: 3, a: 1 });
-            }
+            c.armed = true; c.lit = 1; c.lock = 1;
+            catches.push({
+              x: cx + Math.cos(c.a) * R * c.r,
+              y: cy + Math.sin(c.a) * R * c.r,
+              r: 3, a: 1, type: c.type
+            });
           } else if (diff > 0.5) { c.armed = false; }
-          c.lit *= 0.984; c.lock *= 0.992;
+          /* Lock decays much slower (0.992 to 0.9975) so the label stays
+             on screen for ~5-6 seconds after catch instead of vanishing
+             in ~1 second. Lit (blip flash) also slowed slightly. */
+          c.lit *= 0.988; c.lock *= 0.9975;
           if (c.lit < 0.02 && c.lock < 0.04) return;
           const x = cx + Math.cos(c.a) * R * c.r, y = cy + Math.sin(c.a) * R * c.r;
           const col = c.type === 'hostile' ? 'rgba(244,63,94,' : c.type === 'cyan' ? 'rgba(34,211,238,' : 'rgba(167,139,250,';
@@ -159,36 +168,58 @@
           ctx.beginPath(); ctx.arc(x, y, 4 + c.lit * 2.2, 0, TAU);
           ctx.fillStyle = col + Math.max(c.lit, c.lock * 0.85) + ')';
           ctx.shadowBlur = 14; ctx.shadowColor = col + '0.85)'; ctx.fill(); ctx.shadowBlur = 0;
-          // subtle lock reticle on a caught threat
-          if (c.type === 'hostile' && c.lock > 0.18) {
-            const br = 11;
+          // Lock reticle on every caught threat (all types, not just hostile)
+          if (c.lock > 0.12) {
+            const br = 13;
             ctx.save(); ctx.translate(x, y); ctx.rotate(now * 0.0006);
-            ctx.strokeStyle = col + (c.lock * 0.7) + ')'; ctx.lineWidth = 1.1;
-            for (let k = 0; k < 4; k++) { ctx.rotate(Math.PI / 2); ctx.beginPath(); ctx.moveTo(br, br - 5); ctx.lineTo(br, br); ctx.lineTo(br - 5, br); ctx.stroke(); }
+            ctx.strokeStyle = col + Math.min(c.lock * 0.95, 0.9) + ')'; ctx.lineWidth = 1.3;
+            for (let k = 0; k < 4; k++) { ctx.rotate(Math.PI / 2); ctx.beginPath(); ctx.moveTo(br, br - 6); ctx.lineTo(br, br); ctx.lineTo(br - 6, br); ctx.stroke(); }
             ctx.restore();
           }
-          // threat label — pushed radially OUTWARD into the empty margin, away from centre text
-          if (c.type === 'hostile' && c.lock > 0.22) {
-            const la = c.lock;
+          // Threat label — fires for ALL types. Bigger font, bolder colour,
+          // longer-lived (lock decays slow now) so people can actually read
+          // what the radar caught.
+          if (c.lock > 0.08) {
+            // Boost alpha — labels stay readable even when c.lock is small.
+            const la = Math.min(0.30 + c.lock * 0.85, 1.0);
             const ux = Math.cos(c.a), uy = Math.sin(c.a);
-            const lx = x + ux * 13, ly = y + uy * 13;
-            ctx.beginPath(); ctx.moveTo(x + ux * 6, y + uy * 6); ctx.lineTo(lx, ly);
-            ctx.strokeStyle = 'rgba(244,63,94,' + (la * 0.5) + ')'; ctx.lineWidth = 1; ctx.stroke();
-            ctx.font = "9px 'JetBrains Mono', monospace"; ctx.textBaseline = 'middle';
+            const lx = x + ux * 16, ly = y + uy * 16;
+            ctx.beginPath(); ctx.moveTo(x + ux * 7, y + uy * 7); ctx.lineTo(lx, ly);
+            ctx.strokeStyle = col + (la * 0.55) + ')'; ctx.lineWidth = 1.1; ctx.stroke();
+            // Per-type label palette and status word
+            const labelRGB = c.type === 'hostile' ? '255,99,120'
+                          : c.type === 'cyan'    ? '125,211,252'
+                          :                        '196,181,253';
+            const status = c.type === 'hostile' ? '· BLOCKED'
+                         : c.type === 'cyan'    ? '· SCANNED'
+                         :                        '· DETECTED';
+            ctx.font = "bold 11px 'JetBrains Mono', monospace";
+            ctx.textBaseline = 'middle';
             ctx.textAlign = ux < -0.2 ? 'right' : 'left';
-            const tx = ux < -0.2 ? lx - 4 : lx + 4;
-            ctx.fillStyle = 'rgba(244,63,94,' + (la * 0.95) + ')';
-            ctx.fillText(c.label, tx, ly - 5);
-            ctx.fillStyle = 'rgba(148,163,184,' + (la * 0.6) + ')';
-            ctx.fillText('· BLOCKED', tx, ly + 5);
+            const tx = ux < -0.2 ? lx - 5 : lx + 5;
+            // shadow for crisp legibility on the dark backdrop
+            ctx.shadowBlur = 6; ctx.shadowColor = 'rgba(7,7,26,0.95)';
+            ctx.fillStyle = 'rgba(' + labelRGB + ',' + la + ')';
+            ctx.fillText(c.label, tx, ly - 6);
+            ctx.font = "10px 'JetBrains Mono', monospace";
+            ctx.fillStyle = 'rgba(' + labelRGB + ',' + (la * 0.85) + ')';
+            ctx.fillText(status, tx, ly + 7);
+            ctx.shadowBlur = 0;
           }
         });
 
-        /* expanding block-rings — a threat caught & neutralised */
+        /* Expanding catch rings — colour matches the contact type so cyan
+           and purple catches don't all render red. */
         for (let i = catches.length - 1; i >= 0; i--) {
-          const k = catches[i]; k.r += R * 0.004 * (dt / 16.7); k.a = Math.max(0, 1 - k.r / (R * 0.11));
+          const k = catches[i];
+          k.r += R * 0.004 * (dt / 16.7);
+          k.a = Math.max(0, 1 - k.r / (R * 0.12));
+          const kCol = k.type === 'hostile' ? '244,63,94'
+                     : k.type === 'cyan'    ? '56,189,248'
+                     :                        '167,139,250';
           ctx.beginPath(); ctx.arc(k.x, k.y, k.r, 0, TAU);
-          ctx.strokeStyle = 'rgba(244,63,94,' + (k.a * 0.5) + ')'; ctx.lineWidth = 1.4; ctx.stroke();
+          ctx.strokeStyle = 'rgba(' + kCol + ',' + (k.a * 0.55) + ')';
+          ctx.lineWidth = 1.5; ctx.stroke();
           if (k.a <= 0) catches.splice(i, 1);
         }
 
