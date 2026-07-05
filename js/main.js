@@ -180,11 +180,34 @@ document.querySelectorAll('.faq-q').forEach(q => {
 
 /* ── COURSE DETAIL MODAL ── */
 (function() {
+  /* ============================================================
+     Google Apps Script Web App endpoint that appends each
+     submission as a row in a Google Sheet.
+     1. Create a Google Sheet.
+     2. Extensions → Apps Script → paste the Code.gs from the
+        project README / setup notes → Deploy → Web app →
+        "Execute as: Me", "Who has access: Anyone".
+     3. Copy the deployment URL (ends in /exec) and paste it below.
+     ============================================================ */
+  const FORM_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
   const overlay = document.getElementById('course-modal-overlay');
   if (!overlay) return;
-  const modal  = overlay.querySelector('.modal');
   const closeBtn = overlay.querySelector('.modal-close');
   const form   = overlay.querySelector('.modal-form');
+  const statusEl = overlay.querySelector('.modal-form-status');
+  const SUBMIT_LABEL = 'Submit & Get Details →';
+
+  function setStatus(msg, kind) {
+    if (!statusEl) return;
+    statusEl.textContent = msg || '';
+    statusEl.className = 'modal-form-status' + (kind ? ' ' + kind : '');
+  }
+  function resetForm() {
+    setStatus('');
+    const btn = form && form.querySelector('.modal-submit');
+    if (btn) { btn.disabled = false; btn.textContent = SUBMIT_LABEL; btn.style.background = ''; }
+  }
 
   // Open on any .btn-view-detail click
   document.querySelectorAll('.btn-view-detail').forEach(btn => {
@@ -194,6 +217,8 @@ document.querySelectorAll('.faq-q').forEach(q => {
         btn.closest('.course-card').querySelector('.cc-title').textContent.trim() : '';
       const hidden = overlay.querySelector('input[name="course"]');
       if (hidden) hidden.value = courseName;
+      if (form) form.reset();
+      resetForm();
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
     });
@@ -206,15 +231,59 @@ document.querySelectorAll('.faq-q').forEach(q => {
 
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
 
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       const btn = form.querySelector('.modal-submit');
-      btn.textContent = '✓ Submitted! We\'ll be in touch.';
-      btn.style.background = '#22c55e';
-      setTimeout(closeModal, 2000);
+
+      // Honeypot: bots fill the hidden "website" field; silently drop them.
+      const hp = form.querySelector('input[name="website"]');
+      if (hp && hp.value.trim() !== '') { closeModal(); return; }
+
+      // Native required-field validation
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      const val = n => { const el = form.querySelector('input[name="' + n + '"]'); return el ? el.value.trim() : ''; };
+      const payload = {
+        course: val('course'),
+        name: val('name'),
+        email: val('email'),
+        phone: val('phone'),
+        qualification: val('qualification'),
+        page: location.pathname,
+        submittedAt: new Date().toISOString()
+      };
+
+      if (!FORM_ENDPOINT || FORM_ENDPOINT.indexOf('PASTE_') === 0) {
+        setStatus('Form endpoint not configured yet.', 'err');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+      setStatus('');
+
+      try {
+        // no-cors → response is opaque (Apps Script sends no CORS headers),
+        // but the row is still written. Plain-string body keeps it a
+        // "simple" request so the browser skips the CORS preflight.
+        await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: JSON.stringify(payload)
+        });
+        btn.textContent = '✓ Submitted! We\'ll be in touch.';
+        btn.style.background = '#22c55e';
+        form.reset();
+        setStatus('Thanks! Our team will reach out shortly.', 'ok');
+        setTimeout(closeModal, 2200);
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = SUBMIT_LABEL;
+        setStatus('Something went wrong. Please try again.', 'err');
+      }
     });
   }
 })();

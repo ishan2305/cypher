@@ -2183,6 +2183,18 @@ h1.hero-title {
   font-size: 12px; color: var(--dim); margin-top: 14px;
   display: flex; align-items: center; justify-content: center; gap: 6px;
 }
+/* Honeypot anti-spam field — visually hidden but still in the DOM for bots */
+.hp-field {
+  position: absolute !important; left: -9999px !important;
+  width: 1px; height: 1px; opacity: 0; pointer-events: none;
+}
+/* Submission status message under the submit button */
+.modal-form-status {
+  font-family: 'Inter', sans-serif; font-size: 13px;
+  text-align: center; margin-top: 12px; min-height: 1em;
+}
+.modal-form-status.ok  { color: #22c55e; }
+.modal-form-status.err { color: #f43f5e; }
 
 /* ── SERVICES NEW GRID ── */
 .svc-new-grid {
