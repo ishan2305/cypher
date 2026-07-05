@@ -69,8 +69,10 @@
        fires the catch. Used by the in-loop spawner during animation. */
     function spawnAtSweep(forceType) {
       const headA = ang - Math.PI / 2;
-      // tiny angular jitter so multiple spawns don't stack on the exact line
-      const a = headA + (Math.random() - 0.5) * 0.08;
+      // Place the contact JUST BEHIND the leading edge (in the region the beam
+      // has already swept), so it catches on the very next frame and reads as
+      // "revealed" by the passing beam — never ahead of it.
+      const a = headA - (0.015 + Math.random() * 0.05);
       let r, x, y, t = 0;
       do {
         r = (Math.random() < 0.80)
@@ -170,15 +172,23 @@
         ctx.strokeStyle = 'rgba(150,190,255,0.38)'; ctx.lineWidth = 1.5;
         ctx.shadowBlur = 20; ctx.shadowColor = 'rgba(80,140,255,0.65)'; ctx.stroke(); ctx.shadowBlur = 0;
 
-        /* gentle contacts */
-        const swA = ((ang % TAU) + TAU) % TAU;
+        /* gentle contacts.
+           IMPORTANT: catches are detected against headA — the SAME angle the
+           visible sweep line is drawn at — NOT the raw `ang`. The beam is
+           drawn at (ang - PI/2), so comparing against `ang` fired every catch
+           a quarter-turn (90 deg) before the arm visibly reached the contact.
+           Using headA here makes a blip light up exactly when the drawn beam
+           crosses it. */
+        const swA = ((headA % TAU) + TAU) % TAU;
         contacts.forEach(c => {
           c.a += c.drift * (dt / 16.7);
-          let diff = swA - (((c.a % TAU) + TAU) % TAU);
-          diff = ((diff % TAU) + TAU) % TAU;
-          // rising-edge "catch": fires once as the sweep first touches the contact.
-          // ALL types now lock + push a catch ring (not just hostile) so every
-          // threat label is visibly scanned, not just the red ones.
+          const ca = ((c.a % TAU) + TAU) % TAU;
+          // Signed shortest angular gap between the beam and the contact.
+          let diff = swA - ca;
+          diff = ((diff % TAU) + TAU) % TAU;   // 0..TAU: how far the beam has swept PAST the contact
+          // rising-edge "catch": fires once, right as the beam sweeps across
+          // the contact (0 to ~5 deg past it). ALL types lock + push a catch
+          // ring so every threat label is visibly scanned.
           if (diff < 0.09 && !c.armed) {
             c.armed = true; c.lit = 1; c.lock = 1;
             catches.push({
