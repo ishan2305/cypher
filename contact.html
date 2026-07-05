@@ -122,6 +122,8 @@
     <div class="contact-form reveal reveal-d2">
       <h3>Send Us a Message</h3>
       <form action="#" method="POST" onsubmit="return handleFormSubmit(event);">
+        <!-- Honeypot: hidden from users, bots tend to fill it. If filled, we drop the submission. -->
+        <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true"/>
         <div class="form-group">
           <label class="form-label" for="name">Full Name</label>
           <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required/>
@@ -151,6 +153,7 @@
           <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your goals or challenges..."></textarea>
         </div>
         <button type="submit" class="form-submit">Send Message →</button>
+        <p class="contact-form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
 
@@ -274,13 +277,61 @@
 
 <script src="js/main.js"></script>
 <script>
-  function handleFormSubmit(e) {
+  async function handleFormSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Message Sent! We\'ll be in touch soon.';
-    btn.style.background = 'var(--cyan)';
-    btn.style.color = '#07071a';
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const statusEl = form.querySelector('.contact-form-status');
+    const setStatus = (msg, kind) => {
+      if (!statusEl) return;
+      statusEl.textContent = msg || '';
+      statusEl.className = 'contact-form-status' + (kind ? ' ' + kind : '');
+    };
+
+    // Honeypot: bots fill the hidden "website" field; silently drop them.
+    const hp = form.querySelector('input[name="website"]');
+    if (hp && hp.value.trim() !== '') return false;
+
+    // Native required-field validation
+    if (!form.checkValidity()) { form.reportValidity(); return false; }
+
+    const val = n => { const el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
+    const payload = {
+      formType: 'contact',
+      name: val('name'),
+      email: val('email'),
+      phone: val('phone'),
+      service: val('service'),
+      message: val('message'),
+      page: location.pathname,
+      submittedAt: new Date().toISOString()
+    };
+
+    const endpoint = window.CYLENS_FORM_ENDPOINT;
+    if (!endpoint || endpoint.indexOf('PASTE_') === 0) {
+      setStatus('Form endpoint not configured yet.', 'err');
+      return false;
+    }
+
+    const original = btn.textContent;
     btn.disabled = true;
+    btn.textContent = 'Sending…';
+    setStatus('');
+
+    try {
+      // no-cors → opaque response (Apps Script sends no CORS headers), but the
+      // row is still written. Plain-string body keeps it a simple request.
+      await fetch(endpoint, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) });
+      btn.textContent = 'Message Sent! We\'ll be in touch soon.';
+      btn.style.background = 'var(--cyan)';
+      btn.style.color = '#07071a';
+      form.reset();
+      setStatus('Thanks! Our team will get back to you shortly.', 'ok');
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = original;
+      setStatus('Something went wrong. Please try again.', 'err');
+    }
     return false;
   }
 </script>

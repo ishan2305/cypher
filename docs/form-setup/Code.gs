@@ -12,18 +12,6 @@ function doPost(e) {
   lock.tryLock(30000); // avoid two simultaneous submissions clobbering a row
 
   try {
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sheet = ss.getSheetByName('Submissions') || ss.insertSheet('Submissions');
-
-    // Write a header row the first time the sheet is used
-    if (sheet.getLastRow() === 0) {
-      sheet.appendRow([
-        'Received At', 'Name', 'Email', 'Phone',
-        'Qualification', 'Course', 'Page', 'Submitted At (client)'
-      ]);
-      sheet.getRange(1, 1, 1, 8).setFontWeight('bold');
-    }
-
     // Parse the JSON body sent by the site
     var data = {};
     if (e && e.postData && e.postData.contents) {
@@ -32,16 +20,21 @@ function doPost(e) {
     // Fallback if the body ever comes through form-encoded
     if ((!data || !data.name) && e && e.parameter) { data = e.parameter; }
 
-    sheet.appendRow([
-      new Date(),
-      data.name || '',
-      data.email || '',
-      data.phone || '',
-      data.qualification || '',
-      data.course || '',
-      data.page || '',
-      data.submittedAt || ''
-    ]);
+    var formType = String(data.formType || 'course').toLowerCase();
+
+    if (formType === 'contact') {
+      // "Send Us a Message" form on contact.html
+      writeRow('Contact Messages',
+        ['Received At', 'Name', 'Email', 'Phone', 'Service Interest', 'Message', 'Page', 'Submitted At (client)'],
+        [new Date(), data.name || '', data.email || '', data.phone || '',
+         data.service || '', data.message || '', data.page || '', data.submittedAt || '']);
+    } else {
+      // "View Course Details" modal on courses.html
+      writeRow('Submissions',
+        ['Received At', 'Name', 'Email', 'Phone', 'Qualification', 'Course', 'Page', 'Submitted At (client)'],
+        [new Date(), data.name || '', data.email || '', data.phone || '',
+         data.qualification || '', data.course || '', data.page || '', data.submittedAt || '']);
+    }
 
     return ContentService
       .createTextOutput(JSON.stringify({ ok: true }))
@@ -54,6 +47,20 @@ function doPost(e) {
   } finally {
     lock.releaseLock();
   }
+}
+
+/**
+ * Append a row to the named tab, creating the tab + bold header row
+ * on first use.
+ */
+function writeRow(sheetName, headers, row) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(sheetName) || ss.insertSheet(sheetName);
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(headers);
+    sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold');
+  }
+  sheet.appendRow(row);
 }
 
 // Lets you sanity-check the deployment by opening the URL in a browser

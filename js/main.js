@@ -189,7 +189,9 @@ document.querySelectorAll('.faq-q').forEach(q => {
         "Execute as: Me", "Who has access: Anyone".
      3. Copy the deployment URL (ends in /exec) and paste it below.
      ============================================================ */
-  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxHf3btFUe55rJA0yUBYtJOzr6vmwkNB3czxlXaBW-mSlHbb_uzMSJ-PEyFPdaTmvNyFw/exec';
+  // Shared across all site forms (course modal + contact page). Single source of truth.
+  window.CYLENS_FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxHf3btFUe55rJA0yUBYtJOzr6vmwkNB3czxlXaBW-mSlHbb_uzMSJ-PEyFPdaTmvNyFw/exec';
+  const FORM_ENDPOINT = window.CYLENS_FORM_ENDPOINT;
 
   const overlay = document.getElementById('course-modal-overlay');
   if (!overlay) return;

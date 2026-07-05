@@ -1,9 +1,16 @@
-# Course Enquiry Form → Google Sheet
+# Site Forms → Google Sheet
 
-The "View Course Details" modal on **courses.html** collects Name, Email, Phone,
-and Qualification. On submit, the site POSTs the data to a **Google Apps Script
-Web App**, which appends it as a row in a **Google Sheet** you own. Free, no
-submission cap, and you can download the sheet as Excel anytime.
+Two forms feed the same **Google Apps Script Web App**, which appends each
+submission as a row in a **Google Sheet** you own. Free, no submission cap, and
+you can download the sheet as Excel anytime.
+
+| Form | Where | Lands in Sheet tab |
+|------|-------|--------------------|
+| "View Course Details" modal | courses.html | **Submissions** |
+| "Send Us a Message" | contact.html | **Contact Messages** |
+
+The script routes by a `formType` field in the payload and auto-creates each tab
+(with a bold header row) the first time it receives that form.
 
 ## One-time setup (~15 minutes)
 
@@ -45,6 +52,14 @@ Replace the placeholder with your `/exec` URL, save, commit, and push.
 1. Open the deployed site → **Courses** → click **View Course Details**.
 2. Fill in the form and submit. You should see "✓ Submitted!".
 3. Check your Google Sheet — a new row should appear within a second or two.
+
+## Adding the contact form (if you set this up before the contact form existed)
+The contact form needs the newer `Code.gs` that routes by `formType`. If your
+Apps Script still has the old single-tab version:
+1. Open **Extensions → Apps Script**, replace `Code.gs` with the current version
+   in this folder, **Save**.
+2. **Deploy → Manage deployments → Edit (✏) → Version: New version → Deploy.**
+   The `/exec` URL stays the same, so no site change is needed.
 
 ## Notes
 - **Updating the script later:** after editing `Code.gs`, you must
