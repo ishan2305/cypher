@@ -57,11 +57,17 @@ body {
     scroll-snap-stop: always;
   }
 }
+.screen { position: relative; }
+
+/* ── The 100vh viewport-fitting + font compression below is DESKTOP-ONLY.
+   On tablet & phones (<=1024px) every .screen flows as a normal block and
+   the responsive @media blocks near the end of this file own the layout —
+   no forced 100vh, no 72px side gutters, no shrunk text. ── */
+@media (min-width: 1025px) {
 .screen {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 /* Screen 1 — hero-main flex-grows to fill space above marquee + stats */
 #hero.screen-1 {
@@ -261,6 +267,8 @@ body {
 .screen-4 .footer-trust-item { font-size: 12.5px; letter-spacing: 1.2px; color: var(--text); opacity: 0.9; }
 .screen-4 .footer-bottom { padding-top: 0; }
 .screen-4 .footer-copy, .screen-4 .footer-legal a { font-size: 12px; letter-spacing: 1.2px; color: var(--muted); }
+} /* ── end @media (min-width: 1025px): desktop 4-screen system ── */
+
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
@@ -1309,9 +1317,12 @@ h1.hero-title {
   color: var(--purple-light);
 }
 .testi-location {
-  font-family: 'Inter', sans-serif; font-size: 11px;
-  color: var(--dim); display: flex; align-items: center; gap: 4px;
-  margin-top: 2px;
+  font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+  background: linear-gradient(135deg, #0274F5, #7622E5);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  display: flex; align-items: center; gap: 4px;
+  margin-top: 3px;
 }
 
 .testi-cta {
@@ -1956,7 +1967,7 @@ h1.hero-title {
   .nav-links {
     display: none; position: fixed; top: 76px; left: 0;
     right: 0; bottom: 0;
-    background: rgba(7,7,26,.98);
+    background: #07071a;
     flex-direction: column; align-items: flex-start;
     padding: 28px 24px; gap: 0; overflow-y: auto; z-index: 199;
   }
@@ -2016,10 +2027,10 @@ h1.hero-title {
   .stat-text span { font-size: 12.5px; line-height: 1.4; }
 
   .features-grid, .courses-grid { grid-template-columns: 1fr; }
-  .features-grid-row { grid-template-columns: 1fr; }
-  .features-grid-row .feature-item { border-right: none; border-bottom: 1px solid var(--border); }
-  .features-grid-row .feature-item:last-child { border-bottom: none; }
-  .feature-item { padding: 28px 24px; }
+  /* "What Sets Us Apart" 6 items: 2-up on phones (see 600/480 blocks for 1-up) */
+  .features-grid-row { grid-template-columns: repeat(2, 1fr); }
+  .features-grid-row .feature-item { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .feature-item { padding: 28px 20px; }
   .process-steps { grid-template-columns: 1fr; gap: 28px; }
   .process-line { display: none; }
   .how-grid { grid-template-columns: 1fr; }
@@ -2031,17 +2042,26 @@ h1.hero-title {
   .mv-grid, .contact-grid { grid-template-columns: 1fr; }
   .shield-diagram { display: none; }
 
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-trust { gap: 20px; flex-direction: column; align-items: center; }
-  .footer-bottom { flex-direction: column; gap: 10px; }
+  footer { padding: 56px 24px 28px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-trust { gap: 14px; flex-direction: column; align-items: flex-start; text-align: left; }
+  .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
+  .footer-legal { flex-wrap: wrap; }
 
   .courses-grid { padding: 40px 24px 0; }
+  .courses-explore-label { padding: 0 24px 16px; margin-top: 32px; }
   .course-features-bar { flex-direction: column; }
   .cfb-item { border-right: none; border-bottom: 1px solid var(--border); }
   .courses-cta { margin: 32px 24px 48px; flex-direction: column; text-align: center; }
 
   .contact-section { padding: 48px 24px; }
   .offices-grid { grid-template-columns: 1fr; }
+
+  /* Modal: breathing room from screen edges + lighter padding */
+  .modal-overlay { padding: 20px; }
+  .modal { padding: 32px 22px; border-radius: 12px; }
+  .modal-title { font-size: 21px; }
+  .modal-logo { width: 60px; height: 60px; margin-bottom: 16px; }
 
   .corp-benefits, .packages-grid { grid-template-columns: 1fr; }
   .industries-grid { grid-template-columns: repeat(2, 1fr); }
