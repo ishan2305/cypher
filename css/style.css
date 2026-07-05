@@ -1547,16 +1547,21 @@ h1.hero-title {
   width: 240px; height: 240px; object-fit: contain;
   filter: drop-shadow(0 0 26px rgba(2,116,245,0.35)) drop-shadow(0 0 44px rgba(118,34,229,0.25));
 }
-.about-logo-name {
+.about-logo-text {
   position: relative; z-index: 1;
-  font-family: 'Alice', serif; font-size: 52px; font-weight: 400;
-  color: #fff; line-height: 1; margin-top: 8px;
+  display: inline-flex; flex-direction: column; align-items: flex-start;
+  margin-top: 8px;
 }
+.about-logo-name {
+  font-family: 'Alice', serif; font-size: 52px; font-weight: 400;
+  color: #fff; line-height: 1;
+}
+/* Indent tagline so "Vision" starts under the "y" of CyLens (matches nav lockup) */
 .about-logo-tagline {
-  position: relative; z-index: 1;
   font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500;
   letter-spacing: 2.5px; text-transform: uppercase;
   color: var(--purple-light); margin-top: 12px;
+  margin-left: 30px;
 }
 
 .about-body-section {
@@ -2067,6 +2072,7 @@ h1.hero-title {
   .about-shield-col { display: flex; justify-content: center; }
   .about-logo-img { width: 180px; height: 180px; }
   .about-logo-name { font-size: 42px; }
+  .about-logo-tagline { margin-left: 24px; }
   .about-logo-glow { width: 240px; height: 240px; }
 
   /* Section header titles */
