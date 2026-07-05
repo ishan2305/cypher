@@ -189,7 +189,7 @@ document.querySelectorAll('.faq-q').forEach(q => {
         "Execute as: Me", "Who has access: Anyone".
      3. Copy the deployment URL (ends in /exec) and paste it below.
      ============================================================ */
-  const FORM_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxHf3btFUe55rJA0yUBYtJOzr6vmwkNB3czxlXaBW-mSlHbb_uzMSJ-PEyFPdaTmvNyFw/exec';
 
   const overlay = document.getElementById('course-modal-overlay');
   if (!overlay) return;
